@@ -574,13 +574,14 @@ map and trace its three decades; **scroll to zoom and drag to pan** into the den
 //| echo: false
 figure6 = {
   const data = await FileAttachment("assets/data/figure6_points.csv").csv({ typed: true });
+  const rdens = await FileAttachment("assets/data/radial_density.json").json();
 
   const periodColors = { "1990–2000": "#E6AB04", "2000–2010": "#B85A0D", "2010–2020": "#878372" };
   const periods = ["1990–2000", "2000–2010", "2010–2020"];
 
   const byCity = d3.group(data, d => d.city_name);
   const cities = Array.from(byCity.keys()).sort((a, b) => a.localeCompare(b, "es"));
-  const cityImage = new Map(Array.from(byCity, ([n, rows]) => [n, rows[0].image]));
+  const cityCve = new Map(Array.from(byCity, ([n, rows]) => [n, rows[0].cve_code]));
   let selected = "Ciudad de México";
 
   // ---- geometry (margins baked into the scale ranges so d3.zoom rescaling is exact) ----
@@ -764,24 +765,152 @@ figure6 = {
   hint.textContent = "Scroll to zoom · drag to pan · click a point or use the menu to select a city.";
   left.append(svg.node(), hint);
 
-  // ---- map panel ----
-  const fig = document.createElement("figure");
-  fig.style.cssText = "margin:0;";
-  const img = document.createElement("img");
-  img.style.cssText = "width:100%;max-width:380px;border:1px solid #e2e2e2;border-radius:8px;background:#fff;display:block;";
-  img.loading = "lazy";
-  const cap = document.createElement("figcaption");
-  cap.style.cssText = "font-size:13px;color:#555;margin-top:8px;line-height:1.45;";
-  fig.append(img, cap);
-  right.append(fig);
+  // ---- radial-density panel (animated version of paper Figure 5) ----
+  const YR = [1990, 2000, 2010, 2020];
+  const yrColor = { 1990: "#cdd9e0", 2000: "#8fb0c4", 2010: "#4e7d9c", 2020: "#0f3041" };
+  const RW = 384, RH = 236, rm = { top: 10, right: 12, bottom: 36, left: 40 };
+  const riw = RW - rm.left - rm.right, rih = RH - rm.top - rm.bottom;
+
+  const rHead = document.createElement("div");
+  rHead.style.cssText = "font-size:14px;font-weight:600;color:#222;margin-bottom:1px;";
+  const rSub = document.createElement("div");
+  rSub.style.cssText = "font-size:12px;color:#777;margin-bottom:6px;line-height:1.4;";
+  rSub.textContent = "Population density vs. distance from the centre — how the city spread out over time.";
+
+  const rx = d3.scaleLinear().range([rm.left, RW - rm.right]);
+  const ry = d3.scaleLinear().range([RH - rm.bottom, rm.top]);
+
+  const rsvg = d3.create("svg")
+    .attr("viewBox", `0 0 ${RW} ${RH}`).attr("width", "100%")
+    .style("max-width", RW + "px").style("height", "auto")
+    .style("font-family", "system-ui, sans-serif");
+  rsvg.append("defs").append("clipPath").attr("id", "rdens-clip").append("rect")
+    .attr("x", rm.left).attr("y", rm.top).attr("width", riw).attr("height", rih);
+  const rxAxis = rsvg.append("g").attr("transform", `translate(0,${RH - rm.bottom})`);
+  const ryAxis = rsvg.append("g").attr("transform", `translate(${rm.left},0)`);
+  rsvg.append("text").attr("x", rm.left + riw / 2).attr("y", RH - 4).attr("text-anchor", "middle")
+    .attr("font-size", 10).attr("fill", "#555").text("remoteness  r  (scaled distance from centre)");
+  rsvg.append("text").attr("transform", "rotate(-90)").attr("x", -(rm.top + rih / 2)).attr("y", 12)
+    .attr("text-anchor", "middle").attr("font-size", 10).attr("fill", "#555").text("population density  ρ");
+  const rContent = rsvg.append("g").attr("clip-path", "url(#rdens-clip)");
+  const rPath = {};
+  for (const yr of YR) rPath[yr] = rContent.append("path")
+    .attr("fill", "none").attr("stroke", yrColor[yr])
+    .attr("stroke-width", yr === 2020 ? 2.6 : 1.8).attr("stroke-opacity", 0.95);
+
+  const rLegend = document.createElement("div");
+  rLegend.style.cssText = "display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:#555;margin-top:4px;";
+  for (const yr of YR) {
+    const it = document.createElement("span");
+    it.style.cssText = "display:inline-flex;align-items:center;gap:4px;";
+    it.innerHTML = `<span style="display:inline-block;width:15px;height:3px;background:${yrColor[yr]};border-radius:2px;"></span>${yr}`;
+    rLegend.append(it);
+  }
+
+  const rCtl = document.createElement("div");
+  rCtl.style.cssText = "display:flex;align-items:center;gap:10px;margin-top:8px;";
+  const playBtn = document.createElement("button");
+  playBtn.style.cssText = "border:1px solid #ccc;border-radius:5px;background:#143d57;color:#fff;font:600 12px system-ui,sans-serif;padding:4px 12px;cursor:pointer;flex:none;";
+  playBtn.textContent = "▶ Play";
+  const slider = document.createElement("input");
+  slider.type = "range"; slider.min = "1990"; slider.max = "2020"; slider.step = "1"; slider.value = "1990";
+  slider.style.cssText = "flex:1 1 auto;min-width:70px;accent-color:#143d57;";
+  const yrReadout = document.createElement("div");
+  yrReadout.style.cssText = "font:600 12.5px system-ui,sans-serif;color:#333;flex:none;width:36px;text-align:right;";
+  yrReadout.textContent = "1990";
+  rCtl.append(playBtn, slider, yrReadout);
+
+  const rCap = document.createElement("div");
+  rCap.style.cssText = "font-size:11px;color:#999;margin-top:6px;line-height:1.45;";
+  rCap.textContent = "Press play: all four census years start collapsed onto the 1990 curve, then each expands to its true shape and freezes at its year — the footprint stretching outward as the centre thins.";
+
+  right.append(rHead, rSub, rsvg.node(), rLegend, rCtl, rCap);
+
+  // ---- animation state + logic ----
+  let curCve = null, rafId = null, playing = false, playFrom = 1990, playT0 = null;
+  const PLAY_MS = 4800;
+
+  // cumulative expansion factor at continuous time t (geometric interp between census years)
+  function Gat(G, t) {
+    if (t <= 1990) return G["1990"];
+    if (t >= 2020) return G["2020"];
+    const k = Math.min(2, Math.floor((t - 1990) / 10));
+    const y0 = 1990 + k * 10, g0 = G[String(y0)], g1 = G[String(y0 + 10)];
+    return g0 * Math.pow(g1 / g0, (t - y0) / 10);
+  }
+
+  function drawRadial(t) {
+    const rec = rdens[curCve];
+    if (!rec) return;
+    const Gt = Gat(rec.G, t);
+    for (const yr of YR) {
+      const ys = rec.years[String(yr)], Gy = rec.G[String(yr)];
+      const s = (t <= yr ? Gt : Gy) / Gy;          // = G(min(t, yr)) / G(yr)
+      rPath[yr].attr("d", d3.line().x((v, i) => rx(ys.x[i] * s)).y(v => ry(v / s))(ys.y));
+    }
+    slider.value = Math.round(t);
+    yrReadout.textContent = Math.round(t);
+  }
+
+  function setCityRadial(cve) {
+    curCve = cve;
+    const rec = rdens[cve];
+    if (!rec) return;
+    // stable axis domains over the whole sweep (census breakpoints bound the interpolated states)
+    let xm = 0, ym = 0;
+    for (const T of YR) {
+      const Gt = rec.G[String(T)];
+      for (const yr of YR) {
+        const ys = rec.years[String(yr)], Gy = rec.G[String(yr)];
+        const s = (T <= yr ? Gt : Gy) / Gy;
+        xm = Math.max(xm, ys.x[ys.x.length - 1] * s);
+        ym = Math.max(ym, d3.max(ys.y) / s);
+      }
+    }
+    rx.domain([0, xm * 1.02]);
+    ry.domain([0, ym * 1.06]);
+    rxAxis.call(d3.axisBottom(rx).ticks(6).tickSize(-rih))
+      .call(g => g.select(".domain").remove())
+      .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06))
+      .call(g => g.selectAll(".tick text").attr("font-size", 9).attr("fill", "#666"));
+    ryAxis.call(d3.axisLeft(ry).ticks(4).tickSize(-riw).tickFormat(() => ""))
+      .call(g => g.select(".domain").remove())
+      .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06));
+    playRadial(1990);   // autoplay from 1990 on each city selection
+  }
+
+  function stopPlay() {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = null; playing = false; playBtn.textContent = "▶ Play";
+  }
+
+  function playRadial(from) {
+    stopPlay();
+    playFrom = Math.max(1990, Math.min(2019, from));
+    playing = true; playT0 = null; playBtn.textContent = "❚❚ Pause";
+    const dur = PLAY_MS * (2020 - playFrom) / 30;
+    function frame(ts) {
+      if (playT0 === null) playT0 = ts;
+      const t = playFrom + Math.min(1, (ts - playT0) / dur) * (2020 - playFrom);
+      drawRadial(t);
+      if (t < 2020 && playing) rafId = requestAnimationFrame(frame);
+      else { stopPlay(); drawRadial(2020); }
+    }
+    rafId = requestAnimationFrame(frame);
+  }
+
+  playBtn.onclick = () => {
+    if (playing) stopPlay();
+    else playRadial(+slider.value >= 2020 ? 1990 : +slider.value);
+  };
+  slider.addEventListener("input", () => { stopPlay(); drawRadial(+slider.value); });
 
   // ---- selection ----
   function selectCity(name) {
     selected = name;
     if (select.value !== name) select.value = name;
-    img.src = cityImage.get(name);
-    img.alt = `Population change map for ${name}, 1990 to 2020`;
-    cap.innerHTML = `<strong>${name}</strong> — population change by grid cell, 2020 minus 1990. Black dot: city centre; brown = loss near the core, blue = gains in the periphery.`;
+    rHead.textContent = name;
+    setCityRadial(cityCve.get(name));
     pts.attr("opacity", d => d.city_name === name ? 1 : 0.16)
       .attr("r", d => d.city_name === name ? 6.5 : 4)
       .attr("stroke", d => d.city_name === name ? "#111" : "#fff")

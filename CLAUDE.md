@@ -28,7 +28,7 @@ committed CSV/JSON).
 index.qmd              # the whole document (prose + 3 interactive OJS/D3 components)
 _quarto.yml            # project config: type default, output-dir _site, resources:[assets, "!ToTest/**"]
 assets/
-  data/                # committed chart data — figure6_points.csv, city_maps.json, city_images.json, density_change.json, map_vmax.json
+  data/                # committed chart data — figure6_points.csv, city_maps.json, city_images.json, density_change.json, map_vmax.json, radial_density.json
   figures/             # paper figures converted PDF->PNG (figure1..8.png, summary_methods.png)
   images/metros/       # per-city population-change maps: thumb <code>.png (127px), detail <code>2.png (828px)
 scripts/               # stdlib data generators (see "Regenerating data")
@@ -50,9 +50,13 @@ main.tex, sup_main.tex, Figure*.pdf, FIGURES/   # the PAPER sources (not part of
    within r). Data: `assets/data/density_change.json` (keyed `{point,avg}`, each `{r, national, cities}`). Under the map is a **per-city
    colour-scale bar** showing the map's shading extent ±`vmax` (max |Δpop| per grid cell — each
    map is drawn on its own continuous scale, `adjust_vmax=False`); data `assets/data/map_vmax.json`.
-3. **Figure 6 phase space** (Finding 4) — `figure6`: growth × urban-expansion-factor Φ scatter with
-   all six labeled regions, city dropdown, hover tooltips, click-to-select linked map, and zoom/pan
-   (`d3.zoom` rescale pattern; "Reset view").
+3. **Figure 6 phase space** (Finding 3) — `figure6`: growth × urban-expansion-factor Φ scatter with
+   all six labeled regions, city dropdown, hover tooltips, zoom/pan (`d3.zoom` rescale pattern;
+   "Reset view"). The right panel shows the selected city's **animated radial probability density**
+   (paper Fig 5): four census-year ρ(r) curves that start collapsed onto 1990 and expand to their
+   true shapes as a 1990→2020 slider/Play sweeps (each freezes at its year; transform `x→x·s`,
+   `ρ→ρ/s` with `s=G(min(τ,y))/G(y)`, G = cumulative expansion factor). Data
+   `assets/data/radial_density.json`. (This replaced the earlier click-to-select linked *map*.)
 
 ## Regenerating chart data (only when the underlying analysis changes)
 
@@ -71,12 +75,15 @@ python3 scripts/build_city_maps_data.py  # -> assets/data/city_maps.json (per-zo
     scripts/build_density_change_data.py   # -> assets/data/density_change.json (Δσ vs remoteness)
 /Users/gperaza/Drive/Research/scaling_depopulation/.venv/bin/python \
     scripts/build_map_vmax.py              # -> assets/data/map_vmax.json (per-city map colour scale)
+/Users/gperaza/Drive/Research/scaling_depopulation/.venv/bin/python \
+    scripts/build_radial_density.py        # -> assets/data/radial_density.json (Fig 5 ρ(r) + expansion factors G)
 ```
 
 The first two are pure stdlib. They read `outputs/scaling_factors.csv`, `outputs/pop_remoteness_brackets_long.csv`,
 `data/cve_code_names.json` from the analysis repo, and join to images via `assets/data/city_images.json`.
-`build_density_change_data.py` and `build_map_vmax.py` instead read `outputs/radial_f/*.csv`
-(and `outputs/mesh.geoparquet` for the latter) via the repo's own functions, so they run with
+`build_density_change_data.py`, `build_map_vmax.py`, and `build_radial_density.py` instead read
+`outputs/radial_f/*.csv` (plus `outputs/mesh.geoparquet` for map_vmax and `outputs/scaling_factors.csv`
+for radial_density) via the repo's own functions (`load_radial_f`, `gen_pop_ar`), so they run with
 that repo's `.venv` (not system python3).
 The paper's raw data is also on Zenodo (DOI `10.5281/zenodo.20630381`).
 
