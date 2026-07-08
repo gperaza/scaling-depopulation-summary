@@ -856,18 +856,18 @@ figure6 = {
     curCve = cve;
     const rec = rdens[cve];
     if (!rec) return;
-    // stable axis domains over the whole sweep (census breakpoints bound the interpolated states)
-    let xm = 0, ym = 0;
+    // x-axis capped at the ~99%-population remoteness (flat tail is clipped by the plot's clip-rect);
+    // y-axis from the tallest state over the whole sweep (census breakpoints bound the interp states)
+    let ym = 0;
     for (const T of YR) {
       const Gt = rec.G[String(T)];
       for (const yr of YR) {
         const ys = rec.years[String(yr)], Gy = rec.G[String(yr)];
         const s = (T <= yr ? Gt : Gy) / Gy;
-        xm = Math.max(xm, ys.x[ys.x.length - 1] * s);
         ym = Math.max(ym, d3.max(ys.y) / s);
       }
     }
-    rx.domain([0, xm * 1.02]);
+    rx.domain([0, rec.xcap * 1.02]);
     ry.domain([0, ym * 1.06]);
     rxAxis.call(d3.axisBottom(rx).ticks(6).tickSize(-rih))
       .call(g => g.select(".domain").remove())

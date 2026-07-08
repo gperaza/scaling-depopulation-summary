@@ -85,11 +85,14 @@ def main():
         g2020.append(G["2020"])
 
         years = {}
+        xcap = 0.0   # remoteness enclosing ~99% of population (max over years) — display x-limit
         for y in YEARS:
             cdf = np.asarray(rf[f"cdf_{y}"])
             rho = np.asarray(rf[f"rho_{y}"])
             idx = int(np.searchsorted(cdf, 1.0))
-            x = r_ring[: idx + 1] / rem_s        # remoteness
+            j99 = int(np.searchsorted(cdf, 0.99))
+            xcap = max(xcap, float(r_ring[min(j99, len(r_ring) - 1)]) / rem_s)
+            x = r_ring[: idx + 1] / rem_s        # remoteness (full extent kept; tail clipped in view)
             yv = rho[: idx + 1] * rem_s          # pdf in remoteness units
             xd, yd, drop = downsample(x, yv)
             dropped += drop
@@ -97,7 +100,7 @@ def main():
                 "x": [round(float(v), 4) for v in xd],
                 "y": [round(float(v), 6) for v in yd],
             }
-        out[cve] = {"G": {k: round(v, 5) for k, v in G.items()}, "years": years}
+        out[cve] = {"xcap": round(xcap, 4), "G": {k: round(v, 5) for k, v in G.items()}, "years": years}
 
     # ---- validate ----
     for cve, rec in out.items():
