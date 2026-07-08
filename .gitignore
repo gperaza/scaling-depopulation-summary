@@ -93,3 +93,6 @@ references.bib
 /Figure7.pdf
 /Figure8.pdf
 /FIGURES/
+
+## Stray Quarto render artifact (supporting files live under _site/ instead)
+/index_files/

@@ -137,7 +137,7 @@ where the most important changes are happening.
 
 ## What we found
 
-### 1. Every core lost people {#finding-1}
+### 1. Every core lost people — and got thinner {#finding-1}
 
 Between 1990 and 2020, **all 69 metropolitan areas lost population in their central zone**
 ($r < 3$), even as every one of them grew overall. Nationwide, central areas shed **2.5 million
@@ -148,7 +148,9 @@ from **over 40% in 1990 to about 22% in 2020**.
 Here is **every one of the 69 metropolitan areas** — brown/red cells lost people (near the black-dot
 centres), blue cells gained them (out at the edges). **Click any city** to enlarge its map, then
 **hover a ring-zone** (central, intermediate, distant, or peri-urban) to read how that zone's
-population changed between 1990 and 2020.
+population changed between 1990 and 2020. Under each enlarged map, a chart traces how population
+**density** shifted with distance from the centre — the orange line is the city you picked, the bold
+black line the national trend.
 
 ::: {.column-screen-inset}
 
@@ -156,6 +158,8 @@ population changed between 1990 and 2020.
 //| echo: false
 figure2grid = {
   const cities = await FileAttachment("assets/data/city_maps.json").json();
+  const density = await FileAttachment("assets/data/density_change.json").json();
+  const vmax = await FileAttachment("assets/data/map_vmax.json").json();
 
   const zoneKeys = ["central", "intermediate", "distant", "periurban"];
   const zoneMeta = {
@@ -269,7 +273,123 @@ figure2grid = {
   const hint = document.createElement("div");
   hint.style.cssText = "font-size:11.5px;color:#999;margin-top:6px;";
   hint.textContent = "Hover a ring-zone for its population change. Zones are scale-normalized, so the rings sit at the same place on every map.";
-  right.append(heading, mapBox, cap, hint);
+
+  // ---- per-city colour-scale bar (the map's shading extent, people per grid cell) ----
+  const cbar = document.createElement("div");
+  cbar.style.cssText = "margin-top:8px;";
+  const cbarGrad = document.createElement("div");
+  cbarGrad.style.cssText = "height:12px;border-radius:3px;border:1px solid #e2e2e2;" +
+    "background:linear-gradient(90deg,#7a2618,#c65a43,#f5f5f5,#4e8ab2,#173a5e);";
+  const cbarRow = document.createElement("div");
+  cbarRow.style.cssText = "display:flex;justify-content:space-between;font-size:10.5px;margin-top:2px;";
+  const cbLo = document.createElement("span"); cbLo.style.color = LOSS; cbLo.style.fontWeight = "600";
+  const cbMid = document.createElement("span"); cbMid.style.color = "#888"; cbMid.textContent = "0";
+  const cbHi = document.createElement("span"); cbHi.style.color = GAIN; cbHi.style.fontWeight = "600";
+  cbarRow.append(cbLo, cbMid, cbHi);
+  const cbCap = document.createElement("div");
+  cbCap.style.cssText = "font-size:10.5px;color:#999;text-align:center;margin-top:1px;";
+  cbCap.textContent = "population change per grid cell — loss ← → gain (scaled per city)";
+  cbar.append(cbarGrad, cbarRow, cbCap);
+
+  // ---- density-change line plots (paper Fig 3): toggle local σ vs. average σ̄ density ----
+  const HL_DENS = "#e6550d";
+  let densMode = "point";   // "point" = local density σ ; "avg" = average density σ̄ within r
+  const densPanel = document.createElement("div");
+  densPanel.style.cssText = "margin-top:16px;";
+  const densTitle = document.createElement("div");
+  densTitle.style.cssText = "font-size:12.5px;font-weight:600;color:#333;margin-bottom:5px;";
+  densTitle.textContent = "Density change, 1990 → 2020";
+  densPanel.append(densTitle);
+
+  // toggle: local (point) vs average density
+  const densToggle = document.createElement("div");
+  densToggle.style.cssText = "display:inline-flex;border:1px solid #ccc;border-radius:5px;overflow:hidden;margin-bottom:5px;";
+  const modeBtn = {};
+  for (const [mode, label] of [["point", "Local"], ["avg", "Average"]]) {
+    const b = document.createElement("button");
+    b.textContent = label;
+    b.style.cssText = "border:none;background:#fff;color:#555;padding:3px 13px;font:500 11px system-ui,sans-serif;cursor:pointer;";
+    b.onclick = () => { densMode = mode; drawDensity(); };
+    modeBtn[mode] = b;
+    densToggle.append(b);
+  }
+  const densExplain = document.createElement("div");
+  densExplain.style.cssText = "font-size:10.5px;color:#999;margin-bottom:2px;";
+  densPanel.append(densToggle, densExplain);
+
+  const densCap = document.createElement("div");
+  densCap.style.cssText = "font-size:11.5px;color:#999;margin-top:4px;line-height:1.4;";
+
+  const DW = 400, DH = 208, dm = { top: 8, right: 12, bottom: 30, left: 48 };
+  const diw = DW - dm.left - dm.right, dih = DH - dm.top - dm.bottom;
+  const dx = d3.scaleLinear().domain([0, 10]).range([dm.left, DW - dm.right]);
+  const dy = d3.scaleLinear().domain([-6000, 4000]).range([DH - dm.bottom, dm.top]);
+
+  const dsvg = d3.create("svg")
+    .attr("viewBox", `0 0 ${DW} ${DH}`).attr("width", "100%")
+    .style("max-width", DW + "px").style("height", "auto")
+    .style("font-family", "system-ui, sans-serif");
+  dsvg.append("defs").append("clipPath").attr("id", "dens-clip").append("rect")
+    .attr("x", dm.left).attr("y", dm.top).attr("width", diw).attr("height", dih);
+  dsvg.append("g").attr("transform", `translate(0,${DH - dm.bottom})`)
+    .call(d3.axisBottom(dx).ticks(6).tickSize(-dih))
+    .call(g => g.select(".domain").remove())
+    .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06))
+    .call(g => g.selectAll(".tick text").attr("font-size", 9).attr("fill", "#666"));
+  dsvg.append("g").attr("transform", `translate(${dm.left},0)`)
+    .call(d3.axisLeft(dy).ticks(5).tickSize(-diw).tickFormat(d3.format("~s")))
+    .call(g => g.select(".domain").remove())
+    .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06))
+    .call(g => g.selectAll(".tick text").attr("font-size", 9).attr("fill", "#666"));
+  dsvg.append("line").attr("x1", dm.left).attr("x2", DW - dm.right)
+    .attr("y1", dy(0)).attr("y2", dy(0)).attr("stroke", "#888").attr("stroke-dasharray", "3 3");
+  dsvg.append("text").attr("x", dm.left + diw / 2).attr("y", DH - 4).attr("text-anchor", "middle")
+    .attr("font-size", 10).attr("fill", "#555").text("remoteness  r");
+  const dyLabel = dsvg.append("text").attr("transform", "rotate(-90)")
+    .attr("x", -(dm.top + dih / 2)).attr("y", 11)
+    .attr("text-anchor", "middle").attr("font-size", 10).attr("fill", "#555");
+
+  const dContent = dsvg.append("g").attr("clip-path", "url(#dens-clip)");
+  const densLine = new Map();
+  for (const cve of Object.keys(density.point.cities)) {
+    densLine.set(cve, dContent.append("path")
+      .attr("fill", "none").attr("stroke", "#bbb").attr("stroke-width", 1).attr("stroke-opacity", 0.22));
+  }
+  const natPath = dContent.append("path").attr("fill", "none").attr("stroke", "#111").attr("stroke-width", 2.5);
+  densPanel.append(dsvg.node(), densCap);
+
+  // (re)draw all density lines for the current mode, then re-apply the selection highlight
+  function drawDensity() {
+    const ds = density[densMode];
+    const cityLine = d3.line().x((v, i) => dx(ds.r[i])).y(v => dy(v));
+    for (const [cve, p] of densLine) p.attr("d", cityLine(ds.cities[cve]));
+    const nx = ds.national.x || ds.r;
+    natPath.attr("d", d3.line().x((v, i) => dx(nx[i])).y(v => dy(v))(ds.national.y));
+    dyLabel.text(densMode === "point" ? "Δσ (people/km²)" : "Δσ̄ (people/km²)");
+    densExplain.textContent = densMode === "point"
+      ? "density right at distance r (each ring)"
+      : "average density of everything within distance r";
+    for (const m of ["point", "avg"]) {
+      const on = m === densMode;
+      modeBtn[m].style.background = on ? "#143d57" : "#fff";
+      modeBtn[m].style.color = on ? "#fff" : "#555";
+    }
+    highlightDens();
+  }
+
+  // highlight the selected city's density line (orange), keep the national trend on top
+  function highlightDens() {
+    for (const [, p] of densLine) p.attr("stroke", "#bbb").attr("stroke-width", 1).attr("stroke-opacity", 0.22);
+    const dsel = densLine.get(selected);
+    if (dsel) dsel.attr("stroke", HL_DENS).attr("stroke-width", 2.5).attr("stroke-opacity", 1).raise();
+    natPath.raise();
+    const nm = byCve.get(selected);
+    densCap.innerHTML =
+      `<span style="color:${HL_DENS};font-weight:600">${nm ? nm.name : ""}</span> highlighted · ` +
+      `faint grey = other cities · <span style="font-weight:700">black</span> = national trend`;
+  }
+
+  right.append(heading, mapBox, cbar, cap, densPanel, hint);
 
   // ---- tooltip ----
   const tip = document.createElement("div");
@@ -310,8 +430,14 @@ figure2grid = {
     dImg.alt = `Population change map for ${c.name}, 1990 to 2020`;
     cap.innerHTML = "Population change by grid cell, 2020 minus 1990. Black dot: city centre; brown/red = loss near the core, blue = gains in the periphery. Dashed rings mark the remoteness zones.";
     for (const [cc, btn] of cardByCve) btn.style.borderColor = cc === cve ? "#143d57" : "transparent";
+    // per-city colour-scale numbers (map shading runs to ±vmax people per grid cell)
+    const vm = vmax[cve];
+    cbLo.textContent = vm != null ? "−" + fmt(vm) : "";
+    cbHi.textContent = vm != null ? "+" + fmt(vm) : "";
+    highlightDens();  // re-highlight this city's density line (same mode)
     tip.style.opacity = 0;
   }
+  drawDensity();       // draw the density lines for the default (local) mode
   selectCity(selected);
 
   return container;
@@ -392,22 +518,18 @@ viewof measure1 = Inputs.radio(["Total (millions)", "Share of population (%)"], 
 
 *Colours run light (1990) to dark (2020). The Central block shrinks over time; every outer block grows.*
 
+It is not just head-counts — density fell too. Near the centre ($r \le 3$), some cities lost as much
+as **4,000 people per km²**, with a national average loss of about **1,000 people per km²**. Further
+out, density rose. Most of the central thinning happened **before 2010**, during the fastest period
+of population growth and the peak of a housing boom. You can see this in the curves beneath each
+city's map: nearly all dip below zero near the centre and rise further out, crossing over at a
+remoteness of about **2–4** (the bold black line is the national trend).
+
 The pattern is not a handful of cherry-picked cases — it holds everywhere. You can call up any
 individual city's own map, and see where it sits among all 69, in the [interactive figure
-below](#finding-4).
+below](#finding-3).
 
-### 2. The centre got thinner {#finding-2}
-
-It is not just head-counts — density fell too. Near the centre ($r \le 3$), some cities lost as
-much as **4,000 people per km²**, with a national average loss of about **1,000 people per km²**.
-Further out, density rose. Most of the central thinning happened **before 2010**, during the fastest
-period of population growth and the peak of a housing boom.
-
-![**Density change by remoteness, 1990–2020.** Every curve dips below zero near the centre (density
-loss) and rises above it further out (density gain). The crossover sits at a remoteness of roughly
-2–4.](assets/figures/figure3.png){#fig-densities fig-alt="Line plots of change in population density versus remoteness for Mexican cities, all negative near the centre and turning positive at larger remoteness, with an inset showing aggregated density profiles for each census year."}
-
-### 3. Cities grow by stretching {#finding-3}
+### 2. Cities grow by stretching {#finding-2}
 
 Remarkably, a city's later population map can be recovered by taking its earlier map and simply
 **stretching it outward**. The figure below demonstrates this for Colima: rescale the 1990 curve by
@@ -419,7 +541,7 @@ expansion factor $\Phi$ (dashed) reproduces the observed 2020 distribution (soli
 probability density (centre) and the population density (right). The slope on the left panel *is*
 $\Phi$.](assets/figures/figure4.png){#fig-scaling fig-alt="Three panels for Colima: a quantile-quantile plot whose straight-line slope equals the expansion factor, and two density curves where the 1990 profile rescaled by that factor overlays the 2020 profile."}
 
-### 4. A simple model of expansion {#finding-4}
+### 3. A simple model of expansion {#finding-3}
 
 How big is $\Phi$? Across all cities and census periods, it follows a clean rule: expansion is a
 **power of population growth**, times a **steady outward drift** that happens even without growth:
@@ -685,7 +807,7 @@ majority land in the upper **density-loss** region. A handful of tourism-driven 
 Cabos, Puerto Vallarta) sit far to the right on runaway growth, while the twin city of
 Tlaxcala-Apizaco is the rare case that pulled *inward*.
 
-### 5. How many people were displaced? {#finding-5}
+### 4. How many people were displaced? {#finding-4}
 
 To gauge the human scale, the study asks a "what-if": had cities grown while **holding their average
 density constant**, how many fewer people would have been pushed out of the centre? The answer is
@@ -696,7 +818,7 @@ from city centres** — nearly **double** the 2.5 million drop measured directly
 distributed had density held constant; panel **b** shows the gap — the excess crowd pushed out of the
 centre and into the periphery.](assets/figures/figure7.png){#fig-counterfactual fig-alt="Two panels comparing observed population by remoteness zone against a constant-density counterfactual, and the difference between them, showing excess displacement away from the central zone toward the periphery."}
 
-### 6. Longer distances, higher costs {#finding-6}
+### 5. Longer distances, higher costs {#finding-5}
 
 Stretching a city's population outward has a direct, unavoidable consequence: the **average distance
 to the centre grows**. With Mexico's typical growth factor of **2.16** over 30 years and the fitted

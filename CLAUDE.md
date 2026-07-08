@@ -28,7 +28,7 @@ committed CSV/JSON).
 index.qmd              # the whole document (prose + 3 interactive OJS/D3 components)
 _quarto.yml            # project config: type default, output-dir _site, resources:[assets, "!ToTest/**"]
 assets/
-  data/                # committed chart data — figure6_points.csv, city_maps.json, city_images.json
+  data/                # committed chart data — figure6_points.csv, city_maps.json, city_images.json, density_change.json, map_vmax.json
   figures/             # paper figures converted PDF->PNG (figure1..8.png, summary_methods.png)
   images/metros/       # per-city population-change maps: thumb <code>.png (127px), detail <code>2.png (828px)
 scripts/               # stdlib data generators (see "Regenerating data")
@@ -44,6 +44,12 @@ main.tex, sup_main.tex, Figure*.pdf, FIGURES/   # the PAPER sources (not part of
    distant/peri-urban) tints it and shows population change. Zone is computed from the cursor's
    **fractional distance from centre** (ring radii `0.150 / 0.250 / 0.465` of image width — constant
    across all maps) — NOT via SVG shape hit-testing (Chromium mis-routes stacked transparent shapes).
+   The right panel also holds a **density-change line plot** (Δ vs. remoteness): 69 faint grey city
+   lines + a bold black national trend, the selected city highlighted (orange), and a **Local/Average
+   toggle** switching between paper Fig 3a (local point density σ) and Fig 3b (average density σ̄
+   within r). Data: `assets/data/density_change.json` (keyed `{point,avg}`, each `{r, national, cities}`). Under the map is a **per-city
+   colour-scale bar** showing the map's shading extent ±`vmax` (max |Δpop| per grid cell — each
+   map is drawn on its own continuous scale, `adjust_vmax=False`); data `assets/data/map_vmax.json`.
 3. **Figure 6 phase space** (Finding 4) — `figure6`: growth × urban-expansion-factor Φ scatter with
    all six labeled regions, city dropdown, hover tooltips, click-to-select linked map, and zoom/pan
    (`d3.zoom` rescale pattern; "Reset view").
@@ -58,10 +64,20 @@ with its `outputs/` precomputed). Then:
 ```bash
 python3 scripts/build_figure6_data.py    # -> assets/data/figure6_points.csv (growth, Φ per city/period)
 python3 scripts/build_city_maps_data.py  # -> assets/data/city_maps.json (per-zone pop per city)
+
+# these two MUST use the analysis repo's interpreter (numpy/pandas/geopandas + the `depopulation`
+# package to reuse load_radial_f / plot_delta_density / pop_change_map's vmax logic):
+/Users/gperaza/Drive/Research/scaling_depopulation/.venv/bin/python \
+    scripts/build_density_change_data.py   # -> assets/data/density_change.json (Δσ vs remoteness)
+/Users/gperaza/Drive/Research/scaling_depopulation/.venv/bin/python \
+    scripts/build_map_vmax.py              # -> assets/data/map_vmax.json (per-city map colour scale)
 ```
 
-Both are pure stdlib. They read `outputs/scaling_factors.csv`, `outputs/pop_remoteness_brackets_long.csv`,
+The first two are pure stdlib. They read `outputs/scaling_factors.csv`, `outputs/pop_remoteness_brackets_long.csv`,
 `data/cve_code_names.json` from the analysis repo, and join to images via `assets/data/city_images.json`.
+`build_density_change_data.py` and `build_map_vmax.py` instead read `outputs/radial_f/*.csv`
+(and `outputs/mesh.geoparquet` for the latter) via the repo's own functions, so they run with
+that repo's `.venv` (not system python3).
 The paper's raw data is also on Zenodo (DOI `10.5281/zenodo.20630381`).
 
 ## Gotchas
