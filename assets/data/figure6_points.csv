@@ -1,0 +1,208 @@
+city_name,cve_code,period,growth_factor,phi,image
+Aguascalientes,01.1.01,1990–2000,1.357007,1.317895,assets/images/metros/01.1.012.png
+Aguascalientes,01.1.01,2000–2010,1.354875,1.321290,assets/images/metros/01.1.012.png
+Aguascalientes,01.1.01,2010–2020,1.241567,1.157796,assets/images/metros/01.1.012.png
+Tijuana,02.1.01,1990–2000,1.692234,1.466643,assets/images/metros/02.1.012.png
+Tijuana,02.1.01,2000–2010,1.271823,1.236459,assets/images/metros/02.1.012.png
+Tijuana,02.1.01,2010–2020,1.242852,1.166810,assets/images/metros/02.1.012.png
+Ensenada,02.2.02,1990–2000,1.333609,1.162162,assets/images/metros/02.2.022.png
+Ensenada,02.2.02,2000–2010,1.244134,1.211646,assets/images/metros/02.2.022.png
+Ensenada,02.2.02,2010–2020,1.173905,1.080000,assets/images/metros/02.2.022.png
+Mexicali,02.2.03,1990–2000,1.281779,1.177496,assets/images/metros/02.2.032.png
+Mexicali,02.2.03,2000–2010,1.309139,1.244572,assets/images/metros/02.2.032.png
+Mexicali,02.2.03,2010–2020,1.139948,1.113249,assets/images/metros/02.2.032.png
+La Paz,03.2.01,1990–2000,1.183906,1.162714,assets/images/metros/03.2.012.png
+La Paz,03.2.01,2000–2010,1.349301,1.257237,assets/images/metros/03.2.012.png
+La Paz,03.2.01,2010–2020,1.179840,1.139943,assets/images/metros/03.2.012.png
+Los Cabos,03.2.02,1990–2000,3.212778,1.413793,assets/images/metros/03.2.022.png
+Los Cabos,03.2.02,2000–2010,2.482013,1.514286,assets/images/metros/03.2.022.png
+Los Cabos,03.2.02,2010–2020,1.580264,1.122763,assets/images/metros/03.2.022.png
+Campeche,04.2.01,1990–2000,1.267729,1.166795,assets/images/metros/04.2.012.png
+Campeche,04.2.01,2000–2010,1.198885,1.158431,assets/images/metros/04.2.012.png
+Campeche,04.2.01,2010–2020,1.132663,1.050031,assets/images/metros/04.2.012.png
+La Laguna,05.1.01,1990–2000,1.188759,1.242807,assets/images/metros/05.1.012.png
+La Laguna,05.1.01,2000–2010,1.227870,1.265863,assets/images/metros/05.1.012.png
+La Laguna,05.1.01,2010–2020,1.142941,1.156574,assets/images/metros/05.1.012.png
+Monclova-Frontera,05.1.02,1990–2000,1.082523,1.128346,assets/images/metros/05.1.022.png
+Monclova-Frontera,05.1.02,2000–2010,1.114485,1.070846,assets/images/metros/05.1.022.png
+Monclova-Frontera,05.1.02,2010–2020,1.199257,1.086031,assets/images/metros/05.1.022.png
+Piedras Negras,05.1.03,1990–2000,1.356495,1.384025,assets/images/metros/05.1.032.png
+Piedras Negras,05.1.03,2000–2010,1.188816,1.257237,assets/images/metros/05.1.032.png
+Piedras Negras,05.1.03,2010–2020,1.155450,1.147245,assets/images/metros/05.1.032.png
+Saltillo,05.1.04,1990–2000,1.358264,1.222222,assets/images/metros/05.1.042.png
+Saltillo,05.1.04,2000–2010,1.308097,1.265409,assets/images/metros/05.1.042.png
+Saltillo,05.1.04,2010–2020,1.266741,1.152872,assets/images/metros/05.1.042.png
+Colima-Villa de Álvarez,06.1.01,1990–2000,1.374352,1.263768,assets/images/metros/06.1.012.png
+Colima-Villa de Álvarez,06.1.01,2000–2010,1.298826,1.291005,assets/images/metros/06.1.012.png
+Colima-Villa de Álvarez,06.1.01,2010–2020,1.192668,1.133333,assets/images/metros/06.1.012.png
+Tapachula,07.1.01,1990–2000,1.295129,1.285714,assets/images/metros/07.1.012.png
+Tapachula,07.1.01,2000–2010,1.196820,1.275862,assets/images/metros/07.1.012.png
+Tapachula,07.1.01,2010–2020,1.078468,1.093023,assets/images/metros/07.1.012.png
+Tuxtla Gutiérrez,07.1.02,1990–2000,1.467357,1.285714,assets/images/metros/07.1.022.png
+Tuxtla Gutiérrez,07.1.02,2000–2010,1.300642,1.200080,assets/images/metros/07.1.022.png
+Tuxtla Gutiérrez,07.1.02,2010–2020,1.122494,1.122763,assets/images/metros/07.1.022.png
+Chihuahua,08.1.01,1990–2000,1.274576,1.222222,assets/images/metros/08.1.012.png
+Chihuahua,08.1.01,2000–2010,1.241506,1.218680,assets/images/metros/08.1.012.png
+Chihuahua,08.1.01,2010–2020,1.163279,1.122763,assets/images/metros/08.1.012.png
+Delicias,08.1.02,1990–2000,1.128163,1.260870,assets/images/metros/08.1.022.png
+Delicias,08.1.02,2000–2010,1.197294,1.263768,assets/images/metros/08.1.022.png
+Delicias,08.1.02,2010–2020,1.088735,1.171429,assets/images/metros/08.1.022.png
+Juárez,08.2.03,1990–2000,1.522811,1.270728,assets/images/metros/08.2.032.png
+Juárez,08.2.03,2000–2010,1.094612,1.449687,assets/images/metros/08.2.032.png
+Juárez,08.2.03,2010–2020,1.136674,1.157059,assets/images/metros/08.2.032.png
+Ciudad de México,09.1.01,1990–2000,1.181903,1.163728,assets/images/metros/09.1.012.png
+Ciudad de México,09.1.01,2000–2010,1.084880,1.064647,assets/images/metros/09.1.012.png
+Ciudad de México,09.1.01,2010–2020,1.080645,1.026908,assets/images/metros/09.1.012.png
+Durango,10.2.01,1990–2000,1.226795,1.181818,assets/images/metros/10.2.012.png
+Durango,10.2.01,2000–2010,1.213722,1.128346,assets/images/metros/10.2.012.png
+Durango,10.2.01,2010–2020,1.184657,1.106686,assets/images/metros/10.2.012.png
+Celaya,11.1.01,1990–2000,1.292726,1.240000,assets/images/metros/11.1.012.png
+Celaya,11.1.01,2000–2010,1.368266,1.296296,assets/images/metros/11.1.012.png
+Celaya,11.1.01,2010–2020,1.102819,1.106686,assets/images/metros/11.1.012.png
+León,11.1.02,1990–2000,1.336687,1.256410,assets/images/metros/11.1.022.png
+León,11.1.02,2000–2010,1.255502,1.229040,assets/images/metros/11.1.022.png
+León,11.1.02,2010–2020,1.334743,1.225397,assets/images/metros/11.1.022.png
+Guanajuato,11.2.03,1990–2000,1.209726,1.202020,assets/images/metros/11.2.032.png
+Guanajuato,11.2.03,2000–2010,1.176425,1.210526,assets/images/metros/11.2.032.png
+Guanajuato,11.2.03,2010–2020,1.236276,1.210526,assets/images/metros/11.2.032.png
+Irapuato,11.2.04,1990–2000,1.269323,1.222222,assets/images/metros/11.2.042.png
+Irapuato,11.2.04,2000–2010,1.235846,1.206897,assets/images/metros/11.2.042.png
+Irapuato,11.2.04,2010–2020,1.163852,1.146341,assets/images/metros/11.2.042.png
+Chilpancingo,12.1.01,1990–2000,1.469109,1.461538,assets/images/metros/12.2.012.png
+Chilpancingo,12.1.01,2000–2010,1.590847,1.307692,assets/images/metros/12.2.012.png
+Chilpancingo,12.1.01,2010–2020,1.199140,1.119430,assets/images/metros/12.2.012.png
+Acapulco,12.2.02,1990–2000,1.209339,1.194335,assets/images/metros/12.2.022.png
+Acapulco,12.2.02,2000–2010,1.086724,1.127712,assets/images/metros/12.2.022.png
+Acapulco,12.2.02,2010–2020,0.991624,1.070692,assets/images/metros/12.2.022.png
+Pachuca,13.1.01,1990–2000,1.381507,1.393548,assets/images/metros/13.1.012.png
+Pachuca,13.1.01,2000–2010,1.412621,1.545455,assets/images/metros/13.1.012.png
+Pachuca,13.1.01,2010–2020,1.372681,1.323452,assets/images/metros/13.1.012.png
+Tulancingo,13.1.02,1990–2000,1.368636,1.216374,assets/images/metros/13.1.022.png
+Tulancingo,13.1.02,2000–2010,1.288992,1.296296,assets/images/metros/13.1.022.png
+Tulancingo,13.1.02,2010–2020,1.107226,1.117647,assets/images/metros/13.1.022.png
+Guadalajara,14.1.01,1990–2000,1.234751,1.161268,assets/images/metros/14.1.012.png
+Guadalajara,14.1.01,2000–2010,1.190958,1.149120,assets/images/metros/14.1.012.png
+Guadalajara,14.1.01,2010–2020,1.163546,1.110063,assets/images/metros/14.1.012.png
+Puerto Vallarta,14.1.02,1990–2000,2.355400,2.166852,assets/images/metros/14.1.022.png
+Puerto Vallarta,14.1.02,2000–2010,1.566744,1.490897,assets/images/metros/14.1.022.png
+Puerto Vallarta,14.1.02,2010–2020,1.267308,1.211146,assets/images/metros/14.1.022.png
+Toluca,15.1.01,1990–2000,1.530351,1.267662,assets/images/metros/15.1.012.png
+Toluca,15.1.01,2000–2010,1.239415,1.175631,assets/images/metros/15.1.012.png
+Toluca,15.1.01,2010–2020,1.171091,1.112017,assets/images/metros/15.1.012.png
+La Piedad-Pénjamo,16.1.01,1990–2000,1.102812,1.222222,assets/images/metros/16.1.012.png
+La Piedad-Pénjamo,16.1.01,2000–2010,1.152536,1.150997,assets/images/metros/16.1.012.png
+La Piedad-Pénjamo,16.1.01,2010–2020,1.029173,1.095238,assets/images/metros/16.1.012.png
+Morelia,16.1.02,1990–2000,1.305380,1.243902,assets/images/metros/16.1.022.png
+Morelia,16.1.02,2000–2010,1.197500,1.241212,assets/images/metros/16.1.022.png
+Morelia,16.1.02,2010–2020,1.258432,1.157796,assets/images/metros/16.1.022.png
+Zamora,16.1.03,1990–2000,1.177621,1.105263,assets/images/metros/16.1.032.png
+Zamora,16.1.03,2000–2010,1.183944,1.208711,assets/images/metros/16.1.032.png
+Zamora,16.1.03,2010–2020,1.123648,1.119430,assets/images/metros/16.1.032.png
+Uruapan,16.2.04,1990–2000,1.204704,1.181818,assets/images/metros/16.2.042.png
+Uruapan,16.2.04,2000–2010,1.204596,1.172671,assets/images/metros/16.2.042.png
+Uruapan,16.2.04,2010–2020,1.132705,1.066741,assets/images/metros/16.2.042.png
+Cuautla,17.1.01,1990–2000,1.279685,1.125122,assets/images/metros/17.1.012.png
+Cuautla,17.1.01,2000–2010,1.121793,1.125122,assets/images/metros/17.1.012.png
+Cuautla,17.1.01,2010–2020,1.035976,1.058874,assets/images/metros/17.1.012.png
+Cuernavaca,17.1.02,1990–2000,1.369359,1.228210,assets/images/metros/17.1.022.png
+Cuernavaca,17.1.02,2000–2010,1.141970,1.133009,assets/images/metros/17.1.022.png
+Cuernavaca,17.1.02,2010–2020,1.133102,1.093596,assets/images/metros/17.1.022.png
+Tepic,18.1.01,1990–2000,1.362761,1.237647,assets/images/metros/18.1.012.png
+Tepic,18.1.01,2000–2010,1.267515,1.171429,assets/images/metros/18.1.012.png
+Tepic,18.1.01,2010–2020,1.142921,1.106686,assets/images/metros/18.1.012.png
+Monterrey,19.1.01,1990–2000,1.267522,1.210667,assets/images/metros/19.1.012.png
+Monterrey,19.1.01,2000–2010,1.235080,1.190781,assets/images/metros/19.1.012.png
+Monterrey,19.1.01,2010–2020,1.269586,1.140527,assets/images/metros/19.1.012.png
+Oaxaca,20.1.01,1990–2000,1.437251,1.257237,assets/images/metros/20.1.012.png
+Oaxaca,20.1.01,2000–2010,1.194710,1.166713,assets/images/metros/20.1.012.png
+Oaxaca,20.1.01,2010–2020,1.126994,1.084807,assets/images/metros/20.1.012.png
+Puebla-Tlaxcala,21.1.01,1990–2000,1.288536,1.265409,assets/images/metros/21.1.012.png
+Puebla-Tlaxcala,21.1.01,2000–2010,1.204135,1.246095,assets/images/metros/21.1.012.png
+Puebla-Tlaxcala,21.1.01,2010–2020,1.158615,1.117658,assets/images/metros/21.1.012.png
+San Martín Texmelucan,21.1.02,1990–2000,1.346462,1.083478,assets/images/metros/21.1.022.png
+San Martín Texmelucan,21.1.02,2000–2010,1.530405,1.478095,assets/images/metros/21.1.022.png
+San Martín Texmelucan,21.1.02,2010–2020,1.453371,1.389627,assets/images/metros/21.1.022.png
+Tehuacán,21.1.03,1990–2000,1.467178,1.216374,assets/images/metros/21.1.032.png
+Tehuacán,21.1.03,2000–2010,1.231131,1.193548,assets/images/metros/21.1.032.png
+Tehuacán,21.1.03,2010–2020,1.289082,1.156923,assets/images/metros/21.1.032.png
+Querétaro,22.1.01,1990–2000,1.473261,1.342857,assets/images/metros/22.1.012.png
+Querétaro,22.1.01,2000–2010,1.438692,1.363636,assets/images/metros/22.1.012.png
+Querétaro,22.1.01,2010–2020,1.501837,1.258444,assets/images/metros/22.1.012.png
+Cancún,23.1.01,1990–2000,2.378095,1.363636,assets/images/metros/23.1.012.png
+Cancún,23.1.01,2000–2010,1.625094,1.368859,assets/images/metros/23.1.012.png
+Cancún,23.1.01,2010–2020,1.409910,1.239403,assets/images/metros/23.1.012.png
+Chetumal,23.2.02,1990–2000,1.291468,1.206897,assets/images/metros/23.2.022.png
+Chetumal,23.2.02,2000–2010,1.287553,1.235294,assets/images/metros/23.2.022.png
+Chetumal,23.2.02,2010–2020,1.115029,1.122763,assets/images/metros/23.2.022.png
+San Luis Potosí,24.1.01,1990–2000,1.302307,1.235294,assets/images/metros/24.1.012.png
+San Luis Potosí,24.1.01,2000–2010,1.228607,1.187363,assets/images/metros/24.1.012.png
+San Luis Potosí,24.1.01,2010–2020,1.207104,1.112942,assets/images/metros/24.1.012.png
+Culiacán,25.2.01,1990–2000,1.305147,1.194335,assets/images/metros/25.2.012.png
+Culiacán,25.2.01,2000–2010,1.248034,1.208711,assets/images/metros/25.2.012.png
+Culiacán,25.2.01,2010–2020,1.196468,1.102130,assets/images/metros/25.2.012.png
+Los Mochis,25.2.02,1990–2000,1.229802,1.121212,assets/images/metros/25.2.022.png
+Los Mochis,25.2.02,2000–2010,1.269488,1.166795,assets/images/metros/25.2.022.png
+Los Mochis,25.2.02,2010–2020,1.157490,1.094131,assets/images/metros/25.2.022.png
+Mazatlán,25.2.03,1990–2000,1.248851,1.310437,assets/images/metros/25.2.032.png
+Mazatlán,25.2.03,2000–2010,1.182576,1.250061,assets/images/metros/25.2.032.png
+Mazatlán,25.2.03,2010–2020,1.163073,1.127273,assets/images/metros/25.2.032.png
+Guaymas,26.1.01,1990–2000,1.115553,1.156923,assets/images/metros/26.1.012.png
+Guaymas,26.1.01,2000–2010,1.157912,1.258065,assets/images/metros/26.1.012.png
+Guaymas,26.1.01,2010–2020,1.032618,1.223377,assets/images/metros/26.1.012.png
+Ciudad Obregón,26.2.02,1990–2000,1.330453,1.217494,assets/images/metros/26.2.022.png
+Ciudad Obregón,26.2.02,2000–2010,1.180464,1.051417,assets/images/metros/26.2.022.png
+Ciudad Obregón,26.2.02,2010–2020,1.085552,1.064004,assets/images/metros/26.2.022.png
+Hermosillo,26.2.03,1990–2000,1.343272,1.222222,assets/images/metros/26.2.032.png
+Hermosillo,26.2.03,2000–2010,1.315190,1.211646,assets/images/metros/26.2.032.png
+Hermosillo,26.2.03,2010–2020,1.196282,1.097373,assets/images/metros/26.2.032.png
+Nogales,26.2.04,1990–2000,1.481530,1.367003,assets/images/metros/26.2.042.png
+Nogales,26.2.04,2000–2010,1.354973,1.327273,assets/images/metros/26.2.042.png
+Nogales,26.2.04,2010–2020,1.155138,1.113481,assets/images/metros/26.2.042.png
+Villahermosa,27.1.01,1990–2000,1.603188,1.346327,assets/images/metros/27.1.012.png
+Villahermosa,27.1.01,2000–2010,1.207722,1.241212,assets/images/metros/27.1.012.png
+Villahermosa,27.1.01,2010–2020,1.081909,1.125122,assets/images/metros/27.1.012.png
+Reynosa,28.1.01,1990–2000,1.519664,1.327571,assets/images/metros/28.1.012.png
+Reynosa,28.1.01,2000–2010,1.697009,1.554343,assets/images/metros/28.1.012.png
+Reynosa,28.1.01,2010–2020,1.171881,1.156569,assets/images/metros/28.1.012.png
+Tampico,28.1.02,1990–2000,1.151789,1.229040,assets/images/metros/28.1.022.png
+Tampico,28.1.02,2000–2010,1.241370,1.273734,assets/images/metros/28.1.022.png
+Tampico,28.1.02,2010–2020,1.102300,1.107387,assets/images/metros/28.1.022.png
+Ciudad Victoria,28.2.03,1990–2000,1.277098,1.258065,assets/images/metros/28.2.032.png
+Ciudad Victoria,28.2.03,2000–2010,1.225379,1.181818,assets/images/metros/28.2.032.png
+Ciudad Victoria,28.2.03,2010–2020,1.088299,1.090956,assets/images/metros/28.2.032.png
+Matamoros,28.2.04,1990–2000,1.414290,1.391200,assets/images/metros/28.2.042.png
+Matamoros,28.2.04,2000–2010,1.195429,1.360144,assets/images/metros/28.2.042.png
+Matamoros,28.2.04,2010–2020,1.135442,1.085732,assets/images/metros/28.2.042.png
+Nuevo Laredo,28.2.05,1990–2000,1.413963,1.324953,assets/images/metros/28.2.052.png
+Nuevo Laredo,28.2.05,2000–2010,1.231506,1.368289,assets/images/metros/28.2.052.png
+Nuevo Laredo,28.2.05,2010–2020,1.114393,1.098163,assets/images/metros/28.2.052.png
+Tlaxcala-Apizaco,29.1.01,1990–2000,1.437831,0.979693,assets/images/metros/29.1.012.png
+Tlaxcala-Apizaco,29.1.01,2000–2010,1.238963,0.940293,assets/images/metros/29.1.012.png
+Tlaxcala-Apizaco,29.1.01,2010–2020,1.176706,1.056517,assets/images/metros/29.1.012.png
+Coatzacoalcos,30.1.01,1990–2000,1.108918,1.187363,assets/images/metros/30.1.012.png
+Coatzacoalcos,30.1.01,2000–2010,1.121614,1.153846,assets/images/metros/30.1.012.png
+Coatzacoalcos,30.1.01,2010–2020,1.076401,1.161967,assets/images/metros/30.1.012.png
+Córdoba,30.1.02,1990–2000,1.169875,1.210526,assets/images/metros/30.1.022.png
+Córdoba,30.1.02,2000–2010,1.121368,1.131183,assets/images/metros/30.1.022.png
+Córdoba,30.1.02,2010–2020,1.006651,1.066741,assets/images/metros/30.1.022.png
+Minatitlán,30.1.03,1990–2000,1.537008,1.444444,assets/images/metros/30.1.032.png
+Minatitlán,30.1.03,2000–2010,1.098239,1.108600,assets/images/metros/30.1.032.png
+Minatitlán,30.1.03,2010–2020,0.997023,1.108600,assets/images/metros/30.1.032.png
+Orizaba,30.1.04,1990–2000,1.187085,1.156923,assets/images/metros/30.1.042.png
+Orizaba,30.1.04,2000–2010,1.087754,1.128346,assets/images/metros/30.1.042.png
+Orizaba,30.1.04,2010–2020,1.058044,1.071520,assets/images/metros/30.1.042.png
+Poza Rica,30.1.05,1990–2000,1.047204,1.000000,assets/images/metros/30.1.052.png
+Poza Rica,30.1.05,2000–2010,1.253434,1.166957,assets/images/metros/30.1.052.png
+Poza Rica,30.1.05,2010–2020,0.985034,1.000000,assets/images/metros/30.1.052.png
+Veracruz,30.1.06,1990–2000,1.250987,1.255865,assets/images/metros/30.1.062.png
+Veracruz,30.1.06,2000–2010,1.177892,1.232221,assets/images/metros/30.1.062.png
+Veracruz,30.1.06,2010–2020,1.157225,1.157796,assets/images/metros/30.1.062.png
+Xalapa,30.1.07,1990–2000,1.319061,1.222222,assets/images/metros/30.1.072.png
+Xalapa,30.1.07,2000–2010,1.293556,1.217199,assets/images/metros/30.1.072.png
+Xalapa,30.1.07,2010–2020,1.089364,1.099628,assets/images/metros/30.1.072.png
+Mérida,31.1.01,1990–2000,1.362965,1.238644,assets/images/metros/31.1.012.png
+Mérida,31.1.01,2000–2010,1.213684,1.160000,assets/images/metros/31.1.012.png
+Mérida,31.1.01,2010–2020,1.256992,1.160460,assets/images/metros/31.1.012.png
+Zacatecas-Guadalupe,32.1.01,1990–2000,1.390140,1.400000,assets/images/metros/32.1.012.png
+Zacatecas-Guadalupe,32.1.01,2000–2010,1.336284,1.400000,assets/images/metros/32.1.012.png
+Zacatecas-Guadalupe,32.1.01,2010–2020,1.219739,1.236291,assets/images/metros/32.1.012.png

@@ -1,0 +1,95 @@
+# LaTeX temporary / auxiliary files
+# (Figures under FIGURES/ are real assets and stay tracked — only extension-based
+#  temp rules are used below, plus the two root build PDFs by name.)
+
+## Core auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.lb
+
+## Bibliography (biblatex / biber / bibtex)
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.bbl-SAVE-ERROR
+
+## latexmk
+*.fdb_latexmk
+
+## SyncTeX
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.synctex.gz(busy)
+*.pdfsync
+
+## Intermediate / driver output
+*.dvi
+*.xdv
+*-converted-to.*
+
+## Index, glossary, nomenclature
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.nlo
+*.nls
+
+## hyperref / beamer / misc
+*.brf
+*.nav
+*.snm
+*.vrb
+
+## Compiled PDF build outputs (root only; FIGURES/*.pdf are kept)
+/main.pdf
+/sup_main.pdf
+main_expanded_bibtex.fff
+main_expanded_bibtex.pdf
+main_expanded.fff
+main_expanded.pdf
+supplementary_backup.pdf
+supplementary.pdf
+main_expanded-blx.bib
+
+/.quarto/
+**/*.quarto_ipynb
+
+## Quarto site build output
+/_site/
+
+## macOS
+.DS_Store
+
+## Superseded standalone prototype (has its own git repo)
+/ToTest/
+
+## Paper sources — this repo is the WEBSITE only; the manuscript and its raw figures
+## live with the paper / analysis repo. Delete lines below to track them here instead.
+*.tex
+references.bib
+/Figure1.pdf
+/Figure2.pdf
+/Figure3.pdf
+/Figure4.pdf
+/Figure5.pdf
+/Figure6.pdf
+/Figure7.pdf
+/Figure8.pdf
+/FIGURES/

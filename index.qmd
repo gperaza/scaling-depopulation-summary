@@ -1,0 +1,770 @@
+---
+title: "Suburbanisation Takes Over Mexico"
+subtitle: "How 69 cities grew at the edges while their centres emptied out — and what it costs"
+author:
+  - name: Gonzalo G. Peraza-Mues
+    affiliations:
+      - name: Tecnológico de Monterrey, Center for the Future of Cities
+      - name: Tecnológico de Monterrey, School of Government and Public Transformation
+    email: ggperaza@gmail.com
+    corresponding: true
+  - name: Eugen Resendiz
+    affiliations:
+      - name: Tecnológico de Monterrey, School of Architecture, Art and Design
+  - name: Rodolfo Figueroa-Soriano
+    affiliations:
+      - name: Tecnológico de Monterrey, Center for the Future of Cities
+  - name: Rafael Prieto-Curiel
+    affiliations:
+      - name: Complexity Science Hub, Vienna, Austria
+  - name: Roberto Ponce-Lopez
+    affiliations:
+      - name: Tecnológico de Monterrey, Center for the Future of Cities
+date: today
+format:
+  html:
+    theme: default
+    toc: true
+    toc-depth: 2
+    toc-title: "On this page"
+    toc-location: right
+    smooth-scroll: true
+    fig-align: center
+    fig-cap-location: bottom
+    number-sections: false
+    lightbox: true
+    embed-resources: false
+abstract: |
+  Between 1990 and 2020, Mexico's urban population nearly doubled — yet across all
+  69 of its metropolitan areas, the historic city centres *lost* residents. As people
+  moved outward, central zones shed **2.5 million people**, the share of city-dwellers
+  living centrally fell **from over 40% to just 22%**, and the average distance from
+  the centre grew **28%** beyond what compact growth would have produced. This is a
+  plain-language summary of the study, its method, and why it matters for how cities work.
+keywords:
+  - urban scaling
+  - urban sprawl
+  - depopulation
+  - Mexico
+  - city centres
+citation:
+  type: article-journal
+---
+
+> Cities are supposed to be busiest at their heart. In Mexico, the opposite happened.
+> Over three decades of booming growth, people drained out of city centres and piled up
+> on the fringes — in *every single one* of the country's 69 large metropolitan areas.
+
+::: {.callout-note}
+## The numbers at a glance
+
+- **69** metropolitan areas — all showing the same pattern
+- **−2.5 million** residents lost from city centres (1990–2020)
+- **22%** now live centrally — down from over 40%
+- **+28%** longer distances to the centre, on average
+- **4.7 million** people displaced vs. density-preserving growth
+:::
+
+## The paradox: booming cities, emptying centres
+
+The world is becoming urban. The number of people living in cities nearly doubled between
+1990 and 2020, and is projected to grow another 60% by 2050. Cities can absorb that growth
+two ways: by building **up and in** (getting denser) or by spreading **out** (expanding their
+footprint). In recent decades, most growth has gone outward — often in a fragmented, unplanned
+sprawl that lengthens journeys, strains services, and deepens inequality.
+
+Mexico is a striking case. Its population climbed from **81.7 million in 1990 to 126 million
+in 2020**, and the fraction living in cities rose from **71% to 81%** — so the urban population
+nearly doubled. Standard urban economics predicts that density should be highest at the centre,
+where jobs and services concentrate. Yet Mexico's cities did the reverse: their cores thinned out
+while their edges thickened.
+
+The three largest metros make the paradox concrete. Each grew enormously overall, but each lost
+people near the middle:
+
+- **Monterrey** grew by 99%, yet the population within 5 km of its centre fell from **485,000 to 377,000**.
+- **Guadalajara** grew by 71%, but its inner 5 km dropped from **866,000 to 626,000**.
+- **Mexico City** grew by 38% while its central area lost **166,000 residents**.
+
+This study set out to measure that "hollowing-out" precisely — and to explain it — using census
+data for all 69 metropolitan areas across four censuses (1990, 2000, 2010, 2020).
+
+## How we measured it
+
+Counting people by distance from the centre sounds simple, but two problems get in the way:
+cities come in wildly different sizes, and the shape of a city's population is hard to pin to any
+tidy formula. The study introduces two ideas to get around this.
+
+::: {.column-page}
+![**The toolkit at a glance.** Each city's population is placed on a fine grid, then read off in
+concentric rings around its historic centre (left). Two "remoteness" rescalings shrink a small
+city (Colima) and a large one (Guadalajara) onto a common yardstick — a city of one million
+people — so their density profiles can be compared directly (right).](assets/figures/summary_methods.png){#fig-methods fig-alt="A multi-panel methodology figure: concentric rings over a gridded city map with labelled remoteness zones; population-density curves; and a demonstration of remoteness scaling that stretches a small city and compresses a large city onto a common one-million-person scale."}
+:::
+
+### Remoteness: one yardstick for every city
+
+To compare a giant like Mexico City (21 million) with a small city like Colima on equal terms,
+the authors rescale distance into **remoteness** ($r$):
+
+$$r = 1000\,\frac{s}{\sqrt{P}}$$
+
+where $s$ is the distance from the centre and $P$ is the city's population. In plain terms,
+remoteness re-expresses every distance as if the city had exactly **one million inhabitants** —
+a universal ruler that keeps density values intact. Two people equally "remote" sit at the same
+relative position in their cities, regardless of size. That lets the study sort every
+neighbourhood into four zones:
+
+| Zone | Remoteness | Meaning |
+|------|:----------:|---------|
+| **Central** | $r < 3$ | The historic heart, where the city was founded |
+| **Intermediate** | $3 \le r < 5$ | Established neighbourhoods, transitioning outward |
+| **Distant** | $5 \le r < 9.3$ | Areas built up in later stages |
+| **Peri-urban** | $r \ge 9.3$ | The outermost edge of the urban fabric |
+
+### The urban expansion factor: how far the map stretched
+
+The study also tracks the **radial population distribution** $\rho(s)$ — the chance that a randomly
+chosen resident lives at a given distance from the centre. The central discovery is that a city's
+distribution at a later date is simply a **stretched copy** of its earlier one:
+
+$$\rho(s, t_j) = \frac{1}{\Phi_{ij}}\,\rho\!\left(\frac{s}{\Phi_{ij}},\, t_i\right)$$
+
+The single number $\Phi_{ij}$ — the **urban expansion factor** — says how much the population map
+has been pulled outward (or, rarely, pulled in) between two dates. It needs no assumptions about the
+"correct" shape of a city, which is exactly where older models fail — especially near the centre,
+where the most important changes are happening.
+
+## What we found
+
+### 1. Every core lost people {#finding-1}
+
+Between 1990 and 2020, **all 69 metropolitan areas lost population in their central zone**
+($r < 3$), even as every one of them grew overall. Nationwide, central areas shed **2.5 million
+residents**, while the intermediate, distant, and peri-urban zones gained **5.8, 16.1, and 11.7
+million** people respectively. The share of city-dwellers living centrally was more than halved —
+from **over 40% in 1990 to about 22% in 2020**.
+
+Here is **every one of the 69 metropolitan areas** — brown/red cells lost people (near the black-dot
+centres), blue cells gained them (out at the edges). **Click any city** to enlarge its map, then
+**hover a ring-zone** (central, intermediate, distant, or peri-urban) to read how that zone's
+population changed between 1990 and 2020.
+
+::: {.column-screen-inset}
+
+```{ojs}
+//| echo: false
+figure2grid = {
+  const cities = await FileAttachment("assets/data/city_maps.json").json();
+
+  const zoneKeys = ["central", "intermediate", "distant", "periurban"];
+  const zoneMeta = {
+    central:      { label: "Central",      range: "r < 3" },
+    intermediate: { label: "Intermediate", range: "3 ≤ r < 5" },
+    distant:      { label: "Distant",      range: "5 ≤ r < 9.3" },
+    periurban:    { label: "Peri-urban",   range: "r ≥ 9.3" }
+  };
+  // overlay geometry — fraction of image size, identical for every city (measured)
+  const R = { r3: 0.150, r5: 0.250, r93: 0.465 };
+  const LOSS = "#c65a43", GAIN = "#4e8ab2", HILITE = "rgba(20,61,87,0.18)";
+  const fmt = n => n.toLocaleString("en-US");
+
+  const byCve = new Map(cities.map(c => [c.cve, c]));
+  let selected = "09.1.01"; // Ciudad de México
+
+  const container = document.createElement("div");
+  container.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:flex-start;font-family:system-ui,sans-serif;";
+  const left = document.createElement("div");
+  left.style.cssText = "flex:0 1 860px;min-width:280px;";
+  const right = document.createElement("div");
+  right.style.cssText = "flex:0 1 400px;min-width:280px;position:sticky;top:20px;";
+  container.append(left, right);
+
+  // ---- grid of 69 thumbnails (7 wide) ----
+  const grid = document.createElement("div");
+  grid.style.cssText = "display:grid;grid-template-columns:repeat(auto-fill, minmax(76px, 1fr));gap:6px;max-width:860px;";
+  const cardByCve = new Map();
+  for (const c of cities) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.title = c.name;
+    btn.style.cssText = "display:flex;flex-direction:column;gap:2px;padding:3px;border:2px solid transparent;border-radius:8px;background:#fff;cursor:pointer;font:inherit;";
+    const im = document.createElement("img");
+    im.src = c.thumb; im.alt = c.name; im.loading = "lazy";
+    im.style.cssText = "width:100%;aspect-ratio:1;object-fit:cover;border-radius:5px;background:#f3f5f7;";
+    const nm = document.createElement("span");
+    nm.textContent = c.name;
+    nm.style.cssText = "font-size:8.5px;line-height:1.1;color:#555;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;";
+    btn.append(im, nm);
+    btn.addEventListener("click", () => selectCity(c.cve));
+    cardByCve.set(c.cve, btn);
+    grid.append(btn);
+  }
+  left.append(grid);
+
+  // ---- detail panel: enlarged map + zone overlay ----
+  const heading = document.createElement("h3");
+  heading.style.cssText = "font-size:1.15rem;margin:0 0 8px;font-weight:700;";
+  const mapBox = document.createElement("div");
+  mapBox.style.cssText = "position:relative;width:100%;max-width:400px;aspect-ratio:1;border:1px solid #e2e2e2;border-radius:8px;overflow:hidden;background:#fff;";
+  const dImg = document.createElement("img");
+  dImg.style.cssText = "position:absolute;inset:0;width:100%;height:100%;";
+  dImg.loading = "lazy";
+
+  const NS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", "0 0 1 1");
+  svg.setAttribute("preserveAspectRatio", "none");
+  svg.style.cssText = "position:absolute;inset:0;width:100%;height:100%;";
+  const circ = r => `M ${0.5 - r} 0.5 a ${r} ${r} 0 1 0 ${2 * r} 0 a ${r} ${r} 0 1 0 ${-2 * r} 0 Z`;
+
+  // (1) highlight layer — exact zone shapes (evenodd), NOT interactive; tinted on hover
+  const shapes = {
+    central: circ(R.r3),
+    intermediate: circ(R.r5) + " " + circ(R.r3),
+    distant: circ(R.r93) + " " + circ(R.r5),
+    periurban: "M0 0 H1 V1 H0 Z " + circ(R.r93)
+  };
+  const hl = {};
+  for (const z of zoneKeys) {
+    const p = document.createElementNS(NS, "path");
+    p.setAttribute("d", shapes[z]);
+    p.setAttribute("fill", "transparent");
+    p.setAttribute("fill-rule", "evenodd");
+    p.setAttribute("pointer-events", "none");
+    hl[z] = p;
+    svg.append(p);
+  }
+
+  // (2) hit surface — ONE transparent rect covering the map; the zone is computed from
+  // the cursor's fractional distance from the centre (reliable; avoids per-shape SVG
+  // hit-testing, which mis-routes stacked transparent shapes in some browsers).
+  const hitRect = document.createElementNS(NS, "rect");
+  hitRect.setAttribute("x", 0); hitRect.setAttribute("y", 0);
+  hitRect.setAttribute("width", 1); hitRect.setAttribute("height", 1);
+  hitRect.setAttribute("fill", "transparent");
+  hitRect.setAttribute("pointer-events", "all");
+  hitRect.style.cursor = "crosshair";
+  let curZone = null;
+  function zoneAt(e) {
+    const r = mapBox.getBoundingClientRect();
+    const dx = (e.clientX - r.left) / r.width - 0.5;
+    const dy = (e.clientY - r.top) / r.height - 0.5;
+    const rad = Math.hypot(dx, dy);
+    return rad < R.r3 ? "central" : rad < R.r5 ? "intermediate" : rad < R.r93 ? "distant" : "periurban";
+  }
+  function clearZone() { if (curZone) { hl[curZone].setAttribute("fill", "transparent"); curZone = null; } }
+  hitRect.addEventListener("mousemove", (e) => {
+    const z = zoneAt(e);
+    if (z !== curZone) { clearZone(); curZone = z; hl[z].setAttribute("fill", HILITE); showTip(z); }
+    moveTip(e);
+  });
+  hitRect.addEventListener("mouseleave", () => { clearZone(); tip.style.opacity = 0; });
+  svg.append(hitRect);
+
+  mapBox.append(dImg, svg);
+
+  const cap = document.createElement("div");
+  cap.style.cssText = "font-size:12.5px;color:#666;margin-top:8px;line-height:1.45;";
+  const hint = document.createElement("div");
+  hint.style.cssText = "font-size:11.5px;color:#999;margin-top:6px;";
+  hint.textContent = "Hover a ring-zone for its population change. Zones are scale-normalized, so the rings sit at the same place on every map.";
+  right.append(heading, mapBox, cap, hint);
+
+  // ---- tooltip ----
+  const tip = document.createElement("div");
+  tip.style.cssText = "position:absolute;pointer-events:none;background:#fff;border:1px solid #ccc;border-radius:6px;padding:7px 10px;font-size:12.5px;line-height:1.4;box-shadow:0 4px 14px rgba(0,0,0,.14);opacity:0;transition:opacity .1s;z-index:30;max-width:240px;";
+  container.append(tip);
+  function distText(z, c) {
+    const k = c.km || {};
+    if (z === "central") return k.r3 != null ? `within ${k.r3} km` : "";
+    if (z === "intermediate") return (k.r3 != null && k.r5 != null) ? `${k.r3}–${k.r5} km` : "";
+    if (z === "distant") return (k.r5 != null && k.r9_3 != null) ? `${k.r5}–${k.r9_3} km` : "";
+    return k.r9_3 != null ? `beyond ${k.r9_3} km` : "";
+  }
+  function showTip(z) {
+    const c = byCve.get(selected), zn = c.zones[z], m = zoneMeta[z];
+    const d = zn.p2020 - zn.p1990;
+    const pct = zn.p1990 > 0 ? Math.round(d / zn.p1990 * 100) : null;
+    const col = d < 0 ? LOSS : GAIN, sign = d < 0 ? "−" : "+";
+    const dist = distText(z, c);
+    tip.innerHTML =
+      `<strong>${m.label}</strong> <span style="color:#888">(${m.range}${dist ? " · " + dist : ""})</span><br>` +
+      `1990: ${fmt(zn.p1990)}<br>2020: ${fmt(zn.p2020)}<br>` +
+      `<span style="color:${col};font-weight:600">Change: ${sign}${fmt(Math.abs(d))}` +
+      `${pct != null ? ` (${sign}${Math.abs(pct)}%)` : ""}</span>`;
+    tip.style.opacity = 1;
+  }
+  function moveTip(e) {
+    const r = container.getBoundingClientRect();
+    tip.style.left = (e.clientX - r.left + 14) + "px";
+    tip.style.top = (e.clientY - r.top + 14) + "px";
+  }
+
+  // ---- selection ----
+  function selectCity(cve) {
+    selected = cve;
+    const c = byCve.get(cve);
+    heading.textContent = c.name;
+    dImg.src = c.detail;
+    dImg.alt = `Population change map for ${c.name}, 1990 to 2020`;
+    cap.innerHTML = "Population change by grid cell, 2020 minus 1990. Black dot: city centre; brown/red = loss near the core, blue = gains in the periphery. Dashed rings mark the remoteness zones.";
+    for (const [cc, btn] of cardByCve) btn.style.borderColor = cc === cve ? "#143d57" : "transparent";
+    tip.style.opacity = 0;
+  }
+  selectCity(selected);
+
+  return container;
+}
+```
+
+:::
+
+The same story shows up in the numbers below — drag the toggle to switch between raw population and
+each zone's share of the total.
+
+**Where Mexico's city-dwellers live has flipped.** Population of all 69 metros by remoteness
+zone across four censuses (aggregated across every city above). Use the toggle to switch
+between totals and each zone's share.
+
+```{ojs}
+//| echo: false
+popData = [
+  {year: 1990, zone: "Central",      population: 17.7},
+  {year: 2000, zone: "Central",      population: 17.2},
+  {year: 2010, zone: "Central",      population: 15.6},
+  {year: 2020, zone: "Central",      population: 15.2},
+  {year: 1990, zone: "Intermediate", population: 12.5},
+  {year: 2000, zone: "Intermediate", population: 16.3},
+  {year: 2010, zone: "Intermediate", population: 17.6},
+  {year: 2020, zone: "Intermediate", population: 18.2},
+  {year: 1990, zone: "Distant",      population:  8.1},
+  {year: 2000, zone: "Distant",      population: 13.5},
+  {year: 2010, zone: "Distant",      population: 19.4},
+  {year: 2020, zone: "Distant",      population: 24.2},
+  {year: 1990, zone: "Peri-urban",   population:  2.7},
+  {year: 2000, zone: "Peri-urban",   population:  5.3},
+  {year: 2010, zone: "Peri-urban",   population:  9.7},
+  {year: 2020, zone: "Peri-urban",   population: 14.3}
+]
+```
+
+```{ojs}
+//| echo: false
+viewof measure1 = Inputs.radio(["Total (millions)", "Share of population (%)"], {value: "Total (millions)", label: "Show"})
+```
+
+```{ojs}
+//| echo: false
+{
+  const zones = ["Central", "Intermediate", "Distant", "Peri-urban"];
+  const years = [1990, 2000, 2010, 2020];
+  const totals = new Map(years.map(y => [y, d3.sum(popData.filter(d => d.year === y), d => d.population)]));
+  const isShare = measure1.startsWith("Share");
+  const data = popData.map(d => ({
+    ...d,
+    value: isShare ? 100 * d.population / totals.get(d.year) : d.population
+  }));
+  return Plot.plot({
+    height: 380,
+    marginBottom: 40,
+    marginLeft: 52,
+    style: { fontFamily: "system-ui, sans-serif", fontSize: "12px" },
+    x: { axis: null },
+    fx: { domain: zones, label: null, padding: 0.2 },
+    y: { label: isShare ? "↑ Share of population (%)" : "↑ Population (millions)", grid: true, nice: true },
+    color: {
+      legend: true,
+      domain: years.map(String),
+      range: ["#cdd9e0", "#8fb0c4", "#4e7d9c", "#0f3041"]
+    },
+    marks: [
+      Plot.barY(data, {
+        fx: "zone", x: "year", y: "value", fill: d => String(d.year),
+        tip: true,
+        title: d => `${d.zone} — ${d.year}\n${d.value.toFixed(1)}${isShare ? "%" : " million"}`
+      }),
+      Plot.ruleY([0])
+    ]
+  });
+}
+```
+
+*Colours run light (1990) to dark (2020). The Central block shrinks over time; every outer block grows.*
+
+The pattern is not a handful of cherry-picked cases — it holds everywhere. You can call up any
+individual city's own map, and see where it sits among all 69, in the [interactive figure
+below](#finding-4).
+
+### 2. The centre got thinner {#finding-2}
+
+It is not just head-counts — density fell too. Near the centre ($r \le 3$), some cities lost as
+much as **4,000 people per km²**, with a national average loss of about **1,000 people per km²**.
+Further out, density rose. Most of the central thinning happened **before 2010**, during the fastest
+period of population growth and the peak of a housing boom.
+
+![**Density change by remoteness, 1990–2020.** Every curve dips below zero near the centre (density
+loss) and rises above it further out (density gain). The crossover sits at a remoteness of roughly
+2–4.](assets/figures/figure3.png){#fig-densities fig-alt="Line plots of change in population density versus remoteness for Mexican cities, all negative near the centre and turning positive at larger remoteness, with an inset showing aggregated density profiles for each census year."}
+
+### 3. Cities grow by stretching {#finding-3}
+
+Remarkably, a city's later population map can be recovered by taking its earlier map and simply
+**stretching it outward**. The figure below demonstrates this for Colima: rescale the 1990 curve by
+the single expansion factor $\Phi$, and it lands almost exactly on the 2020 curve. This one number
+captures three decades of change.
+
+![**One number captures the change.** For Colima, the 1990 distribution rescaled by the urban
+expansion factor $\Phi$ (dashed) reproduces the observed 2020 distribution (solid) — in the
+probability density (centre) and the population density (right). The slope on the left panel *is*
+$\Phi$.](assets/figures/figure4.png){#fig-scaling fig-alt="Three panels for Colima: a quantile-quantile plot whose straight-line slope equals the expansion factor, and two density curves where the 1990 profile rescaled by that factor overlays the 2020 profile."}
+
+### 4. A simple model of expansion {#finding-4}
+
+How big is $\Phi$? Across all cities and census periods, it follows a clean rule: expansion is a
+**power of population growth**, times a **steady outward drift** that happens even without growth:
+
+$$\Phi_{ij} = \left(\frac{P(t_j)}{P(t_i)}\right)^{\beta} \, e^{\,\alpha\,(t_j - t_i)}$$
+
+Fitting this to 65 of the 69 cities gives **$\beta = 0.60$** (95% CI 0.54–0.67), **$\alpha = 0.0057$
+per year** (95% CI 0.0043–0.0071), and an $R^2$ of **0.82**. The two pieces have clear meanings:
+
+- The **$\beta$ term** is *extensive* expansion — the part driven by more people needing more room.
+- The **$\alpha$ term** is *intensive* expansion — a steady spreading-out that continues **even if the
+  population never grows**, driven by housing policy, cheap peripheral land, and car-friendly
+  development.
+
+A city that grew while **keeping its density** would have $\beta = 0.5$ and $\alpha = 0$. Mexico's
+values sit *above both* thresholds — the signature of a nation expanding **while losing density**.
+(For comparison, $\alpha$ alone amounts to a location 10 km out in 1990 drifting to **11.8 km by
+2020**, with no population growth at all.)
+
+The interactive figure below places **every city in every decade** on this map. The horizontal axis
+is how much a city's population grew; the vertical axis is its expansion factor $\Phi$. Three
+boundaries — growth $= 1$, $\Phi = 1$, and the constant-density diagonal $\Phi = \sqrt{\text{growth}}$ —
+carve the plane into **six regimes** that combine density loss/gain, urban expansion/compression, and
+population growth/loss. **Pick a city from the menu or click any point** to see its population-change
+map and trace its three decades; **scroll to zoom and drag to pan** into the dense cluster.
+
+::: {.column-page}
+
+```{ojs}
+//| echo: false
+figure6 = {
+  const data = await FileAttachment("assets/data/figure6_points.csv").csv({ typed: true });
+
+  const periodColors = { "1990–2000": "#E6AB04", "2000–2010": "#B85A0D", "2010–2020": "#878372" };
+  const periods = ["1990–2000", "2000–2010", "2010–2020"];
+
+  const byCity = d3.group(data, d => d.city_name);
+  const cities = Array.from(byCity.keys()).sort((a, b) => a.localeCompare(b, "es"));
+  const cityImage = new Map(Array.from(byCity, ([n, rows]) => [n, rows[0].image]));
+  let selected = "Ciudad de México";
+
+  // ---- geometry (margins baked into the scale ranges so d3.zoom rescaling is exact) ----
+  const W = 640, H = 470, m = { top: 22, right: 22, bottom: 50, left: 56 };
+  const iw = W - m.left - m.right, ih = H - m.top - m.bottom;
+  const x = d3.scaleLinear().domain([0, 3.5]).range([m.left, W - m.right]);
+  const y = d3.scaleLinear().domain([0, 2.25]).range([H - m.bottom, m.top]);
+  const XMAX = x.domain()[1], YMAX = y.domain()[1];
+
+  // ---- container ----
+  const container = document.createElement("div");
+  container.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start;font-family:system-ui,sans-serif;";
+  const left = document.createElement("div");
+  left.style.cssText = "flex:1 1 540px;min-width:300px;";
+  const right = document.createElement("div");
+  right.style.cssText = "flex:1 1 320px;min-width:250px;";
+  container.append(left, right);
+
+  // ---- controls ----
+  const controls = document.createElement("div");
+  controls.style.cssText = "display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:8px;";
+  const lbl = document.createElement("label");
+  lbl.style.cssText = "font-size:14px;font-weight:600;display:flex;gap:8px;align-items:center;";
+  lbl.append("Select a city:");
+  const select = document.createElement("select");
+  select.style.cssText = "font:inherit;padding:4px 8px;border-radius:6px;border:1px solid #bbb;background:#fff;";
+  for (const c of cities) {
+    const o = document.createElement("option");
+    o.value = c; o.textContent = c;
+    select.append(o);
+  }
+  lbl.append(select);
+  const resetBtn = document.createElement("button");
+  resetBtn.type = "button";
+  resetBtn.textContent = "Reset view";
+  resetBtn.style.cssText = "font:inherit;font-size:13px;padding:4px 10px;border-radius:6px;border:1px solid #bbb;background:#f6f6f6;cursor:pointer;";
+  controls.append(lbl, resetBtn);
+  const legend = document.createElement("div");
+  legend.style.cssText = "display:flex;gap:14px;font-size:12.5px;color:#333;";
+  for (const p of periods) {
+    const it = document.createElement("span");
+    it.style.cssText = "display:inline-flex;align-items:center;gap:5px;";
+    it.innerHTML = `<span style="width:11px;height:11px;border-radius:50%;background:${periodColors[p]};display:inline-block;"></span>${p}`;
+    legend.append(it);
+  }
+  controls.append(legend);
+  left.append(controls);
+
+  // ---- svg scaffold ----
+  const svg = d3.create("svg")
+    .attr("viewBox", `0 0 ${W} ${H}`).attr("width", "100%")
+    .style("max-width", W + "px").style("height", "auto")
+    .style("font-family", "system-ui, sans-serif").style("cursor", "grab");
+
+  const clipId = "fig6-clip";
+  svg.append("defs").append("clipPath").attr("id", clipId).append("rect")
+    .attr("x", m.left).attr("y", m.top).attr("width", iw).attr("height", ih);
+
+  const gx = svg.append("g").attr("transform", `translate(0,${H - m.bottom})`);   // x axis (fixed)
+  const gy = svg.append("g").attr("transform", `translate(${m.left},0)`);          // y axis (fixed)
+  const content = svg.append("g").attr("clip-path", `url(#${clipId})`);            // zoomable
+
+  // ---- the six phase regions (A–F), bounded by growth=1, Φ=1, Φ=√growth ----
+  // teal shades = density loss (above √growth); tan/brown = density gain (below).
+  const xsL = d3.range(0, 1.0001, 0.02);          // population loss  (growth < 1)
+  const xsR = d3.range(1, XMAX + 0.0001, 0.02);   // population growth (growth > 1)
+  const regions = [
+    { xs:xsR, y0:d=>Math.sqrt(d), y1:()=>YMAX, color:"#bfe0d8",
+      lines:["Density loss","Urban expansion","Population growth"], lx:1.22, ly:2.12, anchor:"start" },   // B
+    { xs:xsR, y0:()=>1,           y1:d=>Math.sqrt(d), color:"#f2e6c2",
+      lines:["Density gain","Urban expansion","Population growth"], lx:XMAX-0.05, ly:1.22, anchor:"end" }, // C
+    { xs:xsR, y0:()=>0,           y1:()=>1, color:"#dcc07a",
+      lines:["Density gain","Urban compression","Population growth"], lx:XMAX-0.05, ly:0.6, anchor:"end" },// D
+    { xs:xsL, y0:()=>1,           y1:()=>YMAX, color:"#6fc0b7",
+      lines:["Density loss","Urban expansion","Population loss"], lx:0.05, ly:2.12, anchor:"start" },      // A
+    { xs:xsL, y0:d=>Math.sqrt(d), y1:()=>1, color:"#3f8f86",
+      lines:["Density loss","Urban compression","Population loss"], lx:0.05, ly:0.8, anchor:"start" },     // E
+    { xs:xsL, y0:()=>0,           y1:d=>Math.sqrt(d), color:"#c79a5a",
+      lines:["Density gain","Urban compression","Population loss"], lx:0.97, ly:0.42, anchor:"end" },      // F
+  ];
+  for (const r of regions)
+    r.fill = content.append("path").attr("fill", r.color).attr("fill-opacity", 0.22).attr("stroke", "none");
+
+  // boundary lines
+  const vLine = content.append("line").attr("stroke", "#8a8a8a").attr("stroke-dasharray", "4 4"); // growth = 1
+  const hLine = content.append("line").attr("stroke", "#8a8a8a").attr("stroke-dasharray", "4 4"); // Φ = 1
+  const diag  = content.append("path").attr("fill", "none").attr("stroke", "#555")
+    .attr("stroke-width", 1.5).attr("stroke-dasharray", "6 4");                                    // Φ = √growth
+
+  // region labels (three lines each)
+  for (const r of regions) {
+    r.label = content.append("text").attr("text-anchor", r.anchor)
+      .attr("font-size", 8.7).attr("fill", "#2b2b2b").style("pointer-events", "none");
+    r.lines.forEach((ln, i) => r.label.append("tspan")
+      .text(ln).attr("dy", i === 0 ? 0 : "1.15em").attr("font-weight", i === 0 ? 700 : 400));
+  }
+  const diagLabel = content.append("text").attr("font-size", 9).attr("fill", "#555")
+    .attr("text-anchor", "end").style("pointer-events", "none").text("constant density  Φ = √growth");
+
+  // connector across a selected city's three decades (below points)
+  const connector = content.append("path").attr("fill", "none").attr("stroke", "#111")
+    .attr("stroke-width", 1).attr("stroke-opacity", 0.55).attr("stroke-dasharray", "2 2");
+
+  // points
+  const pts = content.append("g").selectAll("circle").data(data).join("circle")
+    .attr("r", 4).attr("fill", d => periodColors[d.period])
+    .attr("stroke", "#fff").attr("stroke-width", 0.6).attr("opacity", 0.85)
+    .style("cursor", "pointer");
+
+  // axis titles + plot frame (fixed)
+  svg.append("rect").attr("x", m.left).attr("y", m.top).attr("width", iw).attr("height", ih)
+    .attr("fill", "none").attr("stroke", "#ddd");
+  svg.append("text").attr("x", m.left + iw / 2).attr("y", H - 10).attr("text-anchor", "middle")
+    .attr("font-size", 12.5).attr("fill", "#333").text("Population growth factor  P(t₂)/P(t₁)");
+  svg.append("text").attr("transform", "rotate(-90)").attr("x", -(m.top + ih / 2)).attr("y", 15)
+    .attr("text-anchor", "middle").attr("font-size", 12.5).attr("fill", "#333")
+    .text("Urban expansion factor  Φ");
+
+  // ---- redraw for the current (possibly zoomed) scales ----
+  let curX = x, curY = y;
+  const diagXs = d3.range(0, XMAX + 0.0001, 0.02);
+  function redraw(zx, zy) {
+    curX = zx; curY = zy;
+    gx.call(d3.axisBottom(zx).ticks(7).tickSize(-ih))
+      .call(s => s.select(".domain").remove())
+      .call(s => s.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06));
+    gy.call(d3.axisLeft(zy).ticks(6).tickSize(-iw))
+      .call(s => s.select(".domain").remove())
+      .call(s => s.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06));
+    for (const r of regions)
+      r.fill.attr("d", d3.area().x(d => zx(d)).y0(d => zy(r.y0(d))).y1(d => zy(r.y1(d)))(r.xs));
+    vLine.attr("x1", zx(1)).attr("x2", zx(1)).attr("y1", m.top).attr("y2", H - m.bottom);
+    hLine.attr("y1", zy(1)).attr("y2", zy(1)).attr("x1", m.left).attr("x2", W - m.right);
+    diag.attr("d", d3.line().x(d => zx(d)).y(d => zy(Math.sqrt(d)))(diagXs));
+    for (const r of regions) {
+      r.label.attr("x", zx(r.lx)).attr("y", zy(r.ly));
+      r.label.selectAll("tspan").attr("x", zx(r.lx));
+    }
+    diagLabel.attr("x", zx(3.35)).attr("y", zy(Math.sqrt(3.35)) - 6);
+    pts.attr("cx", d => zx(d.growth_factor)).attr("cy", d => zy(d.phi));
+    const seq = data.filter(d => d.city_name === selected)
+      .sort((a, b) => periods.indexOf(a.period) - periods.indexOf(b.period));
+    connector.attr("d", d3.line().x(d => zx(d.growth_factor)).y(d => zy(d.phi))(seq));
+    pts.filter(d => d.city_name === selected).raise();
+  }
+
+  // ---- tooltip ----
+  const tip = document.createElement("div");
+  tip.style.cssText = "position:absolute;pointer-events:none;background:#fff;border:1px solid #ccc;border-radius:6px;padding:6px 9px;font-size:12.5px;line-height:1.35;box-shadow:0 4px 14px rgba(0,0,0,.12);opacity:0;transition:opacity .1s;z-index:20;";
+  container.append(tip);
+
+  pts.on("mouseover", (e, d) => {
+      d3.select(e.currentTarget).attr("r", 7).attr("stroke", "#222").attr("stroke-width", 1).raise();
+      tip.style.opacity = 1;
+      tip.innerHTML = `<strong>${d.city_name}</strong><br>${d.period}<br>growth ${d.growth_factor.toFixed(2)}× · Φ ${d.phi.toFixed(2)}`;
+    })
+    .on("mousemove", (e) => {
+      const r = container.getBoundingClientRect();
+      tip.style.left = (e.clientX - r.left + 12) + "px";
+      tip.style.top = (e.clientY - r.top + 12) + "px";
+    })
+    .on("mouseout", (e, d) => {
+      const sel = d.city_name === selected;
+      d3.select(e.currentTarget).attr("r", sel ? 6.5 : 4)
+        .attr("stroke", sel ? "#111" : "#fff").attr("stroke-width", sel ? 1.5 : 0.6);
+      tip.style.opacity = 0;
+    })
+    .on("click", (e, d) => selectCity(d.city_name));
+
+  // ---- zoom & pan ----
+  const zoom = d3.zoom().scaleExtent([1, 20])
+    .extent([[m.left, m.top], [W - m.right, H - m.bottom]])
+    .translateExtent([[m.left, m.top], [W - m.right, H - m.bottom]])
+    .on("zoom", (e) => redraw(e.transform.rescaleX(x), e.transform.rescaleY(y)));
+  svg.call(zoom).on("dblclick.zoom", null);
+  resetBtn.addEventListener("click", () =>
+    svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity));
+
+  const hint = document.createElement("div");
+  hint.style.cssText = "font-size:11.5px;color:#888;margin-top:4px;";
+  hint.textContent = "Scroll to zoom · drag to pan · click a point or use the menu to select a city.";
+  left.append(svg.node(), hint);
+
+  // ---- map panel ----
+  const fig = document.createElement("figure");
+  fig.style.cssText = "margin:0;";
+  const img = document.createElement("img");
+  img.style.cssText = "width:100%;max-width:380px;border:1px solid #e2e2e2;border-radius:8px;background:#fff;display:block;";
+  img.loading = "lazy";
+  const cap = document.createElement("figcaption");
+  cap.style.cssText = "font-size:13px;color:#555;margin-top:8px;line-height:1.45;";
+  fig.append(img, cap);
+  right.append(fig);
+
+  // ---- selection ----
+  function selectCity(name) {
+    selected = name;
+    if (select.value !== name) select.value = name;
+    img.src = cityImage.get(name);
+    img.alt = `Population change map for ${name}, 1990 to 2020`;
+    cap.innerHTML = `<strong>${name}</strong> — population change by grid cell, 2020 minus 1990. Black dot: city centre; brown = loss near the core, blue = gains in the periphery.`;
+    pts.attr("opacity", d => d.city_name === name ? 1 : 0.16)
+      .attr("r", d => d.city_name === name ? 6.5 : 4)
+      .attr("stroke", d => d.city_name === name ? "#111" : "#fff")
+      .attr("stroke-width", d => d.city_name === name ? 1.5 : 0.6);
+    const seq = data.filter(d => d.city_name === name)
+      .sort((a, b) => periods.indexOf(a.period) - periods.indexOf(b.period));
+    connector.attr("d", d3.line().x(d => curX(d.growth_factor)).y(d => curY(d.phi))(seq));
+    pts.filter(d => d.city_name === name).raise();
+  }
+
+  select.addEventListener("change", () => selectCity(select.value));
+  redraw(x, y);
+  selectCity(selected);
+
+  return container;
+}
+```
+
+:::
+
+Each city contributes **three points** — one per decade (1990–2000, 2000–2010, 2010–2020). The vast
+majority land in the upper **density-loss** region. A handful of tourism-driven ports (Cancún, Los
+Cabos, Puerto Vallarta) sit far to the right on runaway growth, while the twin city of
+Tlaxcala-Apizaco is the rare case that pulled *inward*.
+
+### 5. How many people were displaced? {#finding-5}
+
+To gauge the human scale, the study asks a "what-if": had cities grown while **holding their average
+density constant**, how many fewer people would have been pushed out of the centre? The answer is
+stark. Compared with that density-preserving path, **4.7 million people were effectively displaced
+from city centres** — nearly **double** the 2.5 million drop measured directly.
+
+![**Observed vs. a density-preserving what-if.** Panel **a** shows how the population would have been
+distributed had density held constant; panel **b** shows the gap — the excess crowd pushed out of the
+centre and into the periphery.](assets/figures/figure7.png){#fig-counterfactual fig-alt="Two panels comparing observed population by remoteness zone against a constant-density counterfactual, and the difference between them, showing excess displacement away from the central zone toward the periphery."}
+
+### 6. Longer distances, higher costs {#finding-6}
+
+Stretching a city's population outward has a direct, unavoidable consequence: the **average distance
+to the centre grows**. With Mexico's typical growth factor of **2.16** over 30 years and the fitted
+parameters, mean distances end up **28% longer** than under density-preserving growth. Longer
+distances mean:
+
+- more vehicle-kilometres, emissions, and air pollution;
+- reduced access to water, sewage, schools, and healthcare on the fringe;
+- fragmented labour markets and longer commutes;
+- deeper car dependency — Mexico's car fleet ballooned from **under 5 million in 1990 to over 40
+  million today**.
+
+## Why it happened
+
+The hollowing-out was not an accident of geography; it was engineered by a stack of reinforcing
+forces on both sides of the housing market.
+
+**On the demand side**, a demographic boom and rising incomes — helped by remittances and by
+**NAFTA (1994)** — created a wave of new households ready to buy homes and, increasingly, to own cars
+that made long commutes feasible.
+
+**On the supply side**, two structural reforms opened the fringe:
+
+1. **The 1992 reform of communal ("ejido") land tenure** allowed communal land to be sold, unlocking
+   vast tracts of cheap, developable land on the urban edge.
+2. **From 2001, the national housing agency became a financial intermediary**, pouring credit into
+   large-scale peripheral housing. Annual housing production leapt from about **50,000 units to more
+   than 1.4 million** by 2013.
+
+Developers built where land was cheapest — far from the centre — and credit followed. But roads,
+transit, water, sewage, and schools rarely kept pace, leaving residents farther out and less well
+served.
+
+::: {.callout-important}
+## The key policy lever
+
+Some outward growth is unavoidable when a population doubles. But the study isolates a second,
+*policy-driven* component — the steady drift ($\alpha$) that occurs **even without population growth**.
+That part reflects dysfunctional housing finance and car-oriented planning, not demographic necessity.
+Compact design, transit investment, and housing-finance reform could shrink it — and with it, the
+density losses and social costs documented here.
+:::
+
+## Why it matters
+
+For most of history, cities were densest at their core. Mexico's are now densest several kilometres
+out. That inversion — driven by housing markets pushing residents ever outward even as the overall
+population grew — is a *self-organising* dynamic that simple models of city growth cannot reproduce.
+
+The framework introduced here offers planners a **model-free, size-independent ruler** for measuring
+and comparing expansion across cities and decades. Because it makes no assumption about a city's
+"correct" shape, it works precisely where older density models break down — near the centre, where
+the most consequential changes unfold. That makes it a practical tool for anticipating the spatial
+fallout of population shifts, and for designing growth that is more compact, better served, and more
+equitable.
+
+## Data & code
+
+- **Census data:** [INEGI](https://www.inegi.org.mx/) (Mexico's national statistics institute).
+- **Processed dataset & code (Zenodo):** [doi.org/10.5281/zenodo.20630381](https://doi.org/10.5281/zenodo.20630381)
+- **Analysis code (GitHub):** [CentroFuturoCiudades/scaling_depopulation_mex](https://github.com/CentroFuturoCiudades/scaling_depopulation_mex)
+- **Interactive city maps:** [CitiesMoving.com/UrbanDispersion](https://citiesmoving.com/UrbanDispersion/)
+
+---
+
+*This is a plain-language summary of the research article “Scaling and Population Loss in Mexican Urban
+Centres” by G. G. Peraza-Mues, E. Resendiz, R. Figueroa-Soriano, R. Prieto-Curiel, and R. Ponce-Lopez.
+Affiliations: Tecnológico de Monterrey (Center for the Future of Cities; School of Government and Public
+Transformation; School of Architecture, Art and Design) and the Complexity Science Hub, Vienna. All
+figures are from the paper; the two interactive charts are built from the paper's reported values and
+model parameters.*

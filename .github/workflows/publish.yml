@@ -1,0 +1,30 @@
+name: Publish to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:   # allow manual runs from the Actions tab
+
+permissions:
+  contents: write      # lets the default token push to the gh-pages branch
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      # Render index.qmd and publish _site/ to the gh-pages branch.
+      # The render is self-contained (Quarto + committed assets only): OJS charts run
+      # client-side, figures are pre-rendered PNGs, and chart data is committed CSV/JSON,
+      # so no Python/R, no analysis repo, and no network are needed here.
+      - name: Render & publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

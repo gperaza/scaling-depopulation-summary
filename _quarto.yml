@@ -1,0 +1,13 @@
+project:
+  type: default
+  output-dir: _site
+  # The metro gallery references images from JS strings (data.js), which Quarto's
+  # resource scanner cannot discover. Listing assets/ force-copies the whole tree
+  # (JS, CSS, gallery images, chart CSVs, converted figures) into _site/.
+  resources:
+    - assets
+    - "!ToTest/**"
+
+# Render only the summary.
+render:
+  - index.qmd
