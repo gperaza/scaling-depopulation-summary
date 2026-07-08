@@ -82,9 +82,10 @@ The paper's raw data is also on Zenodo (DOI `10.5281/zenodo.20630381`).
 
 ## Deploying to GitHub Pages
 
-Automated via **`.github/workflows/publish.yml`** (GitHub Actions renders on every push to `main`
-and publishes to the `gh-pages` branch). One-time setup and the manual alternative are in
-`DEPLOY.md`. Live URL after setup: `https://gperaza.github.io/<repo>/`.
+Automated via **`.github/workflows/publish.yml`** (GitHub Actions runs `quarto render` on every push
+to `main` and deploys `_site/` via the GitHub Pages *artifact* flow — used because this is a
+`type: default`, not a `website`, project). Setup details in `DEPLOY.md`.
+Live: **https://gperaza.github.io/scaling-depopulation-summary/**.
 
 ## More context
 

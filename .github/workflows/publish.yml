@@ -5,11 +5,19 @@ on:
     branches: [main]
   workflow_dispatch:   # allow manual runs from the Actions tab
 
+# Permissions for the GitHub Pages "deploy from Actions" flow.
 permissions:
-  contents: write      # lets the default token push to the gh-pages branch
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; don't cancel an in-progress one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
@@ -18,13 +26,24 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      # Render index.qmd and publish _site/ to the gh-pages branch.
-      # The render is self-contained (Quarto + committed assets only): OJS charts run
-      # client-side, figures are pre-rendered PNGs, and chart data is committed CSV/JSON,
-      # so no Python/R, no analysis repo, and no network are needed here.
-      - name: Render & publish
-        uses: quarto-dev/quarto-actions/publish@v2
+      # Self-contained render: Quarto + committed assets only (OJS runs client-side,
+      # figures are pre-rendered PNGs, chart data is committed CSV/JSON) — no Python/R,
+      # no analysis repo, no network needed.
+      - name: Render
+        run: quarto render
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
