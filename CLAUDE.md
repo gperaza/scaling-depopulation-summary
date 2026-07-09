@@ -62,6 +62,11 @@ main.tex, sup_main.tex, Figure*.pdf, FIGURES/   # the PAPER sources (not part of
    true shapes as a 1990→2020 slider/Play sweeps (each freezes at its year; transform `x→x·s`,
    `ρ→ρ/s` with `s=G(min(τ,y))/G(y)`, G = cumulative expansion factor). Data
    `assets/data/radial_density.json`. (This replaced the earlier click-to-select linked *map*.)
+4. **ρ-scaling demo** (Finding 2) — `stretchDemo`: an interactive of the paper's **equation 2**
+   (ρ(s,t_j)=(1/Φ)ρ(s/Φ,t_i)). City dropdown + a **Φ slider with the empirical Φ̂ marked** (Φ̂ =
+   `radial_density.json` `G["2020"]`). Draws the 1990 density, the faded observed-2020 (static ghost),
+   and an animated **"1990 stretched by Φ"** curve `(x·Φ, ρ/Φ)` that coincides with 1990 at Φ=1 and
+   lands on the 2020 ghost at Φ=Φ̂. Data: `radial_density.json` + `city_maps.json` (dropdown names).
 
 ## Regenerating chart data (only when the underlying analysis changes)
 

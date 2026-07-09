@@ -563,10 +563,134 @@ Remarkably, a city's later population map can be recovered by taking its earlier
 factor $\Phi$** — how far the population distribution has been pulled away from the centre between two
 dates. It is **estimated empirically** for every city and period: measured from how much the earlier
 distribution must be rescaled to land on the later one — a remarkably tight fit, typically
-$R^2 \approx 0.99$ — rather than assumed from any "correct" city shape. For Colima, rescaling the 1990
-curve by its $\Phi$ reproduces the observed 2020 curve almost exactly; you can watch this in the
-density panel of the figure below, where each census year expands outward from the 1990 shape. This
-one number captures three decades of change.
+$R^2 \approx 0.99$ — rather than assumed from any "correct" city shape. Formally, a city's radial
+population distribution $\rho(s)$ at a later date is its earlier distribution **stretched by $\Phi$**:
+
+$$\rho(s, t_j) = \frac{1}{\Phi_{ij}}\,\rho\!\left(\frac{s}{\Phi_{ij}},\, t_i\right)$$
+
+Try it yourself: pick a city and **drag the expansion factor $\Phi$**. The blue 1990 curve stretches
+outward as $\Phi$ grows; when you reach that city's empirically estimated $\hat\Phi$ (marked on the
+slider), the stretched curve lands almost exactly on the faded observed-2020 curve. This one number
+captures three decades of change.
+
+```{ojs}
+//| echo: false
+stretchDemo = {
+  const rho = await FileAttachment("assets/data/radial_density.json").json();
+  const cityList = await FileAttachment("assets/data/city_maps.json").json();
+
+  const C1990 = "#8fb0c4", C2020 = "#0f3041", CANIM = "#e6550d";
+  const byName = new Map(cityList.filter(c => rho[c.cve]).map(c => [c.name, c.cve]));
+  const names = Array.from(byName.keys()).sort((a, b) => a.localeCompare(b, "es"));
+
+  const container = document.createElement("div");
+  container.style.cssText = "max-width:640px;font-family:system-ui,sans-serif;";
+
+  // ---- city dropdown ----
+  const ctl = document.createElement("div");
+  ctl.style.cssText = "margin-bottom:4px;";
+  const sel = document.createElement("select");
+  sel.style.cssText = "font:13px system-ui;padding:3px 6px;border:1px solid #ccc;border-radius:5px;";
+  for (const n of names) { const o = document.createElement("option"); o.value = n; o.textContent = n; sel.append(o); }
+  const selLabel = document.createElement("label");
+  selLabel.style.cssText = "font-size:13px;color:#333;display:inline-flex;align-items:center;gap:6px;";
+  selLabel.append("City:", sel);
+  ctl.append(selLabel);
+  container.append(ctl);
+
+  // ---- Φ slider with empirical-Φ̂ marker ----
+  const sliderWrap = document.createElement("div");
+  sliderWrap.style.cssText = "position:relative;margin:20px 0 2px;";
+  const markRow = document.createElement("div");
+  markRow.style.cssText = "position:relative;height:26px;";
+  const marker = document.createElement("div");
+  marker.style.cssText = "position:absolute;transform:translateX(-50%);text-align:center;bottom:-2px;font-size:11px;color:#c0392b;font-weight:600;line-height:1.05;white-space:nowrap;pointer-events:none;";
+  markRow.append(marker);
+  const slider = document.createElement("input");
+  slider.type = "range"; slider.step = "0.01";
+  slider.style.cssText = "width:100%;accent-color:#e6550d;display:block;margin:0;";
+  const sliderTicks = document.createElement("div");
+  sliderTicks.style.cssText = "display:flex;justify-content:space-between;font-size:10.5px;color:#999;margin-top:1px;";
+  const phiReadout = document.createElement("div");
+  phiReadout.style.cssText = "font:600 13px system-ui;color:#333;margin-top:5px;";
+  sliderWrap.append(markRow, slider, sliderTicks, phiReadout);
+  container.append(sliderWrap);
+
+  // ---- chart ----
+  const W = 640, H = 300, m = { top: 12, right: 14, bottom: 34, left: 40 };
+  const iw = W - m.left - m.right, ih = H - m.top - m.bottom;
+  const x = d3.scaleLinear().range([m.left, W - m.right]);
+  const y = d3.scaleLinear().range([H - m.bottom, m.top]);
+  const svg = d3.create("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("width", "100%")
+    .style("max-width", W + "px").style("height", "auto").style("font-family", "system-ui, sans-serif");
+  svg.append("defs").append("clipPath").attr("id", "stretch-clip").append("rect")
+    .attr("x", m.left).attr("y", m.top).attr("width", iw).attr("height", ih);
+  const gx = svg.append("g").attr("transform", `translate(0,${H - m.bottom})`);
+  const gy = svg.append("g").attr("transform", `translate(${m.left},0)`);
+  svg.append("text").attr("x", m.left + iw / 2).attr("y", H - 3).attr("text-anchor", "middle")
+    .attr("font-size", 11).attr("fill", "#555").text("remoteness  r  (scaled distance from centre)");
+  svg.append("text").attr("transform", "rotate(-90)").attr("x", -(m.top + ih / 2)).attr("y", 13)
+    .attr("text-anchor", "middle").attr("font-size", 11).attr("fill", "#555").text("population density  ρ");
+  const content = svg.append("g").attr("clip-path", "url(#stretch-clip)");
+  const pathFor = (xs, ys) => d3.line().x((_, i) => x(xs[i])).y((_, i) => y(ys[i]))(ys);
+  const p2020 = content.append("path").attr("fill", "none").attr("stroke", C2020).attr("stroke-width", 3.5).attr("stroke-opacity", 0.22);
+  const p1990 = content.append("path").attr("fill", "none").attr("stroke", C1990).attr("stroke-width", 1.8);
+  const panim = content.append("path").attr("fill", "none").attr("stroke", CANIM).attr("stroke-width", 2.6);
+
+  // legend
+  const legend = document.createElement("div");
+  legend.style.cssText = "display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:#555;margin-top:4px;";
+  const legItem = (color, text, op) => {
+    const s = document.createElement("span"); s.style.cssText = "display:inline-flex;align-items:center;gap:5px;";
+    s.innerHTML = `<span style="display:inline-block;width:16px;height:3px;background:${color};opacity:${op || 1};border-radius:2px;"></span>${text}`;
+    return s;
+  };
+  legend.append(legItem(C1990, "1990"), legItem(CANIM, "1990 stretched by Φ"), legItem(C2020, "2020 (observed)", 0.3));
+  container.append(svg.node(), legend);
+
+  // ---- state + drawing ----
+  let cur = null, phiHat = 1, sMin = 0.8, sMax = 3;
+
+  function redraw(phi) {
+    p1990.attr("d", pathFor(cur.y1990.x, cur.y1990.y));
+    p2020.attr("d", pathFor(cur.y2020.x, cur.y2020.y));
+    const ax = cur.y1990.x.map(v => v * phi), ay = cur.y1990.y.map(v => v / phi);
+    panim.attr("d", pathFor(ax, ay));
+    if (+slider.value !== phi) slider.value = phi;
+    const near = Math.abs(phi - phiHat) < 0.02;
+    phiReadout.innerHTML = `Φ = <span style="color:#e6550d">${phi.toFixed(2)}</span>` +
+      (near ? ` &nbsp;<span style="color:#2e7d32;font-weight:600">✓ matches the observed 2020 curve</span>` : "");
+  }
+
+  function setCity(name) {
+    const rec = rho[byName.get(name)];
+    cur = { y1990: rec.years["1990"], y2020: rec.years["2020"] };
+    phiHat = rec.G["2020"];
+    sMin = 0.8; sMax = Math.min(4, Math.max(2.5, phiHat + 1));
+    slider.min = sMin; slider.max = sMax; slider.value = 1;
+    const x1max = d3.max(cur.y1990.x), x2max = d3.max(cur.y2020.x);
+    const xhi = Math.max(x2max, x1max * Math.min(sMax, phiHat + 0.5));
+    x.domain([0, xhi * 1.04]);
+    y.domain([0, Math.max(d3.max(cur.y1990.y) / sMin, d3.max(cur.y2020.y)) * 1.08]);
+    gx.call(d3.axisBottom(x).ticks(7).tickSize(-ih)).call(g => g.select(".domain").remove())
+      .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06))
+      .call(g => g.selectAll(".tick text").attr("font-size", 9).attr("fill", "#666"));
+    gy.call(d3.axisLeft(y).ticks(5).tickSize(-iw).tickFormat(() => "")).call(g => g.select(".domain").remove())
+      .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06));
+    sliderTicks.innerHTML = `<span>Φ = ${sMin.toFixed(1)}</span><span>${sMax.toFixed(1)}</span>`;
+    const pct = Math.max(0, Math.min(100, (phiHat - sMin) / (sMax - sMin) * 100));
+    marker.style.left = pct + "%";
+    marker.innerHTML = `Φ&#770; = ${phiHat.toFixed(2)}<br>▾`;
+    redraw(1);
+  }
+
+  sel.addEventListener("change", () => setCity(sel.value));
+  slider.addEventListener("input", () => redraw(+slider.value));
+  sel.value = "Colima-Villa de Álvarez";
+  setCity(sel.value);
+  return container;
+}
+```
 
 How big is $\Phi$? Across all cities and census periods, it follows a clean rule: expansion is a
 **power of population growth**, times a **steady outward drift** that happens even without growth:
