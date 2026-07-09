@@ -668,9 +668,7 @@ stretchDemo = {
     phiHat = rec.G["2020"];
     sMin = 0.8; sMax = Math.min(4, Math.max(2.5, phiHat + 1));
     slider.min = sMin; slider.max = sMax; slider.value = 1;
-    const x1max = d3.max(cur.y1990.x), x2max = d3.max(cur.y2020.x);
-    const xhi = Math.max(x2max, x1max * Math.min(sMax, phiHat + 0.5));
-    x.domain([0, xhi * 1.04]);
+    x.domain([0, rec.xcap * 1.02]);   // same ~99%-population cutoff as the phase-space density panel
     y.domain([0, Math.max(d3.max(cur.y1990.y) / sMin, d3.max(cur.y2020.y)) * 1.08]);
     gx.call(d3.axisBottom(x).ticks(7).tickSize(-ih)).call(g => g.select(".domain").remove())
       .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06))
