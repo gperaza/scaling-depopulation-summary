@@ -670,6 +670,12 @@ figure6 = {
   const hLine = content.append("line").attr("stroke", "#8a8a8a").attr("stroke-dasharray", "4 4"); // Φ = 1
   const diag  = content.append("path").attr("fill", "none").attr("stroke", "#555")
     .attr("stroke-width", 1.5).attr("stroke-dasharray", "6 4");                                    // Φ = √growth
+  // fitted log-linear model for the Mexican system (paper eq. L_factors):
+  //   Φ = growth^β · e^(α·Δt), with β=0.60, α=0.0057; Δt=10 yr for these intercensal periods.
+  const BETA_FIT = 0.60, ALPHA_FIT = 0.0057, DT_FIT = 10;
+  const phiModel = g => Math.pow(g, BETA_FIT) * Math.exp(ALPHA_FIT * DT_FIT);
+  const trend = content.append("path").attr("fill", "none").attr("stroke", "#c0392b")
+    .attr("stroke-width", 2.2).attr("stroke-opacity", 0.95);                                       // fitted trend
 
   // region labels (three lines each)
   for (const r of regions) {
@@ -680,6 +686,9 @@ figure6 = {
   }
   const diagLabel = content.append("text").attr("font-size", 9).attr("fill", "#555")
     .attr("text-anchor", "end").style("pointer-events", "none").text("constant density  Φ = √growth");
+  const trendLabel = content.append("text").attr("font-size", 9).attr("fill", "#c0392b")
+    .attr("font-weight", 600).attr("text-anchor", "end").style("pointer-events", "none")
+    .text("Mexican trend (β = 0.60, α = 0.0057)");
 
   // connector across a selected city's three decades (below points)
   const connector = content.append("path").attr("fill", "none").attr("stroke", "#111")
@@ -716,11 +725,19 @@ figure6 = {
     vLine.attr("x1", zx(1)).attr("x2", zx(1)).attr("y1", m.top).attr("y2", H - m.bottom);
     hLine.attr("y1", zy(1)).attr("y2", zy(1)).attr("x1", m.left).attr("x2", W - m.right);
     diag.attr("d", d3.line().x(d => zx(d)).y(d => zy(Math.sqrt(d)))(diagXs));
+    trend.attr("d", d3.line().x(d => zx(d)).y(d => zy(phiModel(d)))(diagXs));
     for (const r of regions) {
       r.label.attr("x", zx(r.lx)).attr("y", zy(r.ly));
       r.label.selectAll("tspan").attr("x", zx(r.lx));
     }
-    diagLabel.attr("x", zx(3.35)).attr("y", zy(Math.sqrt(3.35)) - 6);
+    // place each curve label on its line, rotated parallel to the local tangent (in pixel space)
+    const labelAlong = (label, f, g0, off) => {
+      const px = zx(g0), py = zy(f(g0)), dg = 0.06;
+      const ang = Math.atan2(zy(f(g0 + dg)) - zy(f(g0 - dg)), zx(g0 + dg) - zx(g0 - dg)) * 180 / Math.PI;
+      label.attr("x", px).attr("y", py).attr("dy", off).attr("transform", `rotate(${ang},${px},${py})`);
+    };
+    labelAlong(diagLabel, Math.sqrt, 3.3, -5);
+    labelAlong(trendLabel, phiModel, 2.95, -5);
     pts.attr("cx", d => zx(d.growth_factor)).attr("cy", d => zy(d.phi));
     const seq = data.filter(d => d.city_name === selected)
       .sort((a, b) => periods.indexOf(a.period) - periods.indexOf(b.period));
