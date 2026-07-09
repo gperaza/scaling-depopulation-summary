@@ -446,33 +446,43 @@ figure2grid = {
 
 :::
 
-The same story shows up in the numbers below — drag the toggle to switch between raw population and
-each zone's share of the total.
+The same story shows up in the numbers below — switch between raw population and each zone's share,
+and compare what actually happened against a **density-preserving "what-if."**
 
-**Where Mexico's city-dwellers live has flipped.** Population of all 69 metros by remoteness
-zone across four censuses (aggregated across every city above). Use the toggle to switch
-between totals and each zone's share.
+**Where Mexico's city-dwellers live has flipped.** Population of all 69 metros by remoteness zone
+across four censuses (aggregated across every city above). Use **View** to overlay the
+**counterfactual** — how the population *would* have been distributed if average density had held
+constant — or to show the **difference**: the crowd pushed out of the centre and toward the edge.
+Use **Show** to switch between totals and each zone's share.
 
 ```{ojs}
 //| echo: false
+// population (millions) by remoteness zone: obs = observed; cf = density-preserving counterfactual
+// (1990 radial density stretched by √P, renormalized to each year's total). Aggregates reproduced
+// from the analysis repo's scripts/analysis_cfactual.py (obs matches outputs/rem_brackets_agg.csv).
 popData = [
-  {year: 1990, zone: "Central",      population: 17.7},
-  {year: 2000, zone: "Central",      population: 17.2},
-  {year: 2010, zone: "Central",      population: 15.6},
-  {year: 2020, zone: "Central",      population: 15.2},
-  {year: 1990, zone: "Intermediate", population: 12.5},
-  {year: 2000, zone: "Intermediate", population: 16.3},
-  {year: 2010, zone: "Intermediate", population: 17.6},
-  {year: 2020, zone: "Intermediate", population: 18.2},
-  {year: 1990, zone: "Distant",      population:  8.1},
-  {year: 2000, zone: "Distant",      population: 13.5},
-  {year: 2010, zone: "Distant",      population: 19.4},
-  {year: 2020, zone: "Distant",      population: 24.2},
-  {year: 1990, zone: "Peri-urban",   population:  2.7},
-  {year: 2000, zone: "Peri-urban",   population:  5.3},
-  {year: 2010, zone: "Peri-urban",   population:  9.7},
-  {year: 2020, zone: "Peri-urban",   population: 14.3}
+  {year: 1990, zone: "Central",      obs: 17.7315, cf: 17.7315},
+  {year: 2000, zone: "Central",      obs: 17.1807, cf: 18.7815},
+  {year: 2010, zone: "Central",      obs: 15.6916, cf: 19.4536},
+  {year: 2020, zone: "Central",      obs: 15.2757, cf: 19.9485},
+  {year: 1990, zone: "Intermediate", obs: 12.4768, cf: 12.4768},
+  {year: 2000, zone: "Intermediate", obs: 16.4278, cf: 16.2743},
+  {year: 2010, zone: "Intermediate", obs: 17.7070, cf: 18.9273},
+  {year: 2020, zone: "Intermediate", obs: 18.2936, cf: 21.2605},
+  {year: 1990, zone: "Distant",      obs:  8.1330, cf:  8.1330},
+  {year: 2000, zone: "Distant",      obs: 13.5655, cf: 12.3845},
+  {year: 2010, zone: "Distant",      obs: 19.3712, cf: 16.5000},
+  {year: 2020, zone: "Distant",      obs: 24.1966, cf: 20.9256},
+  {year: 1990, zone: "Peri-urban",   obs:  2.7923, cf:  2.7923},
+  {year: 2000, zone: "Peri-urban",   obs:  5.3504, cf:  5.0841},
+  {year: 2010, zone: "Peri-urban",   obs:  9.7085, cf:  7.5975},
+  {year: 2020, zone: "Peri-urban",   obs: 14.4875, cf: 10.1188}
 ]
+```
+
+```{ojs}
+//| echo: false
+viewof view1 = Inputs.radio(["Observed", "With counterfactual", "Difference"], {value: "Observed", label: "View"})
 ```
 
 ```{ojs}
@@ -485,38 +495,55 @@ viewof measure1 = Inputs.radio(["Total (millions)", "Share of population (%)"], 
 {
   const zones = ["Central", "Intermediate", "Distant", "Peri-urban"];
   const years = [1990, 2000, 2010, 2020];
-  const totals = new Map(years.map(y => [y, d3.sum(popData.filter(d => d.year === y), d => d.population)]));
-  const isShare = measure1.startsWith("Share");
-  const data = popData.map(d => ({
-    ...d,
-    value: isShare ? 100 * d.population / totals.get(d.year) : d.population
-  }));
-  return Plot.plot({
+  const isDiff = view1 === "Difference";
+  const isShare = !isDiff && measure1.startsWith("Share");
+  const totals = new Map(years.map(y => [y, d3.sum(popData.filter(d => d.year === y), d => d.obs)]));
+  const rows = popData.map(d => {
+    const sc = isShare ? 100 / totals.get(d.year) : 1;
+    return { ...d, obsV: d.obs * sc, cfV: d.cf * sc, diff: d.obs - d.cf };
+  });
+  const unit = isShare ? "%" : " million";
+  const marks = [Plot.ruleY([0])];
+  if (isDiff) {
+    marks.push(Plot.barY(rows, {
+      fx: "zone", x: "year", y: "diff", fill: d => String(d.year), tip: true,
+      title: d => `${d.zone} — ${d.year}\n${d.diff >= 0 ? "+" : "−"}${Math.abs(d.diff).toFixed(1)} million vs. counterfactual`
+    }));
+  } else {
+    marks.push(Plot.barY(rows, {
+      fx: "zone", x: "year", y: "obsV", fill: d => String(d.year), tip: true,
+      title: d => `${d.zone} — ${d.year}\n${d.obsV.toFixed(1)}${unit}`
+    }));
+    if (view1 === "With counterfactual")
+      marks.push(Plot.tickY(rows, { fx: "zone", x: "year", y: "cfV", stroke: "#c0392b", strokeWidth: 2.2 }));
+  }
+  const plot = Plot.plot({
     height: 380,
     marginBottom: 40,
-    marginLeft: 52,
+    marginLeft: 58,
     style: { fontFamily: "system-ui, sans-serif", fontSize: "12px" },
     x: { axis: null },
     fx: { domain: zones, label: null, padding: 0.2 },
-    y: { label: isShare ? "↑ Share of population (%)" : "↑ Population (millions)", grid: true, nice: true },
-    color: {
-      legend: true,
-      domain: years.map(String),
-      range: ["#cdd9e0", "#8fb0c4", "#4e7d9c", "#0f3041"]
+    y: {
+      label: isDiff ? "↑ Difference vs. counterfactual (millions)"
+           : isShare ? "↑ Share of population (%)" : "↑ Population (millions)",
+      grid: true, nice: true
     },
-    marks: [
-      Plot.barY(data, {
-        fx: "zone", x: "year", y: "value", fill: d => String(d.year),
-        tip: true,
-        title: d => `${d.zone} — ${d.year}\n${d.value.toFixed(1)}${isShare ? "%" : " million"}`
-      }),
-      Plot.ruleY([0])
-    ]
+    color: { legend: true, domain: years.map(String), range: ["#cdd9e0", "#8fb0c4", "#4e7d9c", "#0f3041"] },
+    marks
   });
+  const cap = document.createElement("div");
+  cap.style.cssText = "font-size:12.5px;color:#666;font-style:italic;margin-top:6px;line-height:1.45;max-width:640px;";
+  cap.innerHTML = isDiff
+    ? "Observed <strong>minus</strong> the constant-density counterfactual, by zone and year. Negative in the centre (people missing), positive in the periphery (excess) — about <strong>4.7&nbsp;million</strong> pushed out of the core by 2020."
+    : view1 === "With counterfactual"
+    ? "<span style=\"color:#c0392b;font-weight:600\">Red caps</span> mark where the population would sit under the constant-density counterfactual. A bar short of its cap (the centre) means people were displaced outward; a bar above its cap (the periphery) is the excess crowd."
+    : "Colours run light (1990) to dark (2020). The Central block shrinks over time; every outer block grows.";
+  const div = document.createElement("div");
+  div.append(plot, cap);
+  return div;
 }
 ```
-
-*Colours run light (1990) to dark (2020). The Central block shrinks over time; every outer block grows.*
 
 It is not just head-counts — density fell too. Near the centre ($r \le 3$), some cities lost as much
 as **4,000 people per km²**, with a national average loss of about **1,000 people per km²**. Further
@@ -960,9 +987,9 @@ density constant**, how many fewer people would have been pushed out of the cent
 stark. Compared with that density-preserving path, **4.7 million people were effectively displaced
 from city centres** — nearly **double** the 2.5 million drop measured directly.
 
-![**Observed vs. a density-preserving what-if.** Panel **a** shows how the population would have been
-distributed had density held constant; panel **b** shows the gap — the excess crowd pushed out of the
-centre and into the periphery.](assets/figures/figure7.png){#fig-counterfactual fig-alt="Two panels comparing observed population by remoteness zone against a constant-density counterfactual, and the difference between them, showing excess displacement away from the central zone toward the periphery."}
+You can see this zone by zone in the [population chart above](#finding-1): switch **View** to
+**With counterfactual** to overlay the density-preserving path, or to **Difference** to read the gap
+directly — negative in the centre (people missing), positive at the edge (the excess crowd).
 
 ### 5. Longer distances, higher costs {#finding-5}
 

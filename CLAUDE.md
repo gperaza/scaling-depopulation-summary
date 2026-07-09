@@ -37,7 +37,11 @@ main.tex, sup_main.tex, Figure*.pdf, FIGURES/   # the PAPER sources (not part of
 
 ## The interactive components (all Observable JS + D3 in `index.qmd`)
 
-1. **Pop-by-zone bar chart** (Finding 1) — `popData` + Observable Plot; toggle total vs share.
+1. **Pop-by-zone bar chart** (Finding 1) — `popData` (observed `obs` + density-preserving
+   counterfactual `cf` per zone/year) + Observable Plot. A **View** radio: *Observed* / *With
+   counterfactual* (red `tickY` caps at the cf level per bar) / *Difference* (diverging `obs−cf`
+   bars = the old figure7 panel b, "4.7 M displaced"), plus the total/share toggle. This replaced
+   the static `figure7.png` (removed from Finding 4).
 2. **Interactive map grid** (Finding 1) — `figure2grid`: responsive grid of all 69 city maps
    (`repeat(auto-fill, minmax(76px,1fr))`, **capped at 10 columns** via `max-width:860px`); click a
    thumbnail → enlarged map on the right; **hovering a remoteness zone** (central/intermediate/
