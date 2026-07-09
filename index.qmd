@@ -554,21 +554,19 @@ remoteness of about **2–4** (the bold black line is the national trend).
 
 The pattern is not a handful of cherry-picked cases — it holds everywhere. You can call up any
 individual city's own map, and see where it sits among all 69, in the [interactive figure
-below](#finding-3).
+below](#finding-2).
 
-### 2. Cities grow by stretching {#finding-2}
+### 2. Cities grow by stretching — a simple model {#finding-2}
 
 Remarkably, a city's later population map can be recovered by taking its earlier map and simply
-**stretching it outward**. The figure below demonstrates this for Colima: rescale the 1990 curve by
-the single expansion factor $\Phi$, and it lands almost exactly on the 2020 curve. This one number
-captures three decades of change.
-
-![**One number captures the change.** For Colima, the 1990 distribution rescaled by the urban
-expansion factor $\Phi$ (dashed) reproduces the observed 2020 distribution (solid) — in the
-probability density (centre) and the population density (right). The slope on the left panel *is*
-$\Phi$.](assets/figures/figure4.png){#fig-scaling fig-alt="Three panels for Colima: a quantile-quantile plot whose straight-line slope equals the expansion factor, and two density curves where the 1990 profile rescaled by that factor overlays the 2020 profile."}
-
-### 3. A simple model of expansion {#finding-3}
+**stretching it outward**. The single number that measures that stretch is the **urban expansion
+factor $\Phi$** — how far the population distribution has been pulled away from the centre between two
+dates. It is **estimated empirically** for every city and period: measured from how much the earlier
+distribution must be rescaled to land on the later one — a remarkably tight fit, typically
+$R^2 \approx 0.99$ — rather than assumed from any "correct" city shape. For Colima, rescaling the 1990
+curve by its $\Phi$ reproduces the observed 2020 curve almost exactly; you can watch this in the
+density panel of the figure below, where each census year expands outward from the 1990 shape. This
+one number captures three decades of change.
 
 How big is $\Phi$? Across all cities and census periods, it follows a clean rule: expansion is a
 **power of population growth**, times a **steady outward drift** that happens even without growth:
@@ -592,8 +590,10 @@ The interactive figure below places **every city in every decade** on this map. 
 is how much a city's population grew; the vertical axis is its expansion factor $\Phi$. Three
 boundaries — growth $= 1$, $\Phi = 1$, and the constant-density diagonal $\Phi = \sqrt{\text{growth}}$ —
 carve the plane into **six regimes** that combine density loss/gain, urban expansion/compression, and
-population growth/loss. **Pick a city from the menu or click any point** to see its population-change
-map and trace its three decades; **scroll to zoom and drag to pan** into the dense cluster.
+population growth/loss; the **solid red curve is the fitted trend** for the Mexican system. **Pick a
+city from the menu or click any point** to watch how its population spread outward over three decades
+— the animated density panel on the right — and trace its path through the regimes; **scroll to zoom
+and drag to pan** into the dense cluster.
 
 ::: {.column-page}
 
@@ -980,7 +980,7 @@ majority land in the upper **density-loss** region. A handful of tourism-driven 
 Cabos, Puerto Vallarta) sit far to the right on runaway growth, while the twin city of
 Tlaxcala-Apizaco is the rare case that pulled *inward*.
 
-### 4. How many people were displaced? {#finding-4}
+### 3. How many people were displaced? {#finding-3}
 
 To gauge the human scale, the study asks a "what-if": had cities grown while **holding their average
 density constant**, how many fewer people would have been pushed out of the centre? The answer is
@@ -991,7 +991,7 @@ You can see this zone by zone in the [population chart above](#finding-1): switc
 **With counterfactual** to overlay the density-preserving path, or to **Difference** to read the gap
 directly — negative in the centre (people missing), positive at the edge (the excess crowd).
 
-### 5. Longer distances, higher costs {#finding-5}
+### 4. Longer distances, higher costs {#finding-4}
 
 Stretching a city's population outward has a direct, unavoidable consequence: the **average distance
 to the centre grows**. With Mexico's typical growth factor of **2.16** over 30 years and the fitted

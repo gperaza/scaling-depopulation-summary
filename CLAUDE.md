@@ -54,7 +54,7 @@ main.tex, sup_main.tex, Figure*.pdf, FIGURES/   # the PAPER sources (not part of
    within r). Data: `assets/data/density_change.json` (keyed `{point,avg}`, each `{r, national, cities}`). Under the map is a **per-city
    colour-scale bar** showing the map's shading extent ±`vmax` (max |Δpop| per grid cell — each
    map is drawn on its own continuous scale, `adjust_vmax=False`); data `assets/data/map_vmax.json`.
-3. **Figure 6 phase space** (Finding 3) — `figure6`: growth × urban-expansion-factor Φ scatter with
+3. **Figure 6 phase space** (Finding 2) — `figure6`: growth × urban-expansion-factor Φ scatter with
    all six labeled regions + the **fitted log-linear trend line** (Φ = growth^β·e^(αΔt), β=0.60,
    α=0.0057, Δt=10 yr; paper eq. L_factors), city dropdown, hover tooltips, zoom/pan (`d3.zoom`
    rescale pattern; "Reset view"). The right panel shows the selected city's **animated radial probability density**
