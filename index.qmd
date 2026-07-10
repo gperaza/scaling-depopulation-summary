@@ -10,6 +10,7 @@ author:
     corresponding: true
   - name: Eugen Resendiz
     affiliations:
+      - name: Tecnológico de Monterrey, Center for the Future of Cities
       - name: Tecnológico de Monterrey, School of Architecture, Art and Design
   - name: Rodolfo Figueroa-Soriano
     affiliations:
