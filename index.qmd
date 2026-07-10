@@ -50,7 +50,7 @@ keywords:
 citation:
   type: article-journal
 
-Key results:
+Highlights:
 - We analyzed urban growth dynamics in 69 Mexican metropolitan areas from 1990 to 2020 using radial scaling analysis.
 - Most of Mexico's metropolitan areas nearly doubled in population, but their historic centers emptied out; at the same time, people moved from downtown to the peripheries of these cities.
 - Between 1990 and 2020, 2.5 million residents left city centers; in detail, the downtown's share of population dropped from 40% to just 22%, meaning that the proportion of people living in the central areas was cut in half.
