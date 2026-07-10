@@ -48,28 +48,21 @@ keywords:
   - depopulation
   - Mexico
   - city centres
-citation:
-  type: article-journal
-
-Highlights:
-- We analyzed urban growth dynamics in 69 Mexican metropolitan areas from 1990 to 2020 using radial scaling analysis.
-- Most of Mexico's metropolitan areas nearly doubled in population, but their historic centers emptied out; at the same time, people moved from downtown to the peripheries of these cities.
-- Between 1990 and 2020, 2.5 million residents left city centers; in detail, the downtown's share of population dropped from 40% to just 22%, meaning that the proportion of people living in the central areas was cut in half.
-- Across the 69 cities, the average distance to the city center increased by 28%, lengthening commutes and straining infrastructure.
+# citation:
+#   type: article-journal
 ---
 
 > Cities are supposed to be busiest at their heart. In Mexico, the opposite happened.
 > Over three decades of booming growth, people drained out of city centres and piled up
 > on the fringes — in *every single one* of the country's 69 large metropolitan areas.
 
-::: {.callout-note}
-## The numbers at a glance
-
-- **69** metropolitan areas — all showing the same pattern
-- **−2.5 million** residents lost from city centres (1990–2020)
-- **22%** now live centrally — down from over 40%
-- **+28%** longer distances to the centre, on average
-- **4.7 million** people displaced vs. density-preserving growth
+::: {.callout-note title="Highlights"}
+- **69 metros, one pattern** — every one of Mexico's large metropolitan areas, across four censuses (1990–2020), tells the same story.
+- **Booming cities, emptying centres** — most metros nearly *doubled* in population, yet their historic cores lost residents as people shifted to the periphery. City centres shed **2.5 million** residents; the share of urban Mexicans living centrally fell from **~40% to 22%**.
+- **Excess displacement** — versus a density-preserving path, about **4.7 million** people were pushed out of the centres, nearly *double* what growth alone required, making distances to the centre **28%** larger, lengthening commutes and straining services.
+- **One rule for every city** — a city's later population map is its earlier one *stretched outward* by a single **urban expansion factor**; 30 years of change reduce to one number, with no assumed city shape, and it fits growing and shrinking cities alike.
+- **Two ingredients: growth and policy** — expansion splits into a **growth-driven** part and a **policy-driven** drift that continues *even without growth*; both exceed the density-preserving level, so cities **expand while losing density**.
+- **Sprawl is a policy outcome, not destiny** — much of the displacement happened only because cities spread *faster than growth required*.
 :::
 
 ## The paradox: booming cities, emptying centres
