@@ -1,6 +1,5 @@
 ---
-title: "Suburbanisation Takes Over Mexico"
-subtitle: "How 69 cities grew at the edges while their centres emptied out — and what it costs"
+title: "Scaling and Population Loss in Mexican Urban Centres"
 author:
   - name: Gonzalo G. Peraza-Mues
     affiliations:
@@ -56,248 +55,2063 @@ keywords:
 > Over three decades of booming growth, people drained out of city centres and piled up
 > on the fringes — in *every single one* of the country's 69 large metropolitan areas.
 
-::: {.callout-note title="Highlights"}
-- **69 metros, one pattern** — every one of Mexico's large metropolitan areas, across four censuses (1990–2020), tells the same story.
-- **Booming cities, emptying centres** — most metros nearly *doubled* in population, yet their historic cores lost residents as people shifted to the periphery. City centres shed **2.5 million** residents; the share of urban Mexicans living centrally fell from **~40% to 22%**.
-- **Excess displacement** — versus a density-preserving path, about **4.7 million** people were pushed out of the centres, nearly *double* what growth alone required, making distances to the centre **28%** larger, lengthening commutes and straining services.
-- **One rule for every city** — a city's later population map is its earlier one *stretched outward* by a single **urban expansion factor**; 30 years of change reduce to one number, with no assumed city shape, and it fits growing and shrinking cities alike.
-- **Two ingredients: growth and policy** — expansion splits into a **growth-driven** part and a **policy-driven** drift that continues *even without growth*; both exceed the density-preserving level, so cities **expand while losing density**.
-- **Sprawl is a policy outcome, not destiny** — much of the displacement happened only because cities spread *faster than growth required*.
-:::
-
 ## The paradox: booming cities, emptying centres
 
-The world is becoming urban. The number of people living in cities nearly doubled between
-1990 and 2020, and is projected to grow another 60% by 2050. Cities can absorb that growth
-two ways: by building **up and in** (getting denser) or by spreading **out** (expanding their
-footprint). In recent decades, most growth has gone outward — often in a fragmented, unplanned
-sprawl that lengthens journeys, strains services, and deepens inequality.
-
-Mexico is a striking case. Its population climbed from **81.7 million in 1990 to 126 million
-in 2020**, and the fraction living in cities rose from **71% to 81%** — so the urban population
-nearly doubled. Standard urban economics predicts that density should be highest at the centre,
-where jobs and services concentrate. Yet Mexico's cities did the reverse: their cores thinned out
-while their edges thickened.
-
-The three largest metros make the paradox concrete. Each grew enormously overall, but each lost
-people near the middle:
-
-- **Monterrey** grew by 99%, yet the population within 5 km of its centre fell from **485,000 to 377,000**.
-- **Guadalajara** grew by 71%, but its inner 5 km dropped from **866,000 to 626,000**.
-- **Mexico City** grew by 38% while its central area lost **166,000 residents**.
-
-This study set out to measure that "hollowing-out" precisely — and to explain it — using census
-data for all 69 metropolitan areas across four censuses (1990, 2000, 2010, 2020).
-
-## How we measured it
-
-Counting people by distance from the centre sounds simple, but two problems get in the way:
-cities come in wildly different sizes, and the shape of a city's population is hard to pin to any
-tidy formula. The study introduces two ideas to get around this.
-
-::: {.column-page}
-![**The toolkit at a glance.** Each city's population is placed on a fine grid, then read off in
-concentric rings around its historic centre (left). Two "remoteness" rescalings shrink a small
-city (Colima) and a large one (Guadalajara) onto a common yardstick — a city of one million
-people — so their density profiles can be compared directly (right).](assets/figures/summary_methods.png){#fig-methods fig-alt="A multi-panel methodology figure: concentric rings over a gridded city map with labelled remoteness zones; population-density curves; and a demonstration of remoteness scaling that stretches a small city and compresses a large city onto a common one-million-person scale."}
-:::
-
-### Remoteness: one yardstick for every city
-
-To compare a giant like Mexico City (21 million) with a small city like Colima on equal terms,
-the authors rescale distance into **remoteness** ($r$):
-
-$$r = 1000\,\frac{s}{\sqrt{P}}$$
-
-where $s$ is the distance from the centre and $P$ is the city's population. In plain terms,
-remoteness re-expresses every distance as if the city had exactly **one million inhabitants** —
-a universal ruler that keeps density values intact. Two people equally "remote" sit at the same
-relative position in their cities, regardless of size. That lets the study sort every
-neighbourhood into four zones:
-
-| Zone | Remoteness | Meaning |
-|------|:----------:|---------|
-| **Central** | $r < 3$ | The historic heart, where the city was founded |
-| **Intermediate** | $3 \le r < 5$ | Established neighbourhoods, transitioning outward |
-| **Distant** | $5 \le r < 9.3$ | Areas built up in later stages |
-| **Peri-urban** | $r \ge 9.3$ | The outermost edge of the urban fabric |
-
-### The urban expansion factor: how far the map stretched
-
-The study also tracks the **radial population distribution** $\rho(s)$ — the chance that a randomly
-chosen resident lives at a given distance from the centre. The central discovery is that a city's
-distribution at a later date is simply a **stretched copy** of its earlier one:
-
-$$\rho(s, t_j) = \frac{1}{\Phi_{ij}}\,\rho\!\left(\frac{s}{\Phi_{ij}},\, t_i\right)$$
-
-The single number $\Phi_{ij}$ — the **urban expansion factor** — says how much the population map
-has been pulled outward (or, rarely, pulled in) between two dates. It needs no assumptions about the
-"correct" shape of a city, which is exactly where older models fail — especially near the centre,
-where the most important changes are happening.
-
-## What we found
-
-### 1. Every core lost people — and got thinner {#finding-1}
-
-Between 1990 and 2020, **all 69 metropolitan areas lost population in their central zone**
-($r < 3$), even as every one of them grew overall. Nationwide, central areas shed **2.5 million
-residents**, while the intermediate, distant, and peri-urban zones gained **5.8, 16.1, and 11.7
-million** people respectively. The share of city-dwellers living centrally was more than halved —
-from **over 40% in 1990 to about 22% in 2020**.
-
-Here is **every one of the 69 metropolitan areas** — brown/red cells lost people (near the black-dot
-centres), blue cells gained them (out at the edges). **Click any city** to enlarge its map, then
-**hover a ring-zone** (central, intermediate, distant, or peri-urban) to read how that zone's
-population changed between 1990 and 2020. Under each enlarged map, a chart traces how population
-**density** shifted with distance from the centre — the orange line is the city you picked, the bold
-black line the national trend.
+Between 1990 and 2020, **all 69 metropolitan areas lost population in their central zone**, even as every one of them grew overall. Nationwide, **central areas shed 2.5 million residents.**
 
 ::: {.column-screen-inset}
-
 ```{ojs}
 //| echo: false
-figure2grid = {
+fig1 ={
   const cities = await FileAttachment("assets/data/city_maps.json").json();
-  const density = await FileAttachment("assets/data/density_change.json").json();
-  const vmax = await FileAttachment("assets/data/map_vmax.json").json();
-
-  const zoneKeys = ["central", "intermediate", "distant", "periurban"];
-  const zoneMeta = {
-    central:      { label: "Central",      range: "r < 3" },
-    intermediate: { label: "Intermediate", range: "3 ≤ r < 5" },
-    distant:      { label: "Distant",      range: "5 ≤ r < 9.3" },
-    periurban:    { label: "Peri-urban",   range: "r ≥ 9.3" }
-  };
-  // overlay geometry — fraction of image size, identical for every city (measured)
-  const R = { r3: 0.150, r5: 0.250, r93: 0.465 };
-  const LOSS = "#c65a43", GAIN = "#4e8ab2", HILITE = "rgba(20,61,87,0.18)";
-  const fmt = n => n.toLocaleString("en-US");
-
-  const byCve = new Map(cities.map(c => [c.cve, c]));
-  let selected = "09.1.01"; // Ciudad de México
-
   const container = document.createElement("div");
-  container.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:flex-start;font-family:system-ui,sans-serif;";
-  const left = document.createElement("div");
-  left.style.cssText = "flex:0 1 860px;min-width:280px;";
-  const right = document.createElement("div");
-  right.style.cssText = "flex:0 1 400px;min-width:280px;position:sticky;top:20px;";
-  container.append(left, right);
-
-  // ---- grid of 69 thumbnails (7 wide) ----
+  
+  container.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:flex-start;font-family:system-ui,sans-serif;margin-left:auto;margin-right:auto;max-width:45vw;";
+  
+  if (window.innerWidth < 768) {
+    container.style.maxWidth = "100vw";
+  }
   const grid = document.createElement("div");
-  grid.style.cssText = "display:grid;grid-template-columns:repeat(auto-fill, minmax(76px, 1fr));gap:6px;max-width:860px;";
+  grid.style.cssText = "display:grid;grid-template-columns:repeat(auto-fill, minmax(76px, 1fr));gap:6px;max-width:100%;";
+  let scale = {
+  "cve": "scale",
+  "name": "",
+  "detail": "assets/images/metros/scale.png",
+  "thumb": "assets/images/metros/scale.png",
+  "km": {
+   "r3": 0,
+   "r5": 0,
+   "r9_3": 0
+  }
+};
   const cardByCve = new Map();
+  cities.push(scale);
   for (const c of cities) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.title = c.name;
-    btn.style.cssText = "display:flex;flex-direction:column;gap:2px;padding:3px;border:2px solid transparent;border-radius:8px;background:#fff;cursor:pointer;font:inherit;";
+    btn.style.cssText = "display:flex;flex-direction:column;gap:2px;padding:3px;border:2px solid transparent;border-radius:8px;background:#fff;cursor:default;font:inherit;select:none;user-select:none;pointer-events:auto;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;";
     const im = document.createElement("img");
     im.src = c.thumb; im.alt = c.name; im.loading = "lazy";
-    im.style.cssText = "width:100%;aspect-ratio:1;object-fit:cover;border-radius:5px;background:#f3f5f7;";
+     im.style.cssText = `
+
+    width: 100%;
+
+    height: ${c.cve === "scale" ? "110px" : "auto"};
+
+    aspect-ratio: ${c.cve === "scale" ? "auto" : "1"};
+
+    object-fit: ${c.cve === "scale" ? "contain" : "cover"};
+
+    margin-top: ${c.cve === "scale" ? "-0.6vh" : "0"};
+
+    border-radius: 5px;
+
+    background: #fff;
+
+    user-select: none;
+
+    pointer-events: none;
+
+  `;
     const nm = document.createElement("span");
     nm.textContent = c.name;
-    nm.style.cssText = "font-size:8.5px;line-height:1.1;color:#555;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;";
+    nm.style.cssText = "font-size:8.5px;line-height:1.1;color:#fff;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;user-select:none;pointer-events:none;";
     btn.append(im, nm);
-    btn.addEventListener("click", () => selectCity(c.cve));
     cardByCve.set(c.cve, btn);
     grid.append(btn);
   }
-  left.append(grid);
+  container.append(grid);
+  return container;
+}
+```
+  
+:::
+## Review your city and compare against other city
+```{ojs}
+//| echo: false
 
-  // ---- detail panel: enlarged map + zone overlay ----
-  const heading = document.createElement("h3");
-  heading.style.cssText = "font-size:1.15rem;margin:0 0 8px;font-weight:700;";
-  const mapBox = document.createElement("div");
-  mapBox.style.cssText = "position:relative;width:100%;max-width:400px;aspect-ratio:1;border:1px solid #e2e2e2;border-radius:8px;overflow:hidden;background:#fff;";
-  const dImg = document.createElement("img");
-  dImg.style.cssText = "position:absolute;inset:0;width:100%;height:100%;";
-  dImg.loading = "lazy";
+figure2grid = {
 
-  const NS = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(NS, "svg");
-  svg.setAttribute("viewBox", "0 0 1 1");
-  svg.setAttribute("preserveAspectRatio", "none");
-  svg.style.cssText = "position:absolute;inset:0;width:100%;height:100%;";
-  const circ = r => `M ${0.5 - r} 0.5 a ${r} ${r} 0 1 0 ${2 * r} 0 a ${r} ${r} 0 1 0 ${-2 * r} 0 Z`;
+  const cities = await FileAttachment("assets/data/city_maps.json").json();
+  const density = await FileAttachment("assets/data/density_change.json").json();
+  const container2 = document.createElement("div");
+  const global_container = document.createElement("div");
+  global_container.style.cssText = "position:relative;display:flex;flex-direction:column;gap:12px;justify-content:center;align-items:center;font-family:system-ui,sans-serif;margin-left:auto;margin-right:auto;max-width:45vw;";
+  container2.style.cssText = "position: relative;width: 50%;max-width: 45vw;display: flex;align-items: center;justify-content: center;flex-direction: column;margin-top: 0px;";
+  if (window.innerWidth < 768) {
+    container2.style.maxWidth = "100vw";
+  }
 
-  // (1) highlight layer — exact zone shapes (evenodd), NOT interactive; tinted on hover
-  const shapes = {
-    central: circ(R.r3),
-    intermediate: circ(R.r5) + " " + circ(R.r3),
-    distant: circ(R.r93) + " " + circ(R.r5),
-    periurban: "M0 0 H1 V1 H0 Z " + circ(R.r93)
+
+  const vmax = await FileAttachment("assets/data/map_vmax.json").json();
+
+  const zoneKeys = [
+
+    "central",
+
+    "intermediate",
+
+    "distant",
+
+    "periurban"
+
+  ];
+
+  const zoneMeta = {
+
+    central: {
+
+      label: "Central",
+
+      range: "r < 3"
+
+    },
+
+    intermediate: {
+
+      label: "Intermediate",
+
+      range: "3 ≤ r < 5"
+
+    },
+
+    distant: {
+
+      label: "Distant",
+
+      range: "5 ≤ r < 9.3"
+
+    },
+
+    periurban: {
+
+      label: "Peri-urban",
+
+      range: "r ≥ 9.3"
+
+    }
+
   };
-  const hl = {};
-  for (const z of zoneKeys) {
-    const p = document.createElementNS(NS, "path");
-    p.setAttribute("d", shapes[z]);
-    p.setAttribute("fill", "transparent");
-    p.setAttribute("fill-rule", "evenodd");
-    p.setAttribute("pointer-events", "none");
-    hl[z] = p;
-    svg.append(p);
+
+  const R = {
+
+    r3: 0.150,
+
+    r5: 0.250,
+
+    r93: 0.465
+
+  };
+
+  const LOSS = "#c65a43";
+
+  const GAIN = "#4e8ab2";
+
+  const HILITE = "rgba(20,61,87,0.18)";
+
+  const fmt = number =>
+
+    Number(number).toLocaleString("en-US");
+
+  const normalizeText = value =>
+
+    String(value ?? "")
+
+      .normalize("NFD")
+
+      .replace(/[\u0300-\u036f]/g, "")
+
+      .toLowerCase()
+
+      .trim();
+
+  const normalizeCityCode = value =>
+
+    String(value ?? "")
+
+      .replace(/\.png$/i, "")
+
+      .trim();
+
+  const byCve = new Map(
+
+    cities.map(city => [city.cve, city])
+
+  );
+
+  let selectedLeft = "09.1.01";
+
+  let selectedRight = normalizeCityCode("01.1.01.png");
+
+  /*
+
+   * Prevent an invalid initial configuration in case either code
+
+   * is missing or both resolve to the same city.
+
+   */
+
+  if (!byCve.has(selectedLeft)) {
+
+    selectedLeft = cities[0]?.cve;
+
   }
 
-  // (2) hit surface — ONE transparent rect covering the map; the zone is computed from
-  // the cursor's fractional distance from the centre (reliable; avoids per-shape SVG
-  // hit-testing, which mis-routes stacked transparent shapes in some browsers).
-  const hitRect = document.createElementNS(NS, "rect");
-  hitRect.setAttribute("x", 0); hitRect.setAttribute("y", 0);
-  hitRect.setAttribute("width", 1); hitRect.setAttribute("height", 1);
-  hitRect.setAttribute("fill", "transparent");
-  hitRect.setAttribute("pointer-events", "all");
-  hitRect.style.cursor = "crosshair";
-  let curZone = null;
-  function zoneAt(e) {
-    const r = mapBox.getBoundingClientRect();
-    const dx = (e.clientX - r.left) / r.width - 0.5;
-    const dy = (e.clientY - r.top) / r.height - 0.5;
-    const rad = Math.hypot(dx, dy);
-    return rad < R.r3 ? "central" : rad < R.r5 ? "intermediate" : rad < R.r93 ? "distant" : "periurban";
+  if (
+
+    !byCve.has(selectedRight) ||
+
+    selectedRight === selectedLeft
+
+  ) {
+
+    selectedRight =
+
+      cities.find(city => city.cve !== selectedLeft)?.cve;
+
   }
-  function clearZone() { if (curZone) { hl[curZone].setAttribute("fill", "transparent"); curZone = null; } }
-  hitRect.addEventListener("mousemove", (e) => {
-    const z = zoneAt(e);
-    if (z !== curZone) { clearZone(); curZone = z; hl[z].setAttribute("fill", HILITE); showTip(z); }
-    moveTip(e);
-  });
-  hitRect.addEventListener("mouseleave", () => { clearZone(); tip.style.opacity = 0; });
-  svg.append(hitRect);
 
-  mapBox.append(dImg, svg);
+  // ---------------------------------------------------------------------------
 
-  const cap = document.createElement("div");
-  cap.style.cssText = "font-size:12.5px;color:#666;margin-top:8px;line-height:1.45;";
-  const hint = document.createElement("div");
-  hint.style.cssText = "font-size:11.5px;color:#999;margin-top:6px;";
-  hint.textContent = "Hover a ring-zone for its population change. Zones are scale-normalized, so the rings sit at the same place on every map.";
+  // Main layout
 
-  // ---- per-city colour-scale bar (the map's shading extent, people per grid cell) ----
-  const cbar = document.createElement("div");
-  cbar.style.cssText = "margin-top:8px;";
-  const cbarGrad = document.createElement("div");
-  cbarGrad.style.cssText = "height:12px;border-radius:3px;border:1px solid #e2e2e2;" +
-    "background:linear-gradient(90deg,#7a2618,#c65a43,#f5f5f5,#4e8ab2,#173a5e);";
-  const cbarRow = document.createElement("div");
-  cbarRow.style.cssText = "display:flex;justify-content:space-between;font-size:10.5px;margin-top:2px;";
-  const cbLo = document.createElement("span"); cbLo.style.color = LOSS; cbLo.style.fontWeight = "600";
-  const cbMid = document.createElement("span"); cbMid.style.color = "#888"; cbMid.textContent = "0";
-  const cbHi = document.createElement("span"); cbHi.style.color = GAIN; cbHi.style.fontWeight = "600";
-  cbarRow.append(cbLo, cbMid, cbHi);
-  const cbCap = document.createElement("div");
-  cbCap.style.cssText = "font-size:10.5px;color:#999;text-align:center;margin-top:1px;";
-  cbCap.textContent = "population change per grid cell — loss ← → gain (scaled per city)";
-  cbar.append(cbarGrad, cbarRow, cbCap);
+  // ---------------------------------------------------------------------------
+
+  const container = document.createElement("div");
+
+  container.style.cssText = `
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:minmax(33vw, 100vw) auto minmax(33vw, 100vw);
+
+    align-items:center;
+
+    justify-content:center;
+
+   
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:8px 0;
+
+    font-family:
+
+      system-ui,
+
+      -apple-system,
+
+      BlinkMacSystemFont,
+
+      "Segoe UI",
+
+      sans-serif;
+
+  `;
+
+  const versus = document.createElement("div");
+
+  versus.textContent = "VS";
+
+  versus.style.cssText = `
+
+    align-self:start;
+
+    padding-top:20px;
+
+    color:#111;
+
+    font-size:clamp(24px, 2.4vw, 38px);
+
+    font-weight:500;
+
+    line-height:1;
+
+    text-align:center;
+
+  `;
+
+  // ---------------------------------------------------------------------------
+
+  // Shared tooltip
+
+  // ---------------------------------------------------------------------------
+
+  const tooltip = document.createElement("div");
+
+  tooltip.style.cssText = `
+
+    position:absolute;
+
+    z-index:1000;
+
+    max-width:250px;
+
+    box-sizing:border-box;
+
+    padding:7px 10px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    background:#fff;
+
+    box-shadow:0 4px 14px rgba(0,0,0,0.14);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    color:#333;
+
+    font-size:0.75rem;
+
+    line-height:1.4;
+
+    transition:opacity 100ms ease;
+
+  `;
+
+  // ---------------------------------------------------------------------------
+
+  // City panel factory
+
+  // ---------------------------------------------------------------------------
+
+  function createCityPanel(side) {
+
+    const panel = document.createElement("section");
+
+    panel.style.cssText = `
+
+      width:100%;
+
+      min-width:0;
+
+    `;
+
+    // -------------------------------------------------------------------------
+
+    // Header: title + autocomplete
+
+    // -------------------------------------------------------------------------
+
+    const header = document.createElement("div");
+
+    header.style.cssText = `
+
+      display:flex;
+
+      /* grid-template-columns:minmax(130px, 1fr) minmax(180px, 240px); */
+
+      justify-content:center;
+
+      align-items:center;
+
+      gap:14px;
+
+      min-height:42px;
+
+      margin-bottom:5px;
+
+    `;
+
+   /*  const heading = document.createElement("h3");
+
+    heading.style.cssText = `
+
+      min-width:0;
+
+      margin:0;
+
+      overflow:hidden;
+
+      color:#292929;
+
+      font-size:clamp(17px, 1.45vw, 22px);
+
+      font-weight:700;
+
+      line-height:1.15;
+
+      text-overflow:ellipsis;
+
+      white-space:nowrap;
+
+    `; */
+
+    const searchWrapper = document.createElement("div");
+
+    searchWrapper.style.cssText = `
+
+      position:relative;
+
+      width:100%;
+
+      z-index:50;
+
+    `;
+
+    const searchControl = document.createElement("div");
+
+    searchControl.style.cssText = `
+
+      position:relative;
+
+      display:flex;
+
+      align-items:center;
+
+      width:100%;
+
+      height:34px;
+
+      box-sizing:border-box;
+
+      border-top:1px solid #e4e4e4;
+
+      border-bottom:1px solid #e4e4e4;
+
+      background:#fff;
+
+      transition:
+
+        border-color 120ms ease,
+
+        box-shadow 120ms ease;
+
+    `;
+
+    const searchInput = document.createElement("input");
+
+    searchInput.type = "text";
+
+    searchInput.placeholder = "City, Country";
+
+    searchInput.autocomplete = "off";
+
+    searchInput.setAttribute("role", "combobox");
+
+    searchInput.setAttribute("aria-autocomplete", "list");
+
+    searchInput.setAttribute("aria-expanded", "false");
+
+    searchInput.style.cssText = `
+
+      width:100%;
+
+      height:32px;
+
+      box-sizing:border-box;
+
+      padding:0 34px 0 32px;
+
+      border:none;
+
+      outline:none;
+
+      background:transparent;
+
+      color:#3c454b;
+
+      font:
+
+        italic bold 2rem,
+
+        system-ui,
+
+        -apple-system,
+
+        BlinkMacSystemFont,
+
+        "Segoe UI",
+
+        sans-serif;
+
+    `;
+
+    const arrowButton = document.createElement("button");
+
+    arrowButton.type = "button";
+
+    arrowButton.title = "Show cities";
+
+    arrowButton.setAttribute("aria-label", "Show cities");
+
+    arrowButton.style.cssText = `
+
+      position:absolute;
+
+      right:3px;
+
+      top:50%;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      width:28px;
+
+      height:28px;
+
+      padding:0;
+
+      transform:translateY(-50%);
+
+      border:none;
+
+      border-radius:50%;
+
+      background:transparent;
+
+      color:#66737a;
+
+      cursor:pointer;
+
+    `;
+
+    arrowButton.innerHTML = `
+
+      <svg
+
+        viewBox="0 0 24 24"
+
+        width="17"
+
+        height="17"
+
+        aria-hidden="true"
+
+      >
+
+        <path
+
+          d="M7.5 9.5L12 14L16.5 9.5"
+
+          fill="none"
+
+          stroke="currentColor"
+
+          stroke-width="1.8"
+
+          stroke-linecap="round"
+
+          stroke-linejoin="round"
+
+        ></path>
+
+      </svg>
+
+    `;
+
+    const dropdown = document.createElement("div");
+
+    dropdown.setAttribute("role", "listbox");
+
+    dropdown.style.cssText = `
+
+      position:absolute;
+
+      top:calc(100% + 4px);
+
+      left:0;
+
+      right:0;
+
+      display:none;
+
+      max-height:290px;
+
+      overflow-y:auto;
+
+      box-sizing:border-box;
+
+      padding:5px 0;
+
+      border:1px solid rgba(0,0,0,0.12);
+
+      border-radius:4px;
+
+      background:#fff;
+
+      box-shadow:
+
+        0 5px 5px -3px rgba(0,0,0,0.20),
+
+        0 8px 10px 1px rgba(0,0,0,0.14),
+
+        0 3px 14px 2px rgba(0,0,0,0.12);
+
+    `;
+
+    searchControl.append(
+
+      searchInput,
+
+      arrowButton
+
+    );
+
+    searchWrapper.append(
+
+      searchControl,
+
+      dropdown
+
+    );
+
+    header.append(
+
+      /* heading, */
+
+      searchWrapper
+
+    );
+
+    // -------------------------------------------------------------------------
+
+    // Map
+
+    // -------------------------------------------------------------------------
+
+    const mapBox = document.createElement("div");
+
+    mapBox.style.cssText = `
+
+      position:relative;
+
+      width:100%;
+
+      aspect-ratio:1;
+
+      overflow:hidden;
+
+      box-sizing:border-box;
+
+      border:1px solid #e2e2e2;
+
+      border-radius:7px;
+
+      background:#fff;
+
+    `;
+
+    const detailImage = document.createElement("img");
+
+    detailImage.loading = "lazy";
+
+    detailImage.style.cssText = `
+
+      position:absolute;
+
+      inset:0;
+
+      width:100%;
+
+      height:100%;
+
+      object-fit:contain;
+
+      user-select:none;
+
+      pointer-events:none;
+
+    `;
+
+    // -------------------------------------------------------------------------
+
+    // Ring overlay
+
+    // -------------------------------------------------------------------------
+
+    const SVG_NS = "http://www.w3.org/2000/svg";
+
+    const overlay = document.createElementNS(
+
+      SVG_NS,
+
+      "svg"
+
+    );
+
+    overlay.setAttribute("viewBox", "0 0 1 1");
+
+    overlay.setAttribute("preserveAspectRatio", "none");
+
+    overlay.style.cssText = `
+
+      position:absolute;
+
+      inset:0;
+
+      width:100%;
+
+      height:100%;
+
+    `;
+
+    const circlePath = radius => `
+
+      M ${0.5 - radius} 0.5
+
+      a ${radius} ${radius} 0 1 0 ${2 * radius} 0
+
+      a ${radius} ${radius} 0 1 0 ${-2 * radius} 0
+
+      Z
+
+    `;
+
+    const zoneShapes = {
+
+      central:
+
+        circlePath(R.r3),
+
+      intermediate:
+
+        `${circlePath(R.r5)} ${circlePath(R.r3)}`,
+
+      distant:
+
+        `${circlePath(R.r93)} ${circlePath(R.r5)}`,
+
+      periurban:
+
+        `M0 0 H1 V1 H0 Z ${circlePath(R.r93)}`
+
+    };
+
+    const highlightLayers = {};
+
+    for (const zone of zoneKeys) {
+
+      const path = document.createElementNS(
+
+        SVG_NS,
+
+        "path"
+
+      );
+
+      path.setAttribute("d", zoneShapes[zone]);
+
+      path.setAttribute("fill", "transparent");
+
+      path.setAttribute("fill-rule", "evenodd");
+
+      path.setAttribute("pointer-events", "none");
+
+      highlightLayers[zone] = path;
+
+      overlay.append(path);
+
+    }
+
+    const hitSurface = document.createElementNS(
+
+      SVG_NS,
+
+      "rect"
+
+    );
+
+    hitSurface.setAttribute("x", 0);
+
+    hitSurface.setAttribute("y", 0);
+
+    hitSurface.setAttribute("width", 1);
+
+    hitSurface.setAttribute("height", 1);
+
+    hitSurface.setAttribute("fill", "transparent");
+
+    hitSurface.setAttribute("pointer-events", "all");
+
+    hitSurface.style.cursor = "crosshair";
+
+    let currentZone = null;
+
+    let filteredCities = [...cities];
+
+    let activeOptionIndex = -1;
+
+    function getSelectedCode() {
+
+      return side === "left"
+
+        ? selectedLeft
+
+        : selectedRight;
+
+    }
+
+    function getOtherSelectedCode() {
+
+      return side === "left"
+
+        ? selectedRight
+
+        : selectedLeft;
+
+    }
+
+    function setSelectedCode(cityCode) {
+
+      if (side === "left") {
+
+        selectedLeft = cityCode;
+
+      } else {
+
+        selectedRight = cityCode;
+
+      }
+
+    }
+
+    function zoneAt(event) {
+
+      const bounds = mapBox.getBoundingClientRect();
+
+      const dx =
+
+        (event.clientX - bounds.left) /
+
+          bounds.width -
+
+        0.5;
+
+      const dy =
+
+        (event.clientY - bounds.top) /
+
+          bounds.height -
+
+        0.5;
+
+      const radius = Math.hypot(dx, dy);
+
+      if (radius < R.r3) {
+
+        return "central";
+
+      }
+
+      if (radius < R.r5) {
+
+        return "intermediate";
+
+      }
+
+      if (radius < R.r93) {
+
+        return "distant";
+
+      }
+
+      return "periurban";
+
+    }
+
+    function clearZone() {
+
+      if (!currentZone) {
+
+        return;
+
+      }
+
+      highlightLayers[currentZone].setAttribute(
+
+        "fill",
+
+        "transparent"
+
+      );
+
+      currentZone = null;
+
+    }
+
+    function distanceText(zone, city) {
+
+      const km = city.km || {};
+
+      if (zone === "central") {
+
+        return km.r3 != null
+
+          ? `within ${km.r3} km`
+
+          : "";
+
+      }
+
+      if (zone === "intermediate") {
+
+        return (
+
+          km.r3 != null &&
+
+          km.r5 != null
+
+        )
+
+          ? `${km.r3}–${km.r5} km`
+
+          : "";
+
+      }
+
+      if (zone === "distant") {
+
+        return (
+
+          km.r5 != null &&
+
+          km.r9_3 != null
+
+        )
+
+          ? `${km.r5}–${km.r9_3} km`
+
+          : "";
+
+      }
+
+      return km.r9_3 != null
+
+        ? `beyond ${km.r9_3} km`
+
+        : "";
+
+    }
+
+    function showTooltip(zone) {
+
+      const city = byCve.get(getSelectedCode());
+
+      const zoneValues = city?.zones?.[zone];
+
+      if (!city || !zoneValues) {
+
+        tooltip.style.opacity = 0;
+
+        return;
+
+      }
+
+      const metadata = zoneMeta[zone];
+
+      const change =
+
+        zoneValues.p2020 -
+
+        zoneValues.p1990;
+
+      const percentage =
+
+        zoneValues.p1990 > 0
+
+          ? Math.round(
+
+              change /
+
+              zoneValues.p1990 *
+
+              100
+
+            )
+
+          : null;
+
+      const color =
+
+        change < 0
+
+          ? LOSS
+
+          : GAIN;
+
+      const sign =
+
+        change < 0
+
+          ? "−"
+
+          : "+";
+
+      const distance =
+
+        distanceText(zone, city);
+
+      tooltip.innerHTML = `
+
+        <strong>${metadata.label}</strong>
+
+        <span style="color:#888">
+
+          (${metadata.range}${
+
+            distance
+
+              ? ` · ${distance}`
+
+              : ""
+
+          })
+
+        </span>
+
+        <br>
+
+        1990: ${fmt(zoneValues.p1990)}
+
+        <br>
+
+        2020: ${fmt(zoneValues.p2020)}
+
+        <br>
+
+        <span
+
+          style="
+
+            color:${color};
+
+            font-weight:600;
+
+          "
+
+        >
+
+          Change:
+
+          ${sign}${fmt(Math.abs(change))}
+
+          ${
+
+            percentage != null
+
+              ? ` (${sign}${Math.abs(percentage)}%)`
+
+              : ""
+
+          }
+
+        </span>
+
+      `;
+
+      tooltip.style.opacity = 1;
+
+    }
+
+    function moveTooltip(event) {
+
+      const containerBounds =
+
+        container.getBoundingClientRect();
+
+      const tooltipWidth =
+
+        tooltip.offsetWidth || 220;
+
+      const tooltipHeight =
+
+        tooltip.offsetHeight || 100;
+
+      let left =
+
+        event.clientX -
+
+        containerBounds.left +
+
+        14;
+
+      let top =
+
+        event.clientY -
+
+        containerBounds.top +
+
+        14;
+
+      if (
+
+        left + tooltipWidth >
+
+        containerBounds.width
+
+      ) {
+
+        left =
+
+          event.clientX -
+
+          containerBounds.left -
+
+          tooltipWidth -
+
+          14;
+
+      }
+
+      if (
+
+        top + tooltipHeight >
+
+        containerBounds.height
+
+      ) {
+
+        top =
+
+          event.clientY -
+
+          containerBounds.top -
+
+          tooltipHeight -
+
+          14;
+
+      }
+
+      tooltip.style.left =
+
+        `${Math.max(0, left)}px`;
+
+      tooltip.style.top =
+
+        `${Math.max(0, top)}px`;
+
+    }
+
+    hitSurface.addEventListener(
+
+      "mousemove",
+
+      event => {
+
+        const zone = zoneAt(event);
+
+        if (zone !== currentZone) {
+
+          clearZone();
+
+          currentZone = zone;
+
+          highlightLayers[zone].setAttribute(
+
+            "fill",
+
+            HILITE
+
+          );
+
+          showTooltip(zone);
+
+        }
+
+        moveTooltip(event);
+
+      }
+
+    );
+
+    hitSurface.addEventListener(
+
+      "mouseleave",
+
+      () => {
+
+        clearZone();
+
+        tooltip.style.opacity = 0;
+
+      }
+
+    );
+
+    overlay.append(hitSurface);
+
+    mapBox.append(
+
+      detailImage,
+
+      overlay
+
+    );
+
+    // -------------------------------------------------------------------------
+
+    // Color scale
+
+    // -------------------------------------------------------------------------
+
+    const colorBar = document.createElement("div");
+
+    colorBar.style.cssText = `
+
+      margin-top:8px;
+
+    `;
+
+    const gradient = document.createElement("div");
+
+    gradient.style.cssText = `
+
+      height:11px;
+
+      border:1px solid #e2e2e2;
+
+      border-radius:2px;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          #7a2618,
+
+          #c65a43,
+
+          #f5f5f5,
+
+          #4e8ab2,
+
+          #173a5e
+
+        );
+
+    `;
+
+    const scaleValues = document.createElement("div");
+
+    scaleValues.style.cssText = `
+
+      display:flex;
+
+      justify-content:space-between;
+
+      margin-top:2px;
+
+      font-size:10.5px;
+
+    `;
+
+    const lowValue = document.createElement("span");
+
+    lowValue.style.cssText = `
+
+      color:${LOSS};
+
+      font-weight:600;
+
+    `;
+
+    const middleValue = document.createElement("span");
+
+    middleValue.textContent = "0";
+
+    middleValue.style.cssText = `
+
+      color:#888;
+
+    `;
+
+    const highValue = document.createElement("span");
+
+    highValue.style.cssText = `
+
+      color:${GAIN};
+
+      font-weight:600;
+
+    `;
+
+    scaleValues.append(
+
+      lowValue,
+
+      middleValue,
+
+      highValue
+
+    );
+
+    const scaleCaption = document.createElement("div");
+
+    scaleCaption.textContent =
+
+      "population change per grid cell — loss ← → gain (scaled per city)";
+
+    scaleCaption.style.cssText = `
+
+      margin-top:1px;
+
+      color:#999;
+
+      font-size:0.6rem;
+
+      text-align:center;
+
+    `;
+
+    colorBar.append(
+
+      gradient,
+
+      scaleValues,
+
+      scaleCaption
+
+    );
+
+    // -------------------------------------------------------------------------
+
+    // Map description
+
+    // -------------------------------------------------------------------------
+
+    const caption = document.createElement("div");
+
+    caption.innerHTML = `
+
+      Population change by grid cell, 2020 minus 1990.
+
+      Black dot: city centre; brown/red = loss near the core,
+
+      blue = gains in the periphery. Dashed rings mark the
+
+      remoteness zones.
+
+    `;
+
+    caption.style.cssText = `
+
+      margin-top:12px;
+
+      color:#666;
+
+      font-size:0.75rem;
+
+      line-height:1.45;
+
+    `;
+
+    // -------------------------------------------------------------------------
+
+    // Dropdown behavior
+
+    // -------------------------------------------------------------------------
+
+    function openDropdown() {
+
+      dropdown.style.display = "block";
+
+      searchInput.setAttribute(
+
+        "aria-expanded",
+
+        "true"
+
+      );
+
+      arrowButton.style.transform =
+
+        "translateY(-50%) rotate(180deg)";
+
+      searchControl.style.borderColor =
+
+        "#1976d2";
+
+    }
+
+    function closeDropdown() {
+
+      dropdown.style.display = "none";
+
+      searchInput.setAttribute(
+
+        "aria-expanded",
+
+        "false"
+
+      );
+
+      arrowButton.style.transform =
+
+        "translateY(-50%) rotate(0deg)";
+
+      searchControl.style.borderColor =
+
+        "#e4e4e4";
+
+      activeOptionIndex = -1;
+
+    }
+
+    function renderOptions() {
+
+      dropdown.replaceChildren();
+
+      if (!filteredCities.length) {
+
+        const empty = document.createElement("div");
+
+        empty.textContent = "No cities found";
+
+        empty.style.cssText = `
+
+          padding:11px 14px;
+
+          color:#777;
+
+          font-size:13px;
+
+        `;
+
+        dropdown.append(empty);
+
+        return;
+
+      }
+
+      filteredCities.forEach(
+
+        (city, index) => {
+
+          const option = document.createElement(
+
+            "button"
+
+          );
+
+          const unavailable =
+
+            city.cve === getOtherSelectedCode();
+
+          const currentlySelected =
+
+            city.cve === getSelectedCode();
+
+          const active =
+
+            index === activeOptionIndex;
+
+          option.type = "button";
+
+          option.disabled = unavailable;
+
+          option.setAttribute("role", "option");
+
+          option.setAttribute(
+
+            "aria-selected",
+
+            currentlySelected
+
+              ? "true"
+
+              : "false"
+
+          );
+
+          option.style.cssText = `
+
+            display:flex;
+
+            align-items:center;
+
+            gap:10px;
+
+            width:100%;
+
+            min-height:44px;
+
+            box-sizing:border-box;
+
+            padding:6px 13px;
+
+            border:none;
+
+            background:${
+
+              active && !unavailable
+
+                ? "rgba(25,118,210,0.10)"
+
+                : currentlySelected
+
+                  ? "rgba(25,118,210,0.06)"
+
+                  : "#fff"
+
+            };
+
+            color:${
+
+              unavailable
+
+                ? "#aaa"
+
+                : "#292929"
+
+            };
+
+            text-align:left;
+
+            cursor:${
+
+              unavailable
+
+                ? "not-allowed"
+
+                : "pointer"
+
+            };
+
+            opacity:${
+
+              unavailable
+
+                ? "0.55"
+
+                : "1"
+
+            };
+
+            font:inherit;
+
+          `;
+
+          const thumbnail =
+
+            document.createElement("img");
+
+          thumbnail.src = city.thumb;
+
+          thumbnail.alt = "";
+
+          thumbnail.loading = "lazy";
+
+          thumbnail.style.cssText = `
+
+            flex:0 0 32px;
+
+            width:32px;
+
+            height:32px;
+
+            border-radius:3px;
+
+            object-fit:cover;
+
+            background:#f3f5f7;
+
+          `;
+
+          const label =
+
+            document.createElement("span");
+
+          label.textContent =
+
+            unavailable
+
+              ? `${city.name} · selected`
+
+              : city.name;
+
+          label.style.cssText = `
+
+            flex:1;
+
+            min-width:0;
+
+            overflow:hidden;
+
+            font-size:13px;
+
+            line-height:1.2;
+
+            text-overflow:ellipsis;
+
+            white-space:nowrap;
+
+          `;
+
+          option.append(
+
+            thumbnail,
+
+            label
+
+          );
+
+          option.type = "button";
+
+          if (!unavailable) {
+
+            option.addEventListener("mouseenter", () => {
+
+              activeOptionIndex = index;
+
+              for (const item of dropdown.querySelectorAll("button")) {
+
+                const itemIndex = Number(item.dataset.index);
+
+                const itemCity = filteredCities[itemIndex];
+
+                if (!itemCity) continue;
+
+                const isSelected =
+
+                  itemCity.cve === getSelectedCode();
+
+                const isUnavailable =
+
+                  itemCity.cve === getOtherSelectedCode();
+
+                item.style.background =
+
+                  itemIndex === activeOptionIndex && !isUnavailable
+
+                    ? "rgba(25,118,210,0.10)"
+
+                    : isSelected
+
+                      ? "rgba(25,118,210,0.06)"
+
+                      : "#fff";
+
+              }
+
+            });
+
+            option.addEventListener(
+
+              "mousedown",
+
+              event => {
+
+                event.preventDefault();
+
+              }
+
+            );
+
+            option.addEventListener(
+
+              "click",
+
+              () => {
+
+                selectCity(city.cve);
+
+                closeDropdown();
+
+              }
+
+            );
+
+          }
+
+          dropdown.append(option);
+
+        }
+
+      );
+
+    }
+
+    function filterOptions() {
+
+      const query =
+
+        normalizeText(searchInput.value);
+
+      filteredCities = cities.filter(city =>
+
+        normalizeText(city.name).includes(query)
+
+      );
+
+      activeOptionIndex =
+
+        filteredCities.findIndex(
+
+          city =>
+
+            city.cve !== getOtherSelectedCode()
+
+        );
+
+      renderOptions();
+
+      openDropdown();
+
+    }
+
+    function restoreSelectedName() {
+
+      const city =
+
+        byCve.get(getSelectedCode());
+
+      searchInput.value =
+
+        city?.name ?? "";
+
+    }
+
+    function selectCity(cityCode) {
+
+      if (
+
+        !byCve.has(cityCode) ||
+
+        cityCode === getOtherSelectedCode()
+
+      ) {
+
+        return;
+
+      }
+
+      setSelectedCode(cityCode);
+
+      const city = byCve.get(cityCode);
+
+      const cityVmax = vmax[cityCode];
+
+      /* heading.textContent = city.name; */
+
+      searchInput.value = city.name;
+
+      detailImage.src = city.detail;
+
+      detailImage.alt =
+
+        `Population change map for ${city.name}, 1990 to 2020`;
+
+      lowValue.textContent =
+
+        cityVmax != null
+
+          ? `−${fmt(cityVmax)}`
+
+          : "";
+
+      highValue.textContent =
+
+        cityVmax != null
+
+          ? `+${fmt(cityVmax)}`
+
+          : "";
+
+      tooltip.style.opacity = 0;
+
+      /*
+
+       * Update both dropdowns immediately so the newly selected city
+
+       * becomes unavailable in the opposite selector.
+
+       */
+
+      leftPanel.refreshDropdown();
+
+      rightPanel.refreshDropdown();
+
+      drawDensity(); 
+
+      highlightDens();
+
+    }
+
+    searchInput.addEventListener(
+
+      "focus",
+
+      () => {
+
+        searchInput.select();
+
+        filteredCities = [...cities];
+
+        activeOptionIndex = -1;
+
+        renderOptions();
+
+        openDropdown();
+
+      }
+
+    );
+
+    searchInput.addEventListener(
+
+      "input",
+
+      filterOptions
+
+    );
+
+    searchInput.addEventListener(
+
+      "keydown",
+
+      event => {
+
+        if (event.key === "ArrowDown") {
+
+          event.preventDefault();
+
+          if (
+
+            dropdown.style.display === "none"
+
+          ) {
+
+            filteredCities = [...cities];
+
+            renderOptions();
+
+            openDropdown();
+
+          }
+
+          let next =
+
+            activeOptionIndex;
+
+          do {
+
+            next = Math.min(
+
+              next + 1,
+
+              filteredCities.length - 1
+
+            );
+
+          } while (
+
+            filteredCities[next] &&
+
+            filteredCities[next].cve ===
+
+              getOtherSelectedCode() &&
+
+            next <
+
+              filteredCities.length - 1
+
+          );
+
+          activeOptionIndex = next;
+
+          renderOptions();
+
+        }
+
+        if (event.key === "ArrowUp") {
+
+          event.preventDefault();
+
+          let previous =
+
+            activeOptionIndex;
+
+          do {
+
+            previous = Math.max(
+
+              previous - 1,
+
+              0
+
+            );
+
+          } while (
+
+            filteredCities[previous] &&
+
+            filteredCities[previous].cve ===
+
+              getOtherSelectedCode() &&
+
+            previous > 0
+
+          );
+
+          activeOptionIndex = previous;
+
+          renderOptions();
+
+        }
+
+        if (
+
+          event.key === "Enter" &&
+
+          activeOptionIndex >= 0
+
+        ) {
+
+          const city =
+
+            filteredCities[
+
+              activeOptionIndex
+
+            ];
+
+          if (
+
+            city &&
+
+            city.cve !== getOtherSelectedCode()
+
+          ) {
+
+            event.preventDefault();
+
+            selectCity(city.cve);
+
+            closeDropdown();
+
+          }
+
+        }
+
+        if (event.key === "Escape") {
+
+          closeDropdown();
+
+          restoreSelectedName();
+
+          searchInput.blur();
+
+        }
+
+      }
+
+    );
+
+    arrowButton.addEventListener(
+
+      "click",
+
+      event => {
+
+        event.stopPropagation();
+
+        const open =
+
+          dropdown.style.display === "block";
+
+        if (open) {
+
+          closeDropdown();
+
+          return;
+
+        }
+
+        filteredCities = [...cities];
+
+        activeOptionIndex = -1;
+
+        renderOptions();
+
+        openDropdown();
+
+        searchInput.focus();
+
+      }
+
+    );
+
+    document.addEventListener(
+
+      "mousedown",
+
+      event => {
+
+        if (
+
+          !searchWrapper.contains(event.target)
+
+        ) {
+
+          closeDropdown();
+
+          restoreSelectedName();
+
+        }
+
+      }
+
+    );
+
+    panel.append(
+
+      header,
+
+      mapBox,
+
+      colorBar,
+
+      caption
+
+    );
+
+    return {
+
+      node: panel,
+
+      selectCity,
+
+      refreshDropdown() {
+
+        if (
+
+          dropdown.style.display === "block"
+
+        ) {
+
+          renderOptions();
+
+        }
+
+      }
+
+    };
+
+  }
 
   // ---- density-change line plots (paper Fig 3): toggle local σ vs. average σ̄ density ----
   const HL_DENS = "#e6550d";
+  const HL_DENS_RIGHT = "#3182bd";
   let densMode = "point";   // "point" = local density σ ; "avg" = average density σ̄ within r
   const densPanel = document.createElement("div");
-  densPanel.style.cssText = "margin-top:16px;";
+  densPanel.style.cssText = "margin-top:1vh;";
   const densTitle = document.createElement("div");
-  densTitle.style.cssText = "font-size:12.5px;font-weight:600;color:#333;margin-bottom:5px;";
+  densTitle.style.cssText = "font-size:1.15rem;font-weight:600;color:#333;margin-bottom:5px;";
   densTitle.textContent = "Density change, 1990 → 2020";
   densPanel.append(densTitle);
 
@@ -326,8 +2140,8 @@ figure2grid = {
   const dy = d3.scaleLinear().domain([-6000, 4000]).range([DH - dm.bottom, dm.top]);
 
   const dsvg = d3.create("svg")
-    .attr("viewBox", `0 0 ${DW} ${DH}`).attr("width", "100%")
-    .style("max-width", DW + "px").style("height", "auto")
+    .attr("viewBox", `0 0 ${DW} ${DH}`).attr("width", "18vw")
+    .style("height", "auto")
     .style("font-family", "system-ui, sans-serif");
   dsvg.append("defs").append("clipPath").attr("id", "dens-clip").append("rect")
     .attr("x", dm.left).attr("y", dm.top).attr("width", diw).attr("height", dih);
@@ -380,223 +2194,147 @@ figure2grid = {
   // highlight the selected city's density line (orange), keep the national trend on top
   function highlightDens() {
     for (const [, p] of densLine) p.attr("stroke", "#bbb").attr("stroke-width", 1).attr("stroke-opacity", 0.22);
-    const dsel = densLine.get(selected);
+    const dsel = densLine.get(selectedLeft);
+    const dselRight = densLine.get(selectedRight);
     if (dsel) dsel.attr("stroke", HL_DENS).attr("stroke-width", 2.5).attr("stroke-opacity", 1).raise();
+    if (dselRight) dselRight.attr("stroke", HL_DENS_RIGHT).attr("stroke-width", 2.5).attr("stroke-opacity", 1).raise();
     natPath.raise();
-    const nm = byCve.get(selected);
+    const nm = byCve.get(selectedLeft);
+    const nmRight = byCve.get(selectedRight);
     densCap.innerHTML =
-      `<span style="color:${HL_DENS};font-weight:600">${nm ? nm.name : ""}</span> highlighted · ` +
-      `faint grey = other cities · <span style="font-weight:700">black</span> = national trend`;
+      `<span style="color:${HL_DENS};font-weight:600">${nm ? nm.name : ""}</span> • ` +
+      `<span style="color:${HL_DENS_RIGHT};font-weight:600">${nmRight ? nmRight.name : ""}</span> • ` +
+      `<span style="font-weight:700; color:black">National trend</span> • <span style="font-weight:700; color:#909090">Other cities</span>`;
   }
 
-  right.append(heading, mapBox, cbar, cap, densPanel, hint);
+  // ---------------------------------------------------------------------------
 
-  // ---- tooltip ----
-  const tip = document.createElement("div");
-  tip.style.cssText = "position:absolute;pointer-events:none;background:#fff;border:1px solid #ccc;border-radius:6px;padding:7px 10px;font-size:12.5px;line-height:1.4;box-shadow:0 4px 14px rgba(0,0,0,.14);opacity:0;transition:opacity .1s;z-index:30;max-width:240px;";
-  container.append(tip);
-  function distText(z, c) {
-    const k = c.km || {};
-    if (z === "central") return k.r3 != null ? `within ${k.r3} km` : "";
-    if (z === "intermediate") return (k.r3 != null && k.r5 != null) ? `${k.r3}–${k.r5} km` : "";
-    if (z === "distant") return (k.r5 != null && k.r9_3 != null) ? `${k.r5}–${k.r9_3} km` : "";
-    return k.r9_3 != null ? `beyond ${k.r9_3} km` : "";
-  }
-  function showTip(z) {
-    const c = byCve.get(selected), zn = c.zones[z], m = zoneMeta[z];
-    const d = zn.p2020 - zn.p1990;
-    const pct = zn.p1990 > 0 ? Math.round(d / zn.p1990 * 100) : null;
-    const col = d < 0 ? LOSS : GAIN, sign = d < 0 ? "−" : "+";
-    const dist = distText(z, c);
-    tip.innerHTML =
-      `<strong>${m.label}</strong> <span style="color:#888">(${m.range}${dist ? " · " + dist : ""})</span><br>` +
-      `1990: ${fmt(zn.p1990)}<br>2020: ${fmt(zn.p2020)}<br>` +
-      `<span style="color:${col};font-weight:600">Change: ${sign}${fmt(Math.abs(d))}` +
-      `${pct != null ? ` (${sign}${Math.abs(pct)}%)` : ""}</span>`;
-    tip.style.opacity = 1;
-  }
-  function moveTip(e) {
-    const r = container.getBoundingClientRect();
-    tip.style.left = (e.clientX - r.left + 14) + "px";
-    tip.style.top = (e.clientY - r.top + 14) + "px";
+  // Create both panels
+
+  // ---------------------------------------------------------------------------
+
+  const leftPanel = createCityPanel("left");
+
+  const rightPanel = createCityPanel("right");
+
+  container.append(
+
+    leftPanel.node,
+
+    versus,
+
+    rightPanel.node,
+
+    tooltip
+
+  );
+
+  container2.append(densPanel);
+
+  global_container.append(container, container2);
+
+  leftPanel.selectCity(selectedLeft);
+
+  rightPanel.selectCity(selectedRight);
+
+  // ---------------------------------------------------------------------------
+
+  // Responsive layout
+
+  // ---------------------------------------------------------------------------
+
+  const mediaQuery = window.matchMedia(
+
+    "(max-width: 850px)"
+
+  );
+
+  function updateLayout(event) {
+
+    if (event.matches) {
+
+      container.style.gridTemplateColumns =
+
+        "minmax(280px, 520px)";
+
+      container.style.rowGap = "28px";
+
+      versus.style.paddingTop = "0";
+
+    } else {
+
+      container.style.gridTemplateColumns =
+
+        "minmax(280px, 520px) auto minmax(280px, 520px)";
+
+      container.style.rowGap = "0";
+
+      versus.style.paddingTop = "20px";
+
+    }
+
   }
 
-  // ---- selection ----
-  function selectCity(cve) {
-    selected = cve;
-    const c = byCve.get(cve);
-    heading.textContent = c.name;
-    dImg.src = c.detail;
-    dImg.alt = `Population change map for ${c.name}, 1990 to 2020`;
-    cap.innerHTML = "Population change by grid cell, 2020 minus 1990. Black dot: city centre; brown/red = loss near the core, blue = gains in the periphery. Dashed rings mark the remoteness zones.";
-    for (const [cc, btn] of cardByCve) btn.style.borderColor = cc === cve ? "#143d57" : "transparent";
-    // per-city colour-scale numbers (map shading runs to ±vmax people per grid cell)
-    const vm = vmax[cve];
-    cbLo.textContent = vm != null ? "−" + fmt(vm) : "";
-    cbHi.textContent = vm != null ? "+" + fmt(vm) : "";
-    highlightDens();  // re-highlight this city's density line (same mode)
-    tip.style.opacity = 0;
-  }
-  drawDensity();       // draw the density lines for the default (local) mode
-  selectCity(selected);
+  updateLayout(mediaQuery);
 
-  return container;
+  mediaQuery.addEventListener(
+
+    "change",
+
+    updateLayout
+
+  );
+
+  return global_container;
+
 }
 ```
+  
 
-:::
 
-The same story shows up in the numbers below — switch between raw population and each zone's share,
-and compare what actually happened against a **density-preserving "what-if."**
+## Cities grow by stretching: Find where your city is
 
-**Where Mexico's city-dwellers live has flipped.** Population of all 69 metros by remoteness zone
-across four censuses (aggregated across every city above). Use **View** to overlay the
-**counterfactual** — how the population *would* have been distributed if average density had held
-constant — or to show the **difference**: the crowd pushed out of the centre and toward the edge.
-Use **Show** to switch between totals and each zone's share.
+**We found that cities expand in a predictable way:** the population distribution at one date is simply the earlier distribution stretched outward.
 
-```{ojs}
-//| echo: false
-// population (millions) by remoteness zone: obs = observed; cf = density-preserving counterfactual
-// (1990 radial density stretched by √P, renormalized to each year's total). Aggregates reproduced
-// from the analysis repo's scripts/analysis_cfactual.py (obs matches outputs/rem_brackets_agg.csv).
-popData = [
-  {year: 1990, zone: "Central",      obs: 17.7315, cf: 17.7315},
-  {year: 2000, zone: "Central",      obs: 17.1807, cf: 18.7815},
-  {year: 2010, zone: "Central",      obs: 15.6916, cf: 19.4536},
-  {year: 2020, zone: "Central",      obs: 15.2757, cf: 19.9485},
-  {year: 1990, zone: "Intermediate", obs: 12.4768, cf: 12.4768},
-  {year: 2000, zone: "Intermediate", obs: 16.4278, cf: 16.2743},
-  {year: 2010, zone: "Intermediate", obs: 17.7070, cf: 18.9273},
-  {year: 2020, zone: "Intermediate", obs: 18.2936, cf: 21.2605},
-  {year: 1990, zone: "Distant",      obs:  8.1330, cf:  8.1330},
-  {year: 2000, zone: "Distant",      obs: 13.5655, cf: 12.3845},
-  {year: 2010, zone: "Distant",      obs: 19.3712, cf: 16.5000},
-  {year: 2020, zone: "Distant",      obs: 24.1966, cf: 20.9256},
-  {year: 1990, zone: "Peri-urban",   obs:  2.7923, cf:  2.7923},
-  {year: 2000, zone: "Peri-urban",   obs:  5.3504, cf:  5.0841},
-  {year: 2010, zone: "Peri-urban",   obs:  9.7085, cf:  7.5975},
-  {year: 2020, zone: "Peri-urban",   obs: 14.4875, cf: 10.1188}
-]
-```
+A city’s later population map can be recovered by taking its earlier map and simply stretching it outward. The single number that measures that stretch is **the urban expansion factor Φ** — how far the population distribution has been pulled away from the centre between two dates.
+
+
+
+:::  {.column-page}
 
 ```{ojs}
 //| echo: false
-viewof view1 = Inputs.radio(["Observed", "With counterfactual", "Difference"], {value: "Observed", label: "View"})
-```
+figure3 = {
+  const data = await FileAttachment("assets/data/figure6_points.csv").csv({ typed: true });
+  const rdens = await FileAttachment("assets/data/radial_density.json").json();
 
-```{ojs}
-//| echo: false
-viewof measure1 = Inputs.radio(["Total (millions)", "Share of population (%)"], {value: "Total (millions)", label: "Show"})
-```
-
-```{ojs}
-//| echo: false
-{
-  const zones = ["Central", "Intermediate", "Distant", "Peri-urban"];
-  const years = [1990, 2000, 2010, 2020];
-  const isDiff = view1 === "Difference";
-  const isShare = !isDiff && measure1.startsWith("Share");
-  const totals = new Map(years.map(y => [y, d3.sum(popData.filter(d => d.year === y), d => d.obs)]));
-  const rows = popData.map(d => {
-    const sc = isShare ? 100 / totals.get(d.year) : 1;
-    return { ...d, obsV: d.obs * sc, cfV: d.cf * sc, diff: d.obs - d.cf };
-  });
-  const unit = isShare ? "%" : " million";
-  const marks = [Plot.ruleY([0])];
-  if (isDiff) {
-    marks.push(Plot.barY(rows, {
-      fx: "zone", x: "year", y: "diff", fill: d => String(d.year), tip: true,
-      title: d => `${d.zone} — ${d.year}\n${d.diff >= 0 ? "+" : "−"}${Math.abs(d.diff).toFixed(1)} million vs. counterfactual`
-    }));
-  } else {
-    marks.push(Plot.barY(rows, {
-      fx: "zone", x: "year", y: "obsV", fill: d => String(d.year), tip: true,
-      title: d => `${d.zone} — ${d.year}\n${d.obsV.toFixed(1)}${unit}`
-    }));
-    if (view1 === "With counterfactual")
-      marks.push(Plot.tickY(rows, { fx: "zone", x: "year", y: "cfV", stroke: "#c0392b", strokeWidth: 2.2 }));
-  }
-  const plot = Plot.plot({
-    height: 380,
-    marginBottom: 40,
-    marginLeft: 58,
-    style: { fontFamily: "system-ui, sans-serif", fontSize: "12px" },
-    x: { axis: null },
-    fx: { domain: zones, label: null, padding: 0.2 },
-    y: {
-      label: isDiff ? "↑ Difference vs. counterfactual (millions)"
-           : isShare ? "↑ Share of population (%)" : "↑ Population (millions)",
-      grid: true, nice: true
-    },
-    color: { legend: true, domain: years.map(String), range: ["#cdd9e0", "#8fb0c4", "#4e7d9c", "#0f3041"] },
-    marks
-  });
-  const cap = document.createElement("div");
-  cap.style.cssText = "font-size:12.5px;color:#666;font-style:italic;margin-top:6px;line-height:1.45;max-width:640px;";
-  cap.innerHTML = isDiff
-    ? "Observed <strong>minus</strong> the constant-density counterfactual, by zone and year. Negative in the centre (people missing), positive in the periphery (excess) — about <strong>4.7&nbsp;million</strong> pushed out of the core by 2020."
-    : view1 === "With counterfactual"
-    ? "<span style=\"color:#c0392b;font-weight:600\">Red caps</span> mark where the population would sit under the constant-density counterfactual. A bar short of its cap (the centre) means people were displaced outward; a bar above its cap (the periphery) is the excess crowd."
-    : "Colours run light (1990) to dark (2020). The Central block shrinks over time; every outer block grows.";
-  const div = document.createElement("div");
-  div.append(plot, cap);
-  return div;
-}
-```
-
-It is not just head-counts — density fell too. Near the centre ($r \le 3$), some cities lost as much
-as **4,000 people per km²**, with a national average loss of about **1,000 people per km²**. Further
-out, density rose. Most of the central thinning happened **before 2010**, during the fastest period
-of population growth and the peak of a housing boom. You can see this in the curves beneath each
-city's map: nearly all dip below zero near the centre and rise further out, crossing over at a
-remoteness of about **2–4** (the bold black line is the national trend).
-
-The pattern is not a handful of cherry-picked cases — it holds everywhere. You can call up any
-individual city's own map, and see where it sits among all 69, in the [interactive figure
-below](#finding-2).
-
-### 2. Cities grow by stretching — a simple model {#finding-2}
-
-Remarkably, a city's later population map can be recovered by taking its earlier map and simply
-**stretching it outward**. The single number that measures that stretch is the **urban expansion
-factor $\Phi$** — how far the population distribution has been pulled away from the centre between two
-dates. It is **estimated empirically** for every city and period: measured from how much the earlier
-distribution must be rescaled to land on the later one — a remarkably tight fit, typically
-$R^2 \approx 0.99$ — rather than assumed from any "correct" city shape. Formally, a city's radial
-population distribution $\rho(s)$ at a later date is its earlier distribution **stretched by $\Phi$**:
-
-$$\rho(s, t_j) = \frac{1}{\Phi_{ij}}\,\rho\!\left(\frac{s}{\Phi_{ij}},\, t_i\right)$$
-
-Try it yourself: pick a city and **drag the expansion factor $\Phi$**. The blue 1990 curve stretches
-outward as $\Phi$ grows; when you reach that city's empirically estimated $\hat\Phi$ (marked on the
-slider), the stretched curve lands almost exactly on the faded observed-2020 curve. This one number
-captures three decades of change.
-
-```{ojs}
-//| echo: false
-stretchDemo = {
-  const rho = await FileAttachment("assets/data/radial_density.json").json();
-  const cityList = await FileAttachment("assets/data/city_maps.json").json();
-
+  const periodColors = { "1990–2000": "#E6AB04", "2000–2010": "#B85A0D", "2010–2020": "#878372" };
+  const periods = ["1990–2000", "2000–2010", "2010–2020"];
   const C1990 = "#8fb0c4", C2020 = "#0f3041", CANIM = "#e6550d";
-  const byName = new Map(cityList.filter(c => rho[c.cve]).map(c => [c.name, c.cve]));
-  const names = Array.from(byName.keys()).sort((a, b) => a.localeCompare(b, "es"));
+
+  const byCity = d3.group(data, d => d.city_name);
+  const cities = Array.from(byCity.keys()).sort((a, b) => a.localeCompare(b, "es"));
+  const cityCve = new Map(Array.from(byCity, ([n, rows]) => [n, rows[0].cve_code]));
+  let selected = "Ciudad de México";
 
   const container = document.createElement("div");
-  container.style.cssText = "max-width:640px;font-family:system-ui,sans-serif;";
+  container.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start;font-family:system-ui,sans-serif;";
+  const left = document.createElement("div");
+  left.style.cssText = "flex:1 1 540px;max-width:33vw;";
+  const right = document.createElement("div");
+  right.style.cssText = "flex:1 1 320px;max-width:33vw;";
 
-  // ---- city dropdown ----
-  const ctl = document.createElement("div");
-  ctl.style.cssText = "margin-bottom:4px;";
-  const sel = document.createElement("select");
-  sel.style.cssText = "font:13px system-ui;padding:3px 6px;border:1px solid #ccc;border-radius:5px;";
-  for (const n of names) { const o = document.createElement("option"); o.value = n; o.textContent = n; sel.append(o); }
-  const selLabel = document.createElement("label");
-  selLabel.style.cssText = "font-size:13px;color:#333;display:inline-flex;align-items:center;gap:6px;";
-  selLabel.append("City:", sel);
-  ctl.append(selLabel);
-  container.append(ctl);
+  // ---- geometry (margins baked into the scale ranges so d3.zoom rescaling is exact) ----
+  const W = 640, H = 470, m = { top: 22, right: 22, bottom: 50, left: 56 };
+  const W_fig6 = 640, H_fig6 = 470, m_fig6 = { top: 22, right: 22, bottom: 50, left: 56 };
+  const iw = W - m.left - m.right, ih = H - m.top - m.bottom;
+  const iw_fig6 = W_fig6 - m_fig6.left - m_fig6.right, ih_fig6 = H_fig6 - m_fig6.top - m_fig6.bottom;
+  const x = d3.scaleLinear().domain([0, 3.5]).range([m.left, W - m.right]);
+  const x_fig6 = d3.scaleLinear().domain([0, 3.5]).range([m_fig6.left, W_fig6 - m_fig6.right]);
+  const y = d3.scaleLinear().domain([0, 2.25]).range([H - m.bottom, m.top]);
+  const y_fig6 = d3.scaleLinear().domain([0, 2.25]).range([H_fig6 - m_fig6.bottom, m_fig6.top]);
+  const XMAX_fig6 = x_fig6.domain()[1], YMAX_fig6 = y_fig6.domain()[1];
+
 
   // ---- Φ slider with empirical-Φ̂ marker ----
   const sliderWrap = document.createElement("div");
@@ -614,23 +2352,19 @@ stretchDemo = {
   const phiReadout = document.createElement("div");
   phiReadout.style.cssText = "font:600 13px system-ui;color:#333;margin-top:5px;";
   sliderWrap.append(markRow, slider, sliderTicks, phiReadout);
-  container.append(sliderWrap);
+  right.append(sliderWrap);
 
-  // ---- chart ----
-  const W = 640, H = 300, m = { top: 12, right: 14, bottom: 34, left: 40 };
-  const iw = W - m.left - m.right, ih = H - m.top - m.bottom;
-  const x = d3.scaleLinear().range([m.left, W - m.right]);
-  const y = d3.scaleLinear().range([H - m.bottom, m.top]);
+  // --- stretchdemo chart 
   const svg = d3.create("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("width", "100%")
-    .style("max-width", W + "px").style("height", "auto").style("font-family", "system-ui, sans-serif");
+  .style("max-width", W + "px").style("height", "auto").style("font-family", "system-ui, sans-serif");
   svg.append("defs").append("clipPath").attr("id", "stretch-clip").append("rect")
-    .attr("x", m.left).attr("y", m.top).attr("width", iw).attr("height", ih);
+  .attr("x", m.left).attr("y", m.top).attr("width", iw).attr("height", ih);
   const gx = svg.append("g").attr("transform", `translate(0,${H - m.bottom})`);
   const gy = svg.append("g").attr("transform", `translate(${m.left},0)`);
   svg.append("text").attr("x", m.left + iw / 2).attr("y", H - 3).attr("text-anchor", "middle")
-    .attr("font-size", 11).attr("fill", "#555").text("remoteness  r  (scaled distance from centre)");
+  .attr("font-size", 11).attr("fill", "#555").text("remoteness  r  (scaled distance from centre)");
   svg.append("text").attr("transform", "rotate(-90)").attr("x", -(m.top + ih / 2)).attr("y", 13)
-    .attr("text-anchor", "middle").attr("font-size", 11).attr("fill", "#555").text("population density  ρ");
+  .attr("text-anchor", "middle").attr("font-size", 11).attr("fill", "#555").text("population density  ρ");
   const content = svg.append("g").attr("clip-path", "url(#stretch-clip)");
   const pathFor = (xs, ys) => d3.line().x((_, i) => x(xs[i])).y((_, i) => y(ys[i]))(ys);
   const p2020 = content.append("path").attr("fill", "none").attr("stroke", C2020).attr("stroke-width", 3.5).attr("stroke-opacity", 0.22);
@@ -641,12 +2375,12 @@ stretchDemo = {
   const legend = document.createElement("div");
   legend.style.cssText = "display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:#555;margin-top:4px;";
   const legItem = (color, text, op) => {
-    const s = document.createElement("span"); s.style.cssText = "display:inline-flex;align-items:center;gap:5px;";
-    s.innerHTML = `<span style="display:inline-block;width:16px;height:3px;background:${color};opacity:${op || 1};border-radius:2px;"></span>${text}`;
-    return s;
+  const s = document.createElement("span"); s.style.cssText = "display:inline-flex;align-items:center;gap:5px;";
+  s.innerHTML = `<span style="display:inline-block;width:16px;height:3px;background:${color};opacity:${op || 1};border-radius:2px;"></span>${text}`;
+  return s;
   };
   legend.append(legItem(C1990, "1990"), legItem(CANIM, "1990 stretched by Φ"), legItem(C2020, "2020 (observed)", 0.3));
-  container.append(svg.node(), legend);
+  right.append(svg.node(), legend);
 
   // ---- state + drawing ----
   let cur = null, phiHat = 1, sMin = 0.8, sMax = 3;
@@ -662,91 +2396,12 @@ stretchDemo = {
       (near ? ` &nbsp;<span style="color:#2e7d32;font-weight:600">✓ matches the observed 2020 curve</span>` : "");
   }
 
-  function setCity(name) {
-    const rec = rho[byName.get(name)];
-    cur = { y1990: rec.years["1990"], y2020: rec.years["2020"] };
-    phiHat = rec.G["2020"];
-    sMin = 0.8; sMax = Math.min(4, Math.max(2.5, phiHat + 1));
-    slider.min = sMin; slider.max = sMax; slider.value = 1;
-    x.domain([0, rec.xcap * 1.02]);   // same ~99%-population cutoff as the phase-space density panel
-    y.domain([0, Math.max(d3.max(cur.y1990.y) / sMin, d3.max(cur.y2020.y)) * 1.08]);
-    gx.call(d3.axisBottom(x).ticks(7).tickSize(-ih)).call(g => g.select(".domain").remove())
-      .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06))
-      .call(g => g.selectAll(".tick text").attr("font-size", 9).attr("fill", "#666"));
-    gy.call(d3.axisLeft(y).ticks(5).tickSize(-iw).tickFormat(() => "")).call(g => g.select(".domain").remove())
-      .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06));
-    sliderTicks.innerHTML = `<span>Φ = ${sMin.toFixed(1)}</span><span>${sMax.toFixed(1)}</span>`;
-    const pct = Math.max(0, Math.min(100, (phiHat - sMin) / (sMax - sMin) * 100));
-    marker.style.left = pct + "%";
-    marker.innerHTML = `Φ&#770; = ${phiHat.toFixed(2)}<br>▾`;
-    redraw(1);
-  }
 
-  sel.addEventListener("change", () => setCity(sel.value));
-  slider.addEventListener("input", () => redraw(+slider.value));
-  sel.value = "Colima-Villa de Álvarez";
-  setCity(sel.value);
-  return container;
-}
-```
 
-How big is $\Phi$? Across all cities and census periods, it follows a clean rule: expansion is a
-**power of population growth**, times a **steady outward drift** that happens even without growth:
 
-$$\Phi_{ij} = \left(\frac{P(t_j)}{P(t_i)}\right)^{\beta} \, e^{\,\alpha\,(t_j - t_i)}$$
-
-Fitting this to 65 of the 69 cities gives **$\beta = 0.60$** (95% CI 0.54–0.67), **$\alpha = 0.0057$
-per year** (95% CI 0.0043–0.0071), and an $R^2$ of **0.82**. The two pieces have clear meanings:
-
-- The **$\beta$ term** is *extensive* expansion — the part driven by more people needing more room.
-- The **$\alpha$ term** is *intensive* expansion — a steady spreading-out that continues **even if the
-  population never grows**, driven by housing policy, cheap peripheral land, and car-friendly
-  development.
-
-A city that grew while **keeping its density** would have $\beta = 0.5$ and $\alpha = 0$. Mexico's
-values sit *above both* thresholds — the signature of a nation expanding **while losing density**.
-(For comparison, $\alpha$ alone amounts to a location 10 km out in 1990 drifting to **11.8 km by
-2020**, with no population growth at all.)
-
-The interactive figure below places **every city in every decade** on this map. The horizontal axis
-is how much a city's population grew; the vertical axis is its expansion factor $\Phi$. Three
-boundaries — growth $= 1$, $\Phi = 1$, and the constant-density diagonal $\Phi = \sqrt{\text{growth}}$ —
-carve the plane into **six regimes** that combine density loss/gain, urban expansion/compression, and
-population growth/loss; the **solid red curve is the fitted trend** for the Mexican system. **Pick a
-city from the menu or click any point** to watch how its population spread outward over three decades
-— the animated density panel on the right — and trace its path through the regimes; **scroll to zoom
-and drag to pan** into the dense cluster.
-
-::: {.column-page}
-
-```{ojs}
-//| echo: false
-figure6 = {
-  const data = await FileAttachment("assets/data/figure6_points.csv").csv({ typed: true });
-  const rdens = await FileAttachment("assets/data/radial_density.json").json();
-
-  const periodColors = { "1990–2000": "#E6AB04", "2000–2010": "#B85A0D", "2010–2020": "#878372" };
-  const periods = ["1990–2000", "2000–2010", "2010–2020"];
-
-  const byCity = d3.group(data, d => d.city_name);
-  const cities = Array.from(byCity.keys()).sort((a, b) => a.localeCompare(b, "es"));
-  const cityCve = new Map(Array.from(byCity, ([n, rows]) => [n, rows[0].cve_code]));
-  let selected = "Ciudad de México";
-
-  // ---- geometry (margins baked into the scale ranges so d3.zoom rescaling is exact) ----
-  const W = 640, H = 470, m = { top: 22, right: 22, bottom: 50, left: 56 };
-  const iw = W - m.left - m.right, ih = H - m.top - m.bottom;
-  const x = d3.scaleLinear().domain([0, 3.5]).range([m.left, W - m.right]);
-  const y = d3.scaleLinear().domain([0, 2.25]).range([H - m.bottom, m.top]);
-  const XMAX = x.domain()[1], YMAX = y.domain()[1];
 
   // ---- container ----
-  const container = document.createElement("div");
-  container.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start;font-family:system-ui,sans-serif;";
-  const left = document.createElement("div");
-  left.style.cssText = "flex:1 1 540px;min-width:300px;";
-  const right = document.createElement("div");
-  right.style.cssText = "flex:1 1 320px;min-width:250px;";
+  
   container.append(left, right);
 
   // ---- controls ----
@@ -766,45 +2421,45 @@ figure6 = {
   const resetBtn = document.createElement("button");
   resetBtn.type = "button";
   resetBtn.textContent = "Reset view";
-  resetBtn.style.cssText = "font:inherit;font-size:13px;padding:4px 10px;border-radius:6px;border:1px solid #bbb;background:#f6f6f6;cursor:pointer;";
+  resetBtn.style.cssText = "font:inherit;font-size:13px;padding:4px 10px;border-radius:6px;border:1px solid #bbb;background:#f6f6f6;cursor:pointer;color:#000000;";
   controls.append(lbl, resetBtn);
-  const legend = document.createElement("div");
-  legend.style.cssText = "display:flex;gap:14px;font-size:12.5px;color:#333;";
+  const legend_years = document.createElement("div");
+  legend_years.style.cssText = "display:flex;gap:14px;font-size:12.5px;color:#333;";
   for (const p of periods) {
     const it = document.createElement("span");
     it.style.cssText = "display:inline-flex;align-items:center;gap:5px;";
     it.innerHTML = `<span style="width:11px;height:11px;border-radius:50%;background:${periodColors[p]};display:inline-block;"></span>${p}`;
-    legend.append(it);
+    legend_years.append(it);
   }
-  controls.append(legend);
+  controls.append(legend_years);
   left.append(controls);
 
   // ---- svg scaffold ----
-  const svg = d3.create("svg")
-    .attr("viewBox", `0 0 ${W} ${H}`).attr("width", "100%")
-    .style("max-width", W + "px").style("height", "auto")
+  const svg_fig6 = d3.create("svg")
+    .attr("viewBox", `0 0 ${W_fig6} ${H_fig6}`).attr("width", "100%")
+    .style("max-width", W_fig6 + "px").style("height", "auto")
     .style("font-family", "system-ui, sans-serif").style("cursor", "grab");
 
   const clipId = "fig6-clip";
-  svg.append("defs").append("clipPath").attr("id", clipId).append("rect")
-    .attr("x", m.left).attr("y", m.top).attr("width", iw).attr("height", ih);
+  svg_fig6.append("defs").append("clipPath").attr("id", clipId).append("rect")
+    .attr("x", m_fig6.left).attr("y", m_fig6.top).attr("width", iw_fig6).attr("height", ih_fig6);
 
-  const gx = svg.append("g").attr("transform", `translate(0,${H - m.bottom})`);   // x axis (fixed)
-  const gy = svg.append("g").attr("transform", `translate(${m.left},0)`);          // y axis (fixed)
-  const content = svg.append("g").attr("clip-path", `url(#${clipId})`);            // zoomable
+  const gx_fig6 = svg_fig6.append("g").attr("transform", `translate(0,${H_fig6 - m_fig6.bottom})`);   // x axis (fixed)
+  const gy_fig6 = svg_fig6.append("g").attr("transform", `translate(${m_fig6.left},0)`);          // y axis (fixed)
+  const content_fig6 = svg_fig6.append("g").attr("clip-path", `url(#${clipId})`);            // zoomable
 
   // ---- the six phase regions (A–F), bounded by growth=1, Φ=1, Φ=√growth ----
   // teal shades = density loss (above √growth); tan/brown = density gain (below).
   const xsL = d3.range(0, 1.0001, 0.02);          // population loss  (growth < 1)
-  const xsR = d3.range(1, XMAX + 0.0001, 0.02);   // population growth (growth > 1)
+  const xsR = d3.range(1, XMAX_fig6 + 0.0001, 0.02);   // population growth (growth > 1)
   const regions = [
-    { xs:xsR, y0:d=>Math.sqrt(d), y1:()=>YMAX, color:"#bfe0d8",
+    { xs:xsR, y0:d=>Math.sqrt(d), y1:()=>YMAX_fig6, color:"#bfe0d8",
       lines:["Density loss","Urban expansion","Population growth"], lx:1.22, ly:2.12, anchor:"start" },   // B
     { xs:xsR, y0:()=>1,           y1:d=>Math.sqrt(d), color:"#f2e6c2",
-      lines:["Density gain","Urban expansion","Population growth"], lx:XMAX-0.05, ly:1.22, anchor:"end" }, // C
+      lines:["Density gain","Urban expansion","Population growth"], lx:XMAX_fig6-0.05, ly:1.22, anchor:"end" }, // C
     { xs:xsR, y0:()=>0,           y1:()=>1, color:"#dcc07a",
-      lines:["Density gain","Urban compression","Population growth"], lx:XMAX-0.05, ly:0.6, anchor:"end" },// D
-    { xs:xsL, y0:()=>1,           y1:()=>YMAX, color:"#6fc0b7",
+      lines:["Density gain","Urban compression","Population growth"], lx:XMAX_fig6-0.05, ly:0.6, anchor:"end" },// D
+    { xs:xsL, y0:()=>1,           y1:()=>YMAX_fig6, color:"#6fc0b7",
       lines:["Density loss","Urban expansion","Population loss"], lx:0.05, ly:2.12, anchor:"start" },      // A
     { xs:xsL, y0:d=>Math.sqrt(d), y1:()=>1, color:"#3f8f86",
       lines:["Density loss","Urban compression","Population loss"], lx:0.05, ly:0.8, anchor:"start" },     // E
@@ -812,67 +2467,67 @@ figure6 = {
       lines:["Density gain","Urban compression","Population loss"], lx:0.97, ly:0.42, anchor:"end" },      // F
   ];
   for (const r of regions)
-    r.fill = content.append("path").attr("fill", r.color).attr("fill-opacity", 0.22).attr("stroke", "none");
+    r.fill = content_fig6.append("path").attr("fill", r.color).attr("fill-opacity", 0.22).attr("stroke", "none");
 
   // boundary lines
-  const vLine = content.append("line").attr("stroke", "#8a8a8a").attr("stroke-dasharray", "4 4"); // growth = 1
-  const hLine = content.append("line").attr("stroke", "#8a8a8a").attr("stroke-dasharray", "4 4"); // Φ = 1
-  const diag  = content.append("path").attr("fill", "none").attr("stroke", "#555")
+  const vLine = content_fig6.append("line").attr("stroke", "#8a8a8a").attr("stroke-dasharray", "4 4"); // growth = 1
+  const hLine = content_fig6.append("line").attr("stroke", "#8a8a8a").attr("stroke-dasharray", "4 4"); // Φ = 1
+  const diag  = content_fig6.append("path").attr("fill", "none").attr("stroke", "#555")
     .attr("stroke-width", 1.5).attr("stroke-dasharray", "6 4");                                    // Φ = √growth
   // fitted log-linear model for the Mexican system (paper eq. L_factors):
   //   Φ = growth^β · e^(α·Δt), with β=0.60, α=0.0057; Δt=10 yr for these intercensal periods.
   const BETA_FIT = 0.60, ALPHA_FIT = 0.0057, DT_FIT = 10;
   const phiModel = g => Math.pow(g, BETA_FIT) * Math.exp(ALPHA_FIT * DT_FIT);
-  const trend = content.append("path").attr("fill", "none").attr("stroke", "#c0392b")
+  const trend = content_fig6.append("path").attr("fill", "none").attr("stroke", "#c0392b")
     .attr("stroke-width", 2.2).attr("stroke-opacity", 0.95);                                       // fitted trend
 
   // region labels (three lines each)
   for (const r of regions) {
-    r.label = content.append("text").attr("text-anchor", r.anchor)
+    r.label = content_fig6.append("text").attr("text-anchor", r.anchor)
       .attr("font-size", 8.7).attr("fill", "#2b2b2b").style("pointer-events", "none");
     r.lines.forEach((ln, i) => r.label.append("tspan")
       .text(ln).attr("dy", i === 0 ? 0 : "1.15em").attr("font-weight", i === 0 ? 700 : 400));
   }
-  const diagLabel = content.append("text").attr("font-size", 9).attr("fill", "#555")
+  const diagLabel = content_fig6.append("text").attr("font-size", 9).attr("fill", "#555")
     .attr("text-anchor", "end").style("pointer-events", "none").text("constant density  Φ = √growth");
-  const trendLabel = content.append("text").attr("font-size", 9).attr("fill", "#c0392b")
+  const trendLabel = content_fig6.append("text").attr("font-size", 9).attr("fill", "#c0392b")
     .attr("font-weight", 600).attr("text-anchor", "end").style("pointer-events", "none")
     .text("Mexican trend (β = 0.60, α = 0.0057)");
 
   // connector across a selected city's three decades (below points)
-  const connector = content.append("path").attr("fill", "none").attr("stroke", "#111")
+  const connector = content_fig6.append("path").attr("fill", "none").attr("stroke", "#111")
     .attr("stroke-width", 1).attr("stroke-opacity", 0.55).attr("stroke-dasharray", "2 2");
 
   // points
-  const pts = content.append("g").selectAll("circle").data(data).join("circle")
+  const pts = content_fig6.append("g").selectAll("circle").data(data).join("circle")
     .attr("r", 4).attr("fill", d => periodColors[d.period])
     .attr("stroke", "#fff").attr("stroke-width", 0.6).attr("opacity", 0.85)
     .style("cursor", "pointer");
 
   // axis titles + plot frame (fixed)
-  svg.append("rect").attr("x", m.left).attr("y", m.top).attr("width", iw).attr("height", ih)
+  svg_fig6.append("rect").attr("x", m_fig6.left).attr("y", m_fig6.top).attr("width", iw_fig6).attr("height", ih_fig6)
     .attr("fill", "none").attr("stroke", "#ddd");
-  svg.append("text").attr("x", m.left + iw / 2).attr("y", H - 10).attr("text-anchor", "middle")
+  svg_fig6.append("text").attr("x", m_fig6.left + iw_fig6 / 2).attr("y", H_fig6 - 10).attr("text-anchor", "middle")
     .attr("font-size", 12.5).attr("fill", "#333").text("Population growth factor  P(t₂)/P(t₁)");
-  svg.append("text").attr("transform", "rotate(-90)").attr("x", -(m.top + ih / 2)).attr("y", 15)
+  svg_fig6.append("text").attr("transform", "rotate(-90)").attr("x", -(m_fig6.top + ih_fig6 / 2)).attr("y", 15)
     .attr("text-anchor", "middle").attr("font-size", 12.5).attr("fill", "#333")
     .text("Urban expansion factor  Φ");
 
   // ---- redraw for the current (possibly zoomed) scales ----
-  let curX = x, curY = y;
-  const diagXs = d3.range(0, XMAX + 0.0001, 0.02);
-  function redraw(zx, zy) {
+  let curX = x_fig6, curY = y_fig6;
+  const diagXs = d3.range(0, XMAX_fig6 + 0.0001, 0.02);
+  function redraw_fig6(zx, zy) {
     curX = zx; curY = zy;
-    gx.call(d3.axisBottom(zx).ticks(7).tickSize(-ih))
+    gx_fig6.call(d3.axisBottom(zx).ticks(7).tickSize(-ih_fig6))
       .call(s => s.select(".domain").remove())
       .call(s => s.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06));
-    gy.call(d3.axisLeft(zy).ticks(6).tickSize(-iw))
+    gy_fig6.call(d3.axisLeft(zy).ticks(6).tickSize(-iw_fig6))
       .call(s => s.select(".domain").remove())
       .call(s => s.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06));
     for (const r of regions)
       r.fill.attr("d", d3.area().x(d => zx(d)).y0(d => zy(r.y0(d))).y1(d => zy(r.y1(d)))(r.xs));
-    vLine.attr("x1", zx(1)).attr("x2", zx(1)).attr("y1", m.top).attr("y2", H - m.bottom);
-    hLine.attr("y1", zy(1)).attr("y2", zy(1)).attr("x1", m.left).attr("x2", W - m.right);
+    vLine.attr("x1", zx(1)).attr("x2", zx(1)).attr("y1", m_fig6.top).attr("y2", H_fig6 - m_fig6.bottom);
+    hLine.attr("y1", zy(1)).attr("y2", zy(1)).attr("x1", m_fig6.left).attr("x2", W_fig6 - m_fig6.right);
     diag.attr("d", d3.line().x(d => zx(d)).y(d => zy(Math.sqrt(d)))(diagXs));
     trend.attr("d", d3.line().x(d => zx(d)).y(d => zy(phiModel(d)))(diagXs));
     for (const r of regions) {
@@ -919,164 +2574,34 @@ figure6 = {
 
   // ---- zoom & pan ----
   const zoom = d3.zoom().scaleExtent([1, 20])
-    .extent([[m.left, m.top], [W - m.right, H - m.bottom]])
-    .translateExtent([[m.left, m.top], [W - m.right, H - m.bottom]])
-    .on("zoom", (e) => redraw(e.transform.rescaleX(x), e.transform.rescaleY(y)));
-  svg.call(zoom).on("dblclick.zoom", null);
+    .extent([[m_fig6.left, m_fig6.top], [W_fig6 - m_fig6.right, H_fig6 - m_fig6.bottom]])
+    .translateExtent([[m_fig6.left, m_fig6.top], [W_fig6 - m_fig6.right, H_fig6 - m_fig6.bottom]])
+    .on("zoom", (e) => redraw_fig6(e.transform.rescaleX(x_fig6), e.transform.rescaleY(y_fig6)));
+  svg_fig6.call(zoom).on("dblclick.zoom", null);
   resetBtn.addEventListener("click", () =>
-    svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity));
+    svg_fig6.transition().duration(400).call(zoom.transform, d3.zoomIdentity));
 
   const hint = document.createElement("div");
   hint.style.cssText = "font-size:11.5px;color:#888;margin-top:4px;";
   hint.textContent = "Scroll to zoom · drag to pan · click a point or use the menu to select a city.";
-  left.append(svg.node(), hint);
+  // chart_legend from svg file (assets/images/story/legend.svg)
 
-  // ---- radial-density panel (animated version of paper Figure 5) ----
-  const YR = [1990, 2000, 2010, 2020];
-  const yrColor = { 1990: "#cdd9e0", 2000: "#8fb0c4", 2010: "#4e7d9c", 2020: "#0f3041" };
-  const RW = 384, RH = 236, rm = { top: 10, right: 12, bottom: 36, left: 40 };
-  const riw = RW - rm.left - rm.right, rih = RH - rm.top - rm.bottom;
+  let chart_legend = document.createElement("div");
+  chart_legend.style.cssText = "display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:#555;margin-top:4px;";
+  let chart_legend_svg_file = await FileAttachment("assets/images/story/legend.svg").text();
+  chart_legend.innerHTML = chart_legend_svg_file;
+  chart_legend.querySelectorAll("svg").forEach(svg => {
+    svg.style.cssText = "max-width:24vw;height:auto;display:block;";
+  });
 
-  const rHead = document.createElement("div");
-  rHead.style.cssText = "font-size:14px;font-weight:600;color:#222;margin-bottom:1px;";
-  const rSub = document.createElement("div");
-  rSub.style.cssText = "font-size:12px;color:#777;margin-bottom:6px;line-height:1.4;";
-  rSub.textContent = "Population density vs. distance from the centre — how the city spread out over time.";
+  left.append(svg_fig6.node(), hint, chart_legend);
 
-  const rx = d3.scaleLinear().range([rm.left, RW - rm.right]);
-  const ry = d3.scaleLinear().range([RH - rm.bottom, rm.top]);
-
-  const rsvg = d3.create("svg")
-    .attr("viewBox", `0 0 ${RW} ${RH}`).attr("width", "100%")
-    .style("max-width", RW + "px").style("height", "auto")
-    .style("font-family", "system-ui, sans-serif");
-  rsvg.append("defs").append("clipPath").attr("id", "rdens-clip").append("rect")
-    .attr("x", rm.left).attr("y", rm.top).attr("width", riw).attr("height", rih);
-  const rxAxis = rsvg.append("g").attr("transform", `translate(0,${RH - rm.bottom})`);
-  const ryAxis = rsvg.append("g").attr("transform", `translate(${rm.left},0)`);
-  rsvg.append("text").attr("x", rm.left + riw / 2).attr("y", RH - 4).attr("text-anchor", "middle")
-    .attr("font-size", 10).attr("fill", "#555").text("remoteness  r  (scaled distance from centre)");
-  rsvg.append("text").attr("transform", "rotate(-90)").attr("x", -(rm.top + rih / 2)).attr("y", 12)
-    .attr("text-anchor", "middle").attr("font-size", 10).attr("fill", "#555").text("population density  ρ");
-  const rContent = rsvg.append("g").attr("clip-path", "url(#rdens-clip)");
-  const rPath = {};
-  for (const yr of YR) rPath[yr] = rContent.append("path")
-    .attr("fill", "none").attr("stroke", yrColor[yr])
-    .attr("stroke-width", yr === 2020 ? 2.6 : 1.8).attr("stroke-opacity", 0.95);
-
-  const rLegend = document.createElement("div");
-  rLegend.style.cssText = "display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:#555;margin-top:4px;";
-  for (const yr of YR) {
-    const it = document.createElement("span");
-    it.style.cssText = "display:inline-flex;align-items:center;gap:4px;";
-    it.innerHTML = `<span style="display:inline-block;width:15px;height:3px;background:${yrColor[yr]};border-radius:2px;"></span>${yr}`;
-    rLegend.append(it);
-  }
-
-  const rCtl = document.createElement("div");
-  rCtl.style.cssText = "display:flex;align-items:center;gap:10px;margin-top:8px;";
-  const playBtn = document.createElement("button");
-  playBtn.style.cssText = "border:1px solid #ccc;border-radius:5px;background:#143d57;color:#fff;font:600 12px system-ui,sans-serif;padding:4px 12px;cursor:pointer;flex:none;";
-  playBtn.textContent = "▶ Play";
-  const slider = document.createElement("input");
-  slider.type = "range"; slider.min = "1990"; slider.max = "2020"; slider.step = "1"; slider.value = "1990";
-  slider.style.cssText = "flex:1 1 auto;min-width:70px;accent-color:#143d57;";
-  const yrReadout = document.createElement("div");
-  yrReadout.style.cssText = "font:600 12.5px system-ui,sans-serif;color:#333;flex:none;width:36px;text-align:right;";
-  yrReadout.textContent = "1990";
-  rCtl.append(playBtn, slider, yrReadout);
-
-  const rCap = document.createElement("div");
-  rCap.style.cssText = "font-size:11px;color:#999;margin-top:6px;line-height:1.45;";
-  rCap.textContent = "Press play: all four census years start collapsed onto the 1990 curve, then each expands to its true shape and freezes at its year — the footprint stretching outward as the centre thins.";
-
-  right.append(rHead, rSub, rsvg.node(), rLegend, rCtl, rCap);
-
-  // ---- animation state + logic ----
-  let curCve = null, rafId = null, playing = false, playFrom = 1990, playT0 = null;
-  const PLAY_MS = 4800;
-
-  // cumulative expansion factor at continuous time t (geometric interp between census years)
-  function Gat(G, t) {
-    if (t <= 1990) return G["1990"];
-    if (t >= 2020) return G["2020"];
-    const k = Math.min(2, Math.floor((t - 1990) / 10));
-    const y0 = 1990 + k * 10, g0 = G[String(y0)], g1 = G[String(y0 + 10)];
-    return g0 * Math.pow(g1 / g0, (t - y0) / 10);
-  }
-
-  function drawRadial(t) {
-    const rec = rdens[curCve];
-    if (!rec) return;
-    const Gt = Gat(rec.G, t);
-    for (const yr of YR) {
-      const ys = rec.years[String(yr)], Gy = rec.G[String(yr)];
-      const s = (t <= yr ? Gt : Gy) / Gy;          // = G(min(t, yr)) / G(yr)
-      rPath[yr].attr("d", d3.line().x((v, i) => rx(ys.x[i] * s)).y(v => ry(v / s))(ys.y));
-    }
-    slider.value = Math.round(t);
-    yrReadout.textContent = Math.round(t);
-  }
-
-  function setCityRadial(cve) {
-    curCve = cve;
-    const rec = rdens[cve];
-    if (!rec) return;
-    // x-axis capped at the ~99%-population remoteness (flat tail is clipped by the plot's clip-rect);
-    // y-axis from the tallest state over the whole sweep (census breakpoints bound the interp states)
-    let ym = 0;
-    for (const T of YR) {
-      const Gt = rec.G[String(T)];
-      for (const yr of YR) {
-        const ys = rec.years[String(yr)], Gy = rec.G[String(yr)];
-        const s = (T <= yr ? Gt : Gy) / Gy;
-        ym = Math.max(ym, d3.max(ys.y) / s);
-      }
-    }
-    rx.domain([0, rec.xcap * 1.02]);
-    ry.domain([0, ym * 1.06]);
-    rxAxis.call(d3.axisBottom(rx).ticks(6).tickSize(-rih))
-      .call(g => g.select(".domain").remove())
-      .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06))
-      .call(g => g.selectAll(".tick text").attr("font-size", 9).attr("fill", "#666"));
-    ryAxis.call(d3.axisLeft(ry).ticks(4).tickSize(-riw).tickFormat(() => ""))
-      .call(g => g.select(".domain").remove())
-      .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06));
-    playRadial(1990);   // autoplay from 1990 on each city selection
-  }
-
-  function stopPlay() {
-    if (rafId) cancelAnimationFrame(rafId);
-    rafId = null; playing = false; playBtn.textContent = "▶ Play";
-  }
-
-  function playRadial(from) {
-    stopPlay();
-    playFrom = Math.max(1990, Math.min(2019, from));
-    playing = true; playT0 = null; playBtn.textContent = "❚❚ Pause";
-    const dur = PLAY_MS * (2020 - playFrom) / 30;
-    function frame(ts) {
-      if (playT0 === null) playT0 = ts;
-      const t = playFrom + Math.min(1, (ts - playT0) / dur) * (2020 - playFrom);
-      drawRadial(t);
-      if (t < 2020 && playing) rafId = requestAnimationFrame(frame);
-      else { stopPlay(); drawRadial(2020); }
-    }
-    rafId = requestAnimationFrame(frame);
-  }
-
-  playBtn.onclick = () => {
-    if (playing) stopPlay();
-    else playRadial(+slider.value >= 2020 ? 1990 : +slider.value);
-  };
-  slider.addEventListener("input", () => { stopPlay(); drawRadial(+slider.value); });
 
   // ---- selection ----
   function selectCity(name) {
     selected = name;
     if (select.value !== name) select.value = name;
-    rHead.textContent = name;
-    setCityRadial(cityCve.get(name));
+    
     pts.attr("opacity", d => d.city_name === name ? 1 : 0.16)
       .attr("r", d => d.city_name === name ? 6.5 : 4)
       .attr("stroke", d => d.city_name === name ? "#111" : "#fff")
@@ -1085,10 +2610,30 @@ figure6 = {
       .sort((a, b) => periods.indexOf(a.period) - periods.indexOf(b.period));
     connector.attr("d", d3.line().x(d => curX(d.growth_factor)).y(d => curY(d.phi))(seq));
     pts.filter(d => d.city_name === name).raise();
+    const rec = rdens[cityCve.get(name)];
+    cur = { y1990: rec.years["1990"], y2020: rec.years["2020"] };
+    phiHat = rec.G["2020"];
+    sMin = 0.8; sMax = Math.min(4, Math.max(2.5, phiHat + 1));
+    slider.min = sMin; slider.max = sMax; slider.value = 1;
+    x.domain([0, rec.xcap * 1.02]);   // same ~99%-population cutoff as the phase-space density panel
+    y.domain([0, Math.max(d3.max(cur.y1990.y) / sMin, d3.max(cur.y2020.y)) * 1.08]);
+    gx.call(d3.axisBottom(x).ticks(7).tickSize(-ih)).call(g => g.select(".domain").remove())
+      .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06))
+      .call(g => g.selectAll(".tick text").attr("font-size", 9).attr("fill", "#666"));
+    gy.call(d3.axisLeft(y).ticks(5).tickSize(-iw).tickFormat(() => "")).call(g => g.select(".domain").remove())
+      .call(g => g.selectAll(".tick line").attr("stroke", "#000").attr("stroke-opacity", 0.06));
+    sliderTicks.innerHTML = `<span>Φ = ${sMin.toFixed(1)}</span><span>${sMax.toFixed(1)}</span>`;
+    const pct = Math.max(0, Math.min(100, (phiHat - sMin) / (sMax - sMin) * 100));
+    marker.style.left = pct + "%";
+    marker.innerHTML = `Φ&#770; = ${phiHat.toFixed(2)}<br>▾`;
+    redraw(1);
+
+
   }
 
   select.addEventListener("change", () => selectCity(select.value));
-  redraw(x, y);
+  redraw_fig6(x, y);
+  slider.addEventListener("input", () => redraw(+slider.value));
   selectCity(selected);
 
   return container;
@@ -1097,91 +2642,10 @@ figure6 = {
 
 :::
 
-Each city contributes **three points** — one per decade (1990–2000, 2000–2010, 2010–2020). The vast
-majority land in the upper **density-loss** region. A handful of tourism-driven ports (Cancún, Los
-Cabos, Puerto Vallarta) sit far to the right on runaway growth, while the twin city of
-Tlaxcala-Apizaco is the rare case that pulled *inward*.
-
-### 3. How many people were displaced? {#finding-3}
-
-To gauge the human scale, the study asks a "what-if": had cities grown while **holding their average
-density constant**, how many fewer people would have been pushed out of the centre? The answer is
-stark. Compared with that density-preserving path, **4.7 million people were effectively displaced
-from city centres** — nearly **double** the 2.5 million drop measured directly.
-
-You can see this zone by zone in the [population chart above](#finding-1): switch **View** to
-**With counterfactual** to overlay the density-preserving path, or to **Difference** to read the gap
-directly — negative in the centre (people missing), positive at the edge (the excess crowd).
-
-### 4. Longer distances, higher costs {#finding-4}
-
-Stretching a city's population outward has a direct, unavoidable consequence: the **average distance
-to the centre grows**. With Mexico's typical growth factor of **2.16** over 30 years and the fitted
-parameters, mean distances end up **28% longer** than under density-preserving growth. Longer
-distances mean:
-
-- more vehicle-kilometres, emissions, and air pollution;
-- reduced access to water, sewage, schools, and healthcare on the fringe;
-- fragmented labour markets and longer commutes;
-- deeper car dependency — Mexico's car fleet ballooned from **under 5 million in 1990 to over 40
-  million today**.
-
-## Why it happened
-
-The hollowing-out was not an accident of geography; it was engineered by a stack of reinforcing
-forces on both sides of the housing market.
-
-**On the demand side**, a demographic boom and rising incomes — helped by remittances and by
-**NAFTA (1994)** — created a wave of new households ready to buy homes and, increasingly, to own cars
-that made long commutes feasible.
-
-**On the supply side**, two structural reforms opened the fringe:
-
-1. **The 1992 reform of communal ("ejido") land tenure** allowed communal land to be sold, unlocking
-   vast tracts of cheap, developable land on the urban edge.
-2. **From 2001, the national housing agency became a financial intermediary**, pouring credit into
-   large-scale peripheral housing. Annual housing production leapt from about **50,000 units to more
-   than 1.4 million** by 2013.
-
-Developers built where land was cheapest — far from the centre — and credit followed. But roads,
-transit, water, sewage, and schools rarely kept pace, leaving residents farther out and less well
-served.
-
-::: {.callout-important}
-## The key policy lever
-
-Some outward growth is unavoidable when a population doubles. But the study isolates a second,
-*policy-driven* component — the steady drift ($\alpha$) that occurs **even without population growth**.
-That part reflects dysfunctional housing finance and car-oriented planning, not demographic necessity.
-Compact design, transit investment, and housing-finance reform could shrink it — and with it, the
-density losses and social costs documented here.
-:::
-
-## Why it matters
-
-For most of history, cities were densest at their core. Mexico's are now densest several kilometres
-out. That inversion — driven by housing markets pushing residents ever outward even as the overall
-population grew — is a *self-organising* dynamic that simple models of city growth cannot reproduce.
-
-The framework introduced here offers planners a **model-free, size-independent ruler** for measuring
-and comparing expansion across cities and decades. Because it makes no assumption about a city's
-"correct" shape, it works precisely where older density models break down — near the centre, where
-the most consequential changes unfold. That makes it a practical tool for anticipating the spatial
-fallout of population shifts, and for designing growth that is more compact, better served, and more
-equitable.
-
-## Data & code
-
-- **Census data:** [INEGI](https://www.inegi.org.mx/) (Mexico's national statistics institute).
-- **Processed dataset & code (Zenodo):** [doi.org/10.5281/zenodo.20630381](https://doi.org/10.5281/zenodo.20630381)
-- **Analysis code (GitHub):** [CentroFuturoCiudades/scaling_depopulation_mex](https://github.com/CentroFuturoCiudades/scaling_depopulation_mex)
-- **Interactive city maps:** [CitiesMoving.com/UrbanDispersion](https://citiesmoving.com/UrbanDispersion/)
-
----
-
 *This is a plain-language summary of the research article “Scaling and Population Loss in Mexican Urban
 Centres” by G. G. Peraza-Mues, E. Resendiz, R. Figueroa-Soriano, R. Prieto-Curiel, and R. Ponce-Lopez.
 Affiliations: Tecnológico de Monterrey (Center for the Future of Cities; School of Government and Public
 Transformation; School of Architecture, Art and Design) and the Complexity Science Hub, Vienna. All
 figures are from the paper; the two interactive charts are built from the paper's reported values and
 model parameters.*
+
