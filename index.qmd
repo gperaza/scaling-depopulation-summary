@@ -69,7 +69,7 @@ fig1 ={
   `;
     const nm = document.createElement("span");
     nm.textContent = c.name;
-    nm.style.cssText = "font-size:8.5px;line-height:1.1;color:#fff;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;user-select:none;pointer-events:none;";
+    nm.style.cssText = "font-size:8.5px;line-height:1.1;color:#000;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;user-select:none;pointer-events:none;";
     btn.append(im, nm);
     cardByCve.set(c.cve, btn);
     grid.append(btn);
@@ -2090,11 +2090,12 @@ figure2grid = {
   const DW = 400, DH = 208, dm = { top: 8, right: 12, bottom: 30, left: 48 };
   const diw = DW - dm.left - dm.right, dih = DH - dm.top - dm.bottom;
   const dx = d3.scaleLinear().domain([0, 10]).range([dm.left, DW - dm.right]);
-  const dy = d3.scaleLinear().domain([-6000, 4000]).range([DH - dm.bottom, dm.top]);
+  const dy = d3.scaleLinear().domain([-12500, 6000]).range([DH - dm.bottom, dm.top]);
 
   const dsvg = d3.create("svg")
-    .attr("viewBox", `0 0 ${DW} ${DH}`).attr("width", "18vw")
+    .attr("viewBox", `0 0 ${DW} ${DH}`).attr("width", "35vw")
     .style("height", "auto")
+    .style("margin-top", "2vh")
     .style("font-family", "system-ui, sans-serif");
   dsvg.append("defs").append("clipPath").attr("id", "dens-clip").append("rect")
     .attr("x", dm.left).attr("y", dm.top).attr("width", diw).attr("height", dih);
