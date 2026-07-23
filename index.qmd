@@ -2295,6 +2295,9 @@ figure3 = {
   const byCity = d3.group(data, d => d.city_name);
   const cities = Array.from(byCity.keys()).sort((a, b) => a.localeCompare(b, "es"));
   const cityCve = new Map(Array.from(byCity, ([n, rows]) => [n, rows[0].cve_code]));
+  // cumulative population growth P(2020)/P(1990) per city = product of the 3 intercensal
+  // growth factors; its square root is the density-preserving counterfactual Φ (Φ = √growth).
+  const cityCumGrowth = new Map(Array.from(byCity, ([n, rows]) => [n, rows.reduce((a, r) => a * r.growth_factor, 1)]));
   let selected = "Ciudad de México";
 
   const container = document.createElement("div");
@@ -2327,11 +2330,18 @@ figure3 = {
   const slider = document.createElement("input");
   slider.type = "range"; slider.step = "0.01";
   slider.style.cssText = "width:100%;accent-color:#e6550d;display:block;margin:0;";
+  // counterfactual (density-preserving) Φ marker — sits below the slider pointing up (▴),
+  // grey to match the phase-space "constant density Φ = √growth" diagonal.
+  const markRowCf = document.createElement("div");
+  markRowCf.style.cssText = "position:relative;height:34px;";
+  const markerCf = document.createElement("div");
+  markerCf.style.cssText = "position:absolute;transform:translateX(-50%);text-align:center;top:-2px;font-size:11px;color:#555;font-weight:600;line-height:1.05;white-space:nowrap;pointer-events:none;";
+  markRowCf.append(markerCf);
   const sliderTicks = document.createElement("div");
   sliderTicks.style.cssText = "display:flex;justify-content:space-between;font-size:10.5px;color:#999;margin-top:1px;";
   const phiReadout = document.createElement("div");
   phiReadout.style.cssText = "font:600 13px system-ui;color:#333;margin-top:5px;";
-  sliderWrap.append(markRow, slider, sliderTicks, phiReadout);
+  sliderWrap.append(markRow, slider, markRowCf, sliderTicks, phiReadout);
   right.append(sliderWrap);
 
   // --- stretchdemo chart 
@@ -2606,6 +2616,10 @@ figure3 = {
     const pct = Math.max(0, Math.min(100, (phiHat - sMin) / (sMax - sMin) * 100));
     marker.style.left = pct + "%";
     marker.innerHTML = `Φ&#770; = ${phiHat.toFixed(2)}<br>▾`;
+    const phiCf = Math.sqrt(cityCumGrowth.get(name));
+    const pctCf = Math.max(0, Math.min(100, (phiCf - sMin) / (sMax - sMin) * 100));
+    markerCf.style.left = pctCf + "%";
+    markerCf.innerHTML = `▴<br>Φ (density-preserving)<br>= ${phiCf.toFixed(2)}`;
     redraw(1);
 
 
