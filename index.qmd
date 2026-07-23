@@ -1,32 +1,5 @@
 ---
 title: "Scaling and Population Loss in Mexican Urban Centres"
-date: today
-format:
-  html:
-    theme: default
-    toc: true
-    toc-depth: 2
-    toc-title: "On this page"
-    toc-location: right
-    smooth-scroll: true
-    fig-align: center
-    fig-cap-location: bottom
-    number-sections: false
-    lightbox: true
-    embed-resources: false
-abstract: |
-  Between 1990 and 2020, Mexico's urban population nearly doubled — yet across all
-  69 of its metropolitan areas, the historic city centres *lost* residents. As people
-  moved outward, central zones shed **2.5 million people**, the share of city-dwellers
-  living centrally fell **from over 40% to just 22%**, and the average distance from
-  the centre grew **28%** beyond what compact growth would have produced. This is a
-  plain-language summary of the study, its method, and why it matters for how cities work.
-keywords:
-  - urban scaling
-  - urban sprawl
-  - depopulation
-  - Mexico
-  - city centres
 # citation:
 #   type: article-journal
 ---
@@ -2636,12 +2609,13 @@ figure3 = {
 
 :::
 
-*This is a plain-language summary of the research article “Scaling and Population Loss in Mexican Urban
-Centres” by G. G. Peraza-Mues, E. Resendiz, R. Figueroa-Soriano, R. Prieto-Curiel, and R. Ponce-Lopez.
-Affiliations: Tecnológico de Monterrey (Center for the Future of Cities; School of Government and Public
-Transformation; School of Architecture, Art and Design) and the Complexity Science Hub, Vienna. All
-figures are from the paper; the two interactive charts are built from the paper's reported values and
-model parameters.*
+*This is a plain-language visualization summary of the research article Peraza-Mues, G.G., Resendiz, E., Figueroa-Soriano, R., Prieto-Curiel, R., Ponce-Lopez, R. (2026) [Forthcoming] Scaling and Population Loss in Mexican Urban Centres. Nature Communications. (Accepted 30 June, 2026)*
+
+**Affiliations**:
+
+- Tecnológico de Monterrey (Center for the Future of Cities; School of Government and Public Transformation; School of Architecture, Art and Design) 
+
+- Complexity Science Hub, Vienna.
 
 *This web summary and visualizations were created by Gonzalo G. Peraza-Mues, Eugen Resendiz, and Juan E. Díaz Noguez.*
 
