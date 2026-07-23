@@ -2318,7 +2318,7 @@ figure3 = {
   let selected = "Ciudad de México";
 
   const container = document.createElement("div");
-  container.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start;font-family:system-ui,sans-serif;";
+  container.style.cssText = "position:relative;display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start;font-family:system-ui,sans-serif;margin-bottom:2.5vh;";
   const left = document.createElement("div");
   left.style.cssText = "flex:1 1 540px;max-width:33vw;";
   const right = document.createElement("div");
@@ -2587,8 +2587,8 @@ figure3 = {
   // chart_legend from svg file (assets/images/story/legend.svg)
 
   let chart_legend = document.createElement("div");
-  chart_legend.style.cssText = "display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:#555;margin-top:4px;";
-  let chart_legend_svg_file = await FileAttachment("assets/images/story/legend.svg").text();
+  chart_legend.style.cssText = "display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:#555;margin-top:1vh;justify-content:center;align-items:center;";
+  let chart_legend_svg_file = await FileAttachment("assets/images/story/legend_2.svg").text();
   chart_legend.innerHTML = chart_legend_svg_file;
   chart_legend.querySelectorAll("svg").forEach(svg => {
     svg.style.cssText = "max-width:24vw;height:auto;display:block;";
@@ -2648,4 +2648,6 @@ Affiliations: Tecnológico de Monterrey (Center for the Future of Cities; School
 Transformation; School of Architecture, Art and Design) and the Complexity Science Hub, Vienna. All
 figures are from the paper; the two interactive charts are built from the paper's reported values and
 model parameters.*
+
+*This web summary and visualizations were created by Gonzalo G. Peraza-Mues, Eugen Resendiz, and Juan E. Díaz Noguez.*
 
