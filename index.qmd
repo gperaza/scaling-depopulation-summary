@@ -1,25 +1,5 @@
 ---
 title: "Scaling and Population Loss in Mexican Urban Centres"
-author:
-  - name: Gonzalo G. Peraza-Mues
-    affiliations:
-      - name: Tecnológico de Monterrey, Center for the Future of Cities
-      - name: Tecnológico de Monterrey, School of Government and Public Transformation
-    email: ggperaza@gmail.com
-    corresponding: true
-  - name: Eugen Resendiz
-    affiliations:
-      - name: Tecnológico de Monterrey, Center for the Future of Cities
-      - name: Tecnológico de Monterrey, School of Architecture, Art and Design
-  - name: Rodolfo Figueroa-Soriano
-    affiliations:
-      - name: Tecnológico de Monterrey, Center for the Future of Cities
-  - name: Rafael Prieto-Curiel
-    affiliations:
-      - name: Complexity Science Hub, Vienna, Austria
-  - name: Roberto Ponce-Lopez
-    affiliations:
-      - name: Tecnológico de Monterrey, Center for the Future of Cities
 date: today
 format:
   html:
